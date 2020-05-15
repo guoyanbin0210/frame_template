@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lt.body.newContent.dao.NewContentDao">
+  <resultMap id="baseModel" type="com.lt.body.newContent.model.NewContentModel">
+    <id column="id" property="id"/>
+    <id column="create_by" property="create_by"/>
+    <id column="create_time" property="create_time"/>
+    <id column="modify_by" property="modify_by"/>
+    <id column="modify_time" property="modify_time"/>
+    <id column="parent_id" property="parent_id"/>
+    <id column="menu_id" property="menu_id"/>
+    <id column="news_title" property="news_title"/>
+    <id column="title_url" property="title_url"/>
+    <id column="publish_date" property="publish_date"/>
+    <id column="author" property="author"/>
+    <id column="news_contnt" property="news_contnt"/>
+    <id column="news_sort" property="news_sort"/>
+      <id column="news_about" property="news_about"/>
+  </resultMap>
+  <sql id="select_all">id, create_by, create_time, modify_by, modify_time, parent_id, menu_id, news_title, title_url, publish_date, author, news_contnt, news_sort, news_about</sql>
+  <sql id="Base_Column_List">
+    <if test="id!=null">id,</if>
+    <if test="create_by!=null">create_by,</if>
+    <if test="create_time!=null">create_time,</if>
+    <if test="modify_by!=null">modify_by,</if>
+    <if test="modify_time!=null">modify_time,</if>
+    <if test="parent_id!=null">parent_id,</if>
+    <if test="menu_id!=null">menu_id,</if>
+    <if test="news_title!=null">news_title,</if>
+    <if test="title_url!=null">title_url,</if>
+    <if test="publish_date!=null">publish_date,</if>
+    <if test="author!=null">author,</if>
+    <if test="news_contnt!=null">news_contnt,</if>
+    <if test="news_sort!=null">news_sort,</if>
+      <if test="news_about!=null">news_about,</if>
+  </sql>
+  <sql id="Base_property_List">
+    <if test="id!=null">#{id},</if>
+    <if test="create_by!=null">#{create_by},</if>
+    <if test="create_time!=null">#{create_time},</if>
+    <if test="modify_by!=null">#{modify_by},</if>
+    <if test="modify_time!=null">#{modify_time},</if>
+    <if test="parent_id!=null">#{parent_id},</if>
+    <if test="menu_id!=null">#{menu_id},</if>
+    <if test="news_title!=null">#{news_title},</if>
+    <if test="title_url!=null">#{title_url},</if>
+    <if test="publish_date!=null">#{publish_date},</if>
+    <if test="author!=null">#{author},</if>
+    <if test="news_contnt!=null">#{news_contnt},</if>
+    <if test="news_sort!=null">#{news_sort},</if>
+      <if test="news_about!=null">#{news_about},</if>
+  </sql>
+  <sql id="Base_update_List">
+    <if test="id!=null">id=#{id},</if>
+    <if test="create_by!=null">create_by=#{create_by},</if>
+    <if test="create_time!=null">create_time=#{create_time},</if>
+    <if test="modify_by!=null">modify_by=#{modify_by},</if>
+    <if test="modify_time!=null">modify_time=#{modify_time},</if>
+    <if test="parent_id!=null">parent_id=#{parent_id},</if>
+    <if test="menu_id!=null">menu_id=#{menu_id},</if>
+    <if test="news_title!=null">news_title=#{news_title},</if>
+    <if test="title_url!=null">title_url=#{title_url},</if>
+    <if test="publish_date!=null">publish_date=#{publish_date},</if>
+    <if test="author!=null">author=#{author},</if>
+    <if test="news_contnt!=null">news_contnt=#{news_contnt},</if>
+    <if test="news_sort!=null">news_sort=#{news_sort},</if>
+      <if test="news_about!=null">news_about=#{news_about},</if>
+  </sql>
+  <sql id="Base_select_List">
+    <if test="id!=null">AND id=#{id}</if>
+    <if test="create_by!=null">AND create_by=#{create_by}</if>
+    <if test="create_time!=null">AND create_time=#{create_time}</if>
+    <if test="modify_by!=null">AND modify_by=#{modify_by}</if>
+    <if test="modify_time!=null">AND modify_time=#{modify_time}</if>
+    <if test="parent_id!=null">AND parent_id=#{parent_id}</if>
+    <if test="menu_id!=null">AND menu_id=#{menu_id}</if>
+    <if test="news_title!=null">AND news_title=#{news_title}</if>
+    <if test="title_url!=null">AND title_url=#{title_url}</if>
+    <if test="publish_date!=null">AND publish_date=#{publish_date}</if>
+    <if test="author!=null">AND author=#{author}</if>
+    <if test="news_contnt!=null">AND news_contnt=#{news_contnt}</if>
+    <if test="news_sort!=null">AND news_sort=#{news_sort}</if>
+      <if test="news_sort!=null1">AND news_about=#{news_about}</if>
+  </sql>
+  <sql id="Base_select_like_List"><trim suffixOverrides=","> IFNULL(id, ''), IFNULL(create_by, ''), IFNULL(create_time, ''), IFNULL(modify_by, ''), IFNULL(modify_time, ''), IFNULL(parent_id, ''), IFNULL(menu_id, ''), IFNULL(news_title, ''), IFNULL(title_url, ''), IFNULL(publish_date, ''), IFNULL(author, ''), IFNULL(news_contnt, ''), IFNULL(news_sort, ''),IFNULL(news_about, ''), </trim></sql>
+  <insert id="insert">INSERT INTO tb_new_content (<trim suffixOverrides=","><include refid="Base_Column_List"/></trim>) VALUES (<trim suffixOverrides=","><include refid="Base_property_List"/></trim>);</insert>
+  <delete id="delete">DELETE FROM tb_new_content WHERE id = #{id};</delete>
+  <update id="update">UPDATE tb_new_content SET <trim suffixOverrides=","><include refid="Base_update_List"/></trim> WHERE id = #{id};</update>
+  <select id="selectById" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM tb_new_content WHERE id =#{id};</select>
+  <select id="selectListByModel" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM tb_new_content<where> <include refid="Base_select_List"/> </where> ORDER BY create_time DESC</select>
+  <select id="selectAll" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM tb_new_content ORDER BY create_time DESC</select>
+  <select id="selectListByKeyWord" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM tb_new_content<where> CONCAT(<include refid="Base_select_like_List"/>) LIKE concat(concat('%',#{keyWord}),'%')</where> ORDER BY create_time DESC</select>
+
+<select id="selectDataByHtml" resultMap="baseModel">
+    SELECT
+      bc.id,
+	  t1.menu_name AS 'parent_id',
+      t2.menu_name AS 'menu_id',
+      bc.news_title,
+      bc.title_url,
+	  bc.publish_date,
+	  bc.author,
+	  bc.news_sort,
+      bc.create_time
+    FROM
+      tb_new_content bc
+    LEFT JOIN tb_menu t1 ON bc.parent_id = t1.id
+    LEFT JOIN tb_menu t2 ON bc.menu_id = t2.id
+  <where>
+    bc.parent_id = #{parent_id}
+    <if test="menu_id != null and menu_id!= ''">
+      AND bc.menu_id = #{menu_id}
+    </if>
+    <if test="keyWord != null and keyWord != ''">
+      AND bc.news_title LIKE  concat ('%',#{keyWord},'%')
+        OR bc.author LIKE  concat ('%',#{keyWord},'%')
+    </if>
+  </where>
+  ORDER BY create_time DESC
+</select>
+
+<select id="selectDataByMenuId" resultType="com.lt.body.apiMoudel.ApiNewsMoudel">
+  SELECT
+     id,
+     news_title,
+     title_url,
+     publish_date,
+     author,
+     news_contnt,
+     news_about
+  FROM
+   tb_new_content
+   WHERE menu_id = #{menu_id}
+   ORDER BY create_time DESC
+</select>
+
+  <select id="selectDataByType" resultType="com.lt.body.apiMoudel.ApiNewsMoudel">
+  SELECT
+     id,
+     news_title,
+     title_url,
+     publish_date,
+     author,
+     news_contnt,
+     news_about
+  FROM
+   tb_new_content
+   WHERE news_sort = '0'
+   ORDER BY create_time DESC
+</select>
+
+  <select id="selectDataById" resultType="com.lt.body.apiMoudel.ApiNewsMoudel">
+  SELECT
+     id,
+     news_title,
+     title_url,
+     publish_date,
+     author,
+     news_contnt,
+     news_about
+  FROM
+   tb_new_content
+   WHERE id = #{id}
+   ORDER BY create_time DESC
+</select>
+
+
+</mapper>

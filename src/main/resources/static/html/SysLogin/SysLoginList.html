@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>账户管理</title>
+    <script type="text/javascript" src="/js/initCss.js"></script>
+    <script type="text/javascript" src="/js/initJs.js"></script>
+    <link rel="stylesheet" type="text/css" href="/lib/pagination/pagination.css"/>
+    <script type="text/javascript" src="/lib/pagination/jquery.pagination.js"></script>
+    <link rel="stylesheet" type="text/css" href="/lib/zTree/v3/css/metroStyle/metroStyle.css">
+
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页
+    <span class="c-gray en">&gt;</span>系统管理<span class="c-gray en">&gt;</span> 账户管理
+    <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"
+       href="javascript:location.replace(location.href);" title="刷新">
+        <i class="Hui-iconfont">&#xe68f;
+        </i>
+    </a>
+</nav>
+<div class="page-container">
+    <div class="text-c">
+        <div class="btn-group">
+            <input type="text" name="" id="in_search_text" placeholder="请输入你想查询的内容" style="width:250px"
+                   class="input-text">
+            <button id="btn_search" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i>
+                搜索
+            </button>
+        </div>
+    </div>
+    <div class="cl pd-5 bg-1 bk-gray mt-20">
+
+        <span class="l" id="btn_group">
+            <a class="btn btn-primary radius" click-info="add"><i class="Hui-iconfont">&#xe600;</i>添加 </a>
+            <a class="btn disabled radius multiple-choice" click-info="delete"><i
+                    class="Hui-iconfont">&#xe6e2;</i>删除</a>
+            <a class="btn disabled radius single-choice" click-info="edit"><i class="Hui-iconfont">&#xe60c;</i>编辑</a>
+<!--            <a title="请严格按照模版书写数据，否则将无法导入数据"-->
+<!--               class="btn btn-warning radius" click-info="downloadImportModel"><i class="Hui-iconfont">&#xe640;</i>下载批量导入模版</a>-->
+<!--            <a title="请严格按照模版书写数据，否则将无法导入数据!同时请确保数据不重复！"-->
+<!--               class="btn btn-primary radius" click-info="importDate"><i class="Hui-iconfont">&#xe645;</i> 批量导入</a>-->
+        </span>
+    </div>
+    <div class="cl pd-5 bg-1 bk-gray mt-20">
+        <span class="r">数据总数: <span id="show_total">暂未查询到数据</span></span>
+    </div>
+    <div class="mt-20 f l" style="width: 45%">
+        <table class="table table-border table-bordered table-hover table-bg table-sort" id="">
+            <thead>
+            <tr class="text-c text-overflow">
+                <th width="5%"><input type="checkbox" id="checkBoxGroup"></th>
+                <th>创建时间</th>
+                <th>账号</th>
+                <th>显示名称</th>
+            </tr>
+            </thead>
+            <tbody id="mytbody">
+            </tbody>
+        </table>
+        <span class="r mt-10 mb-20">
+            <div class="M-box3"></div>
+        </span>
+    </div>
+    <div class="mt-20 f r" style="width: 50%">
+        <ul id="treeDemo" class="ztree"></ul>
+    </div>
+</div>
+<script type="text/javascript" src="/lib/zTree/v3/js/jquery.ztree.all.js"></script>
+<script type="text/javascript">
+    var userType = getUrlParamByMatch("user_type");
+
+    var zTree, setting, zNodes = [],//初始化zTree
+        baseRoleArr,
+        login_id;
+    initPath(
+        "/base/SysLogin/selectListByPageHelper.do",
+        '/base/SysLogin/deleteById.do',//DATA_URL_delete,
+        '/base/SysLogin/updateById.do',//DATA_URL_update,
+        '/base/SysLogin/insert.do',//DATA_URL_insert,
+        '/base/SysLogin/selectById.do',//DATA_URL_selectById,
+        '/html/SysLogin/SysLoginAdd.html',//VIEW_PATH_ADD,
+        '/html/SysLogin/SysLoginEdit.html',//VIEW_PATH_EDIT,
+    );
+
+    $(document).ready(function () {
+       /* if (userType) {
+            selectListParams.user_type = userType
+        }*/
+        doSelectList(selectListParams, initAppendHtml);
+
+        $('#mytbody tr').click(function (e) {
+            login_id = $(this).attr("id");
+            changeTreeStatus(login_id);
+        });
+    });
+
+
+    setting = {
+        async: {enable: true, url: "/base/RBAC/All", dataFilter: ajaxDataFilter},
+        check: {enable: true},
+        data: {simpleData: {enable: true}},
+        callback: {beforeCheck: myBeforeCheck, onClick: myOnCheck}
+    };
+    zTree = $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+
+    function myOnCheck(event, treeId, treeNode) {
+    }
+
+    function myBeforeCheck(treeId, treeNode) {
+        if (!login_id) {
+            layer.alert("请先选择账号")
+            return false;
+        }
+        if (!treeNode.checked) {
+            layer.confirm('你确定要授权么？', {
+                btn: ['确定', '取消'] //按钮
+            }, function () {
+                layer.msg('授权中...', {icon: 1});
+                zTree.checkNode(treeNode, true, false, false)
+                //角色tree状态
+                ajaxPost("/base/RBAC/insert.do",
+                    {role_id: treeNode.id, login_id: login_id}, function (response) {
+                        if (response.status === 1) {
+                            for (var i = 0; i < response.data.length; i++) {
+                                var item = response.data[i];
+                                var tempNode = zTree.getNodeByParam("id", item.id);
+                                zTree.checkNode(tempNode, true);
+                                zTree.expandNode(tempNode, true);
+
+                            }
+
+                        }
+                    });
+            });
+        } else {
+            layer.confirm('你确定要取消授权么？', {
+                btn: ['确定', '取消'] //按钮
+            }, function () {
+                layer.msg('取消授权中...', {icon: 1});
+                zTree.checkNode(treeNode, false, false, false);
+
+                ajaxPost("/base/RBAC/deleteById.do",
+                    {role_id: treeNode.id, login_id: login_id}, function (response) {
+                        if (response.status === 1) {
+                            for (var i = 0; i < response.data.length; i++) {
+                                var item = response.data[i];
+                                var tempNode = zTree.getNodeByParam("id", item.id);
+                                zTree.checkNode(tempNode, true);
+                                zTree.expandNode(tempNode, true);
+
+                            }
+                        }
+                    });
+
+            });
+        }
+        return false;
+    }
+
+
+    function ajaxDataFilter(treeId, parentNode, responseData) {
+        baseRoleArr = responseData;
+        return responseData;
+    }
+
+    function changeTreeStatus(login_id) {
+        zTree.checkAllNodes(false)
+        //角色tree状态
+        ajaxPost("/base/RBAC/selectByLoginId.do",
+            {id: login_id},
+            function (response) {
+                if (response.status === 1) {
+                    for (var i = 0; i < response.data.length; i++) {
+                        var item = response.data[i];
+                        var tempNode = zTree.getNodeByParam("id", item.id);
+                        zTree.checkNode(tempNode, true);
+                        zTree.expandNode(tempNode, true);
+                    }
+                }
+            }
+        )
+    }
+
+    function initAppendHtml(item) {
+        return '<tr class="text-c" id=' + item.id + '>' +
+            '<td><input type="checkbox" class="checkItemTag" ></td>' +
+            '<td>' + myFormat(item.create_time, "yyyy-MM-dd HH:mm:ss") + '</td>' +
+            '<td>' + item.user_name + '</td>' +
+            '<td>' + item.nick_name + '</td>' +
+            '</tr>';
+    }
+
+
+</script>
+</body>
+</html>

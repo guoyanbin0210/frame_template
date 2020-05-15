@@ -1,0 +1,75 @@
+spring:
+  profiles:
+      active: dev,wx_mp
+    # active: pro,wx_mp
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver  # mysql8.0以前使用com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource  # 使用Druid数据源
+    druid:
+      initial-size: 5  # 初始化大小
+      min-idle: 5  # 最小
+      max-active: 100  # 最大
+      max-wait: 60000  # 连接超时时间
+      time-between-eviction-runs-millis: 60000  # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      min-evictable-idle-time-millis: 300000  # 指定一个空闲连接最少空闲多久后可被清除，单位是毫秒
+      validationQuery: select 'x'
+      test-while-idle: true  # 当连接空闲时，是否执行连接测试
+      test-on-borrow: false  # 当从连接池借用连接时，是否测试该连接
+      test-on-return: false  # 在连接归还到连接池时是否测试该连接
+      filters: slf4j,wall,stat  # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      maxOpenPreparedStatements: 20
+      connectionProperties: druid.stat.slowSqlMillis=1000;druid.stat.logSlowSql=true;config.decrypt=true
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: /druid/*,*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico
+        session-stat-enable: true
+        session-stat-max-count: 10
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        reset-enable: true
+        # IP 白名单，没有配置或者为空，则允许所有访问
+        allow: 127.0.0.1,111.200.215.131
+        # IP 黑名单，若白名单也存在，则优先使用
+        deny:
+        login-username: admin
+        login-password: gaoshan123
+
+
+  jackson:
+    #解决数据库的时间异常
+    time-zone: GMT+8
+    serialization:
+      write-dates-as-timestamps: true
+    #  servlet:
+    #文件上传 这里不生效因为 MultipartConfigElement 这里配置了
+#    multipart:
+#      max-file-size: 10MB #限制单个文件的最大值
+#      max-request-size: 100MB #限制上传的多个文件的总大小
+#      enabled: true
+mybatis:
+  #实体类所做包
+  type-aliases-package: com.gs.*.model
+  config-location: classpath:config/mybatis/mybatis-config.xml
+  #mapper.xml所在位置
+  mapper-locations: classpath*:mapper/*.xml,classpath*:mapper/baseMapper/*.xml,classpath*:mapper/politics/*.xml
+
+#  configuration:
+#    显示sql
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+
+logging:
+  config: classpath:config/log4j2.xml
+
+
+  spring:
+    output:
+      ansi:
+        enabled=ALWAYS

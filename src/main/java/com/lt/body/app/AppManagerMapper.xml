@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gs.xinlianxin.dao.AppManagerDao">
+    <resultMap id="baseModel" type="com.gs.xinlianxin.model.AppManagerModel">
+        <id column="id" property="id"/>
+        <id column="create_by" property="create_by"/>
+        <id column="create_time" property="create_time"/>
+        <id column="modify_by" property="modify_by"/>
+        <id column="modify_time" property="modify_time"/>
+        <id column="package_name" property="package_name"/>
+        <id column="label" property="label"/>
+        <id column="icon_url" property="icon_url"/>
+        <id column="version_name" property="version_name"/>
+        <id column="version_code" property="version_code"/>
+        <id column="min_sdk_version" property="min_sdk_version"/>
+        <id column="down_url" property="down_url"/>
+        <id column="a_qr_code" property="a_qr_code"/>
+        <id column="down_num" property="down_num"/>
+    </resultMap>
+    <sql id="TableName">
+        tb_app_manager
+    </sql>
+    <sql id="BaseColumnAll">
+        <trim suffixOverrides=",">
+            id,
+            create_by,
+            create_time,
+            modify_by,
+            modify_time,
+            package_name,
+            label,
+            icon_url,
+            version_name,
+            version_code,
+            min_sdk_version,
+            down_url,
+            a_qr_code,
+            down_num,
+        </trim>
+    </sql>
+    <sql id="BaseColumnList">
+        <trim suffixOverrides=",">
+            <if test="id!=null">id,</if>
+            <if test="create_by!=null">create_by,</if>
+            <if test="create_time!=null">create_time,</if>
+            <if test="modify_by!=null">modify_by,</if>
+            <if test="modify_time!=null">modify_time,</if>
+            <if test="package_name!=null">package_name,</if>
+            <if test="label!=null">label,</if>
+            <if test="icon_url!=null">icon_url,</if>
+            <if test="version_name!=null">version_name,</if>
+            <if test="version_code!=null">version_code,</if>
+            <if test="min_sdk_version!=null">min_sdk_version,</if>
+            <if test="down_url!=null">down_url,</if>
+            <if test="a_qr_code!=null">a_qr_code,</if>
+            <if test="down_num!=null">down_num,</if>
+        </trim>
+    </sql>
+    <sql id="BasePropertyList">
+        <trim suffixOverrides=",">
+            <if test="id!=null">#{id},</if>
+            <if test="create_by!=null">#{create_by},</if>
+            <if test="create_time!=null">#{create_time},</if>
+            <if test="modify_by!=null">#{modify_by},</if>
+            <if test="modify_time!=null">#{modify_time},</if>
+            <if test="package_name!=null">#{package_name},</if>
+            <if test="label!=null">#{label},</if>
+            <if test="icon_url!=null">#{icon_url},</if>
+            <if test="version_name!=null">#{version_name},</if>
+            <if test="version_code!=null">#{version_code},</if>
+            <if test="min_sdk_version!=null">#{min_sdk_version},</if>
+            <if test="down_url!=null">#{down_url},</if>
+            <if test="a_qr_code!=null">#{a_qr_code},</if>
+            <if test="down_num!=null">#{down_num},</if>
+        </trim>
+    </sql>
+    <sql id="BaseUpdateList">
+        <trim suffixOverrides=",">
+            <if test="id!=null">id=#{id},</if>
+            <if test="create_by!=null">create_by=#{create_by},</if>
+            <if test="create_time!=null">create_time=#{create_time},</if>
+            <if test="modify_by!=null">modify_by=#{modify_by},</if>
+            <if test="modify_time!=null">modify_time=#{modify_time},</if>
+            <if test="package_name!=null">package_name=#{package_name},</if>
+            <if test="label!=null">label=#{label},</if>
+            <if test="icon_url!=null">icon_url=#{icon_url},</if>
+            <if test="version_name!=null">version_name=#{version_name},</if>
+            <if test="version_code!=null">version_code=#{version_code},</if>
+            <if test="min_sdk_version!=null">min_sdk_version=#{min_sdk_version},</if>
+            <if test="down_url!=null">down_url=#{down_url},</if>
+            <if test="a_qr_code!=null">a_qr_code=#{a_qr_code},</if>
+            <if test="down_num!=null">down_num=#{down_num},</if>
+        </trim>
+    </sql>
+    <sql id="BaseSelectList">
+        <if test="id!=null">AND id=#{id}</if>
+        <if test="create_by!=null">AND create_by=#{create_by}</if>
+        <if test="create_time!=null">AND create_time=#{create_time}</if>
+        <if test="modify_by!=null">AND modify_by=#{modify_by}</if>
+        <if test="modify_time!=null">AND modify_time=#{modify_time}</if>
+        <if test="package_name!=null">AND package_name=#{package_name}</if>
+        <if test="label!=null">AND label=#{label}</if>
+        <if test="icon_url!=null">AND icon_url=#{icon_url}</if>
+        <if test="version_name!=null">AND version_name=#{version_name}</if>
+        <if test="version_code!=null">AND version_code=#{version_code}</if>
+        <if test="min_sdk_version!=null">AND min_sdk_version=#{min_sdk_version}</if>
+        <if test="down_url!=null">AND down_url=#{down_url}</if>
+        <if test="a_qr_code!=null">AND a_qr_code=#{a_qr_code}</if>
+        <if test="down_num!=null">AND down_num=#{down_num}</if>
+    </sql>
+    <sql id="BaseKeyWordColumn">
+        <trim suffixOverrides=",">
+            IFNULL (id, '') ,
+            IFNULL (create_by, '') ,
+            IFNULL (create_time, '') ,
+            IFNULL (modify_by, '') ,
+            IFNULL (modify_time, '') ,
+            IFNULL (package_name, '') ,
+            IFNULL (label, '') ,
+            IFNULL (icon_url, '') ,
+            IFNULL (version_name, '') ,
+            IFNULL (version_code, '') ,
+            IFNULL (min_sdk_version, '') ,
+            IFNULL (down_url, '') ,
+            IFNULL (a_qr_code, '') ,
+            IFNULL (down_num, '') ,
+        </trim>
+    </sql>
+    <insert id="insert">
+        INSERT INTO
+        <include refid="TableName"/>
+        (
+        <include refid="BaseColumnList"/>
+        ) VALUES (
+        <include refid="BasePropertyList"/>
+        )
+    </insert>
+    <delete id="deleteById">
+        DELETE
+        FROM
+        <include refid="TableName"/>
+        WHERE id = #{id}
+    </delete>
+    <update id="updateById">
+        UPDATE
+        <include refid="TableName"/>
+        SET
+        <include refid="BaseUpdateList"/>
+        WHERE id = #{id}
+    </update>
+    <select id="selectById" resultMap="baseModel">
+        SELECT
+        <include refid="BaseColumnAll"/>
+        FROM
+        <include refid="TableName"/>
+        WHERE id =#{id}
+    </select>
+    <select id="selectAll" resultMap="baseModel">
+        SELECT
+        <include refid="BaseColumnAll"/>
+        FROM
+        <include refid="TableName"/>
+        ORDER BY create_time DESC
+    </select>
+    <select id="selectAllByXX" resultMap="baseModel" useCache="true">
+        SELECT
+        <include refid="BaseColumnAll"/>
+        FROM
+        <include refid="TableName"/>
+        <where>
+            <include refid="BaseSelectList"/>
+        </where>
+        ORDER BY create_time DESC
+    </select>
+    <select id="selectListByKeyWord" resultMap="baseModel" useCache="true">
+        SELECT
+        <include refid="BaseColumnAll"/>
+        FROM
+        <include refid="TableName"/>
+        <where><if test="keyWord!=null">CONCAT(<include refid="BaseKeyWordColumn"/>) LIKE concat(concat('%',#{keyWord}),'%')</if></where>
+        ORDER BY create_time DESC
+    </select>
+    <select id="selectNewest" resultMap="baseModel">
+        SELECT
+        <include refid="BaseColumnAll"/>
+        FROM
+        <include refid="TableName"/>
+        ORDER BY create_time DESC limit 1
+    </select>
+</mapper>

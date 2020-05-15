@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lt.body.comBanner.dao.BannerDao">
+  <resultMap id="baseModel" type="com.lt.body.comBanner.model.BannerModel">
+    <id column="id" property="id"/>
+    <id column="create_by" property="create_by"/>
+    <id column="create_time" property="create_time"/>
+    <id column="modify_by" property="modify_by"/>
+    <id column="modify_time" property="modify_time"/>
+    <id column="banner_url" property="banner_url"/>
+    <id column="parent_id" property="parent_id"/>
+    <id column="menu_id" property="menu_id"/>
+    <id column="banner_sort" property="banner_sort"/>
+    <id column="banner_type" property="banner_type"/>
+  </resultMap>
+  <sql id="select_all">id, create_by, create_time, modify_by, modify_time, banner_url, parent_id, menu_id, banner_sort, banner_type</sql>
+  <sql id="Base_Column_List">
+    <if test="id!=null">id,</if>
+    <if test="create_by!=null">create_by,</if>
+    <if test="create_time!=null">create_time,</if>
+    <if test="modify_by!=null">modify_by,</if>
+    <if test="modify_time!=null">modify_time,</if>
+    <if test="banner_url!=null">banner_url,</if>
+    <if test="parent_id!=null">parent_id,</if>
+    <if test="menu_id!=null">menu_id,</if>
+    <if test="banner_sort!=null">banner_sort,</if>
+    <if test="banner_type!=null">banner_type,</if>
+  </sql>
+  <sql id="Base_property_List">
+    <if test="id!=null">#{id},</if>
+    <if test="create_by!=null">#{create_by},</if>
+    <if test="create_time!=null">#{create_time},</if>
+    <if test="modify_by!=null">#{modify_by},</if>
+    <if test="modify_time!=null">#{modify_time},</if>
+    <if test="banner_url!=null">#{banner_url},</if>
+    <if test="parent_id!=null">#{parent_id},</if>
+    <if test="menu_id!=null">#{menu_id},</if>
+    <if test="banner_sort!=null">#{banner_sort},</if>
+    <if test="banner_type!=null">#{banner_type},</if>
+  </sql>
+  <sql id="Base_update_List">
+    <if test="id!=null">id=#{id},</if>
+    <if test="create_by!=null">create_by=#{create_by},</if>
+    <if test="create_time!=null">create_time=#{create_time},</if>
+    <if test="modify_by!=null">modify_by=#{modify_by},</if>
+    <if test="modify_time!=null">modify_time=#{modify_time},</if>
+    <if test="banner_url!=null">banner_url=#{banner_url},</if>
+    <if test="parent_id!=null">parent_id=#{parent_id},</if>
+    <if test="menu_id!=null">menu_id=#{menu_id},</if>
+    <if test="banner_sort!=null">banner_sort=#{banner_sort},</if>
+    <if test="banner_type!=null">banner_type=#{banner_type},</if>
+  </sql>
+  <sql id="Base_select_List">
+    <if test="id!=null">AND id=#{id}</if>
+    <if test="create_by!=null">AND create_by=#{create_by}</if>
+    <if test="create_time!=null">AND create_time=#{create_time}</if>
+    <if test="modify_by!=null">AND modify_by=#{modify_by}</if>
+    <if test="modify_time!=null">AND modify_time=#{modify_time}</if>
+    <if test="banner_url!=null">AND banner_url=#{banner_url}</if>
+    <if test="parent_id!=null">AND parent_id=#{parent_id}</if>
+    <if test="menu_id!=null">AND menu_id=#{menu_id}</if>
+    <if test="banner_sort!=null">AND banner_sort=#{banner_sort}</if>
+    <if test="banner_type!=null">AND banner_type=#{banner_type}</if>
+  </sql>
+  <sql id="Base_select_like_List"><trim suffixOverrides=","> IFNULL(id, ''), IFNULL(create_by, ''), IFNULL(create_time, ''), IFNULL(modify_by, ''), IFNULL(modify_time, ''), IFNULL(banner_url, ''), IFNULL(parent_id, ''), IFNULL(menu_id, ''), IFNULL(banner_sort, ''), IFNULL(banner_type, ''), </trim></sql>
+  <insert id="insert">INSERT INTO tb_banner (<trim suffixOverrides=","><include refid="Base_Column_List"/></trim>) VALUES (<trim suffixOverrides=","><include refid="Base_property_List"/></trim>);</insert>
+  <delete id="delete">DELETE FROM tb_banner WHERE id = #{id};</delete>
+  <update id="update">UPDATE tb_banner SET <trim suffixOverrides=","><include refid="Base_update_List"/></trim> WHERE id = #{id};</update>
+  <select id="selectById" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM tb_banner WHERE id =#{id};</select>
+  <select id="selectListByModel" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM tb_banner<where> <include refid="Base_select_List"/> </where> ORDER BY create_time DESC</select>
+  <select id="selectAll" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM tb_banner ORDER BY create_time DESC</select>
+  <select id="selectListByKeyWord" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM tb_banner<where> CONCAT(<include refid="Base_select_like_List"/>) LIKE concat(concat('%',#{keyWord}),'%')</where> ORDER BY create_time DESC</select>
+
+  <select id="findDataByType" resultType="com.lt.body.apiMoudel.ApiBannerModel">
+    SELECT
+       tb.parent_id AS 'id',
+       tm.menu_name AS 'name',
+       tb.banner_sort AS 'sort',
+       tb.banner_type AS 'type',
+       tb.banner_url AS 'url',
+       tb.menu_id AS 'base_id'
+     FROM
+       tb_banner tb,tb_menu tm
+     WHERE tb.parent_id = tm.id
+     AND tb.banner_type = #{type}
+     ORDER BY tb.banner_sort ASC
+  </select>
+
+  <select id="selectDataByType" resultMap="baseModel">
+      SELECT
+          id,
+          banner_url
+      FROM
+          tb_banner
+      WHERE
+          banner_type = #{type}
+          LIMIT 0,1
+  </select>
+
+  <select id="selectDataByHtml" resultMap="baseModel">
+    SELECT
+      bc.id,
+	  bc.banner_type,
+      t2.menu_name AS 'menu_id',
+      t1.menu_name AS 'parent_id',
+      bc.banner_url,
+	  bc.banner_sort,
+      bc.create_time
+    FROM
+      tb_banner bc
+    LEFT JOIN tb_menu t1 ON bc.parent_id = t1.id
+    LEFT JOIN tb_menu t2 ON bc.menu_id = t2.id
+    ORDER BY create_time DESC
+  </select>
+
+
+</mapper>

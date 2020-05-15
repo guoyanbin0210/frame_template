@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lt.body.comContent.dao.ContentDao">
+  <resultMap id="baseModel" type="com.lt.body.comContent.model.ContentModel">
+    <id column="id" property="id"/>
+    <id column="create_by" property="create_by"/>
+    <id column="create_time" property="create_time"/>
+    <id column="modify_by" property="modify_by"/>
+    <id column="modify_time" property="modify_time"/>
+    <id column="tb_menu_id" property="tb_menu_id"/>
+    <id column="tb_parent_id" property="tb_parent_id"/>
+    <id column="tb_title" property="tb_title"/>
+    <id column="tb_about" property="tb_about"/>
+    <id column="tb_title_url" property="tb_title_url"/>
+    <id column="tb_content" property="tb_content"/>
+    <id column="parent_id" property="parent_id"/>
+  </resultMap>
+  <sql id="select_all">id, create_by, create_time, modify_by, modify_time, tb_menu_id, tb_parent_id, tb_title, tb_about, tb_title_url, tb_content, parent_id</sql>
+  <sql id="Base_Column_List">
+    <if test="id!=null">id,</if>
+    <if test="create_by!=null">create_by,</if>
+    <if test="create_time!=null">create_time,</if>
+    <if test="modify_by!=null">modify_by,</if>
+    <if test="modify_time!=null">modify_time,</if>
+    <if test="tb_menu_id!=null">tb_menu_id,</if>
+    <if test="tb_parent_id!=null">tb_parent_id,</if>
+    <if test="tb_title!=null">tb_title,</if>
+    <if test="tb_about!=null">tb_about,</if>
+    <if test="tb_title_url!=null">tb_title_url,</if>
+    <if test="tb_content!=null">tb_content,</if>
+    <if test="parent_id!=null">parent_id,</if>
+  </sql>
+  <sql id="Base_property_List">
+    <if test="id!=null">#{id},</if>
+    <if test="create_by!=null">#{create_by},</if>
+    <if test="create_time!=null">#{create_time},</if>
+    <if test="modify_by!=null">#{modify_by},</if>
+    <if test="modify_time!=null">#{modify_time},</if>
+    <if test="tb_menu_id!=null">#{tb_menu_id},</if>
+    <if test="tb_parent_id!=null">#{tb_parent_id},</if>
+    <if test="tb_title!=null">#{tb_title},</if>
+    <if test="tb_about!=null">#{tb_about},</if>
+    <if test="tb_title_url!=null">#{tb_title_url},</if>
+    <if test="tb_content!=null">#{tb_content},</if>
+    <if test="parent_id!=null">#{parent_id},</if>
+  </sql>
+  <sql id="Base_update_List">
+    <if test="id!=null">id=#{id},</if>
+    <if test="create_by!=null">create_by=#{create_by},</if>
+    <if test="create_time!=null">create_time=#{create_time},</if>
+    <if test="modify_by!=null">modify_by=#{modify_by},</if>
+    <if test="modify_time!=null">modify_time=#{modify_time},</if>
+    <if test="tb_menu_id!=null">tb_menu_id=#{tb_menu_id},</if>
+    <if test="tb_parent_id!=null">tb_parent_id=#{tb_parent_id},</if>
+    <if test="tb_title!=null">tb_title=#{tb_title},</if>
+    <if test="tb_about!=null">tb_about=#{tb_about},</if>
+    <if test="tb_title_url!=null">tb_title_url=#{tb_title_url},</if>
+    <if test="tb_content!=null">tb_content=#{tb_content},</if>
+    <if test="parent_id!=null">parent_id=#{parent_id},</if>
+  </sql>
+  <sql id="Base_select_List">
+    <if test="id!=null">AND id=#{id}</if>
+    <if test="create_by!=null">AND create_by=#{create_by}</if>
+    <if test="create_time!=null">AND create_time=#{create_time}</if>
+    <if test="modify_by!=null">AND modify_by=#{modify_by}</if>
+    <if test="modify_time!=null">AND modify_time=#{modify_time}</if>
+    <if test="tb_menu_id!=null">AND tb_menu_id=#{tb_menu_id}</if>
+    <if test="tb_parent_id!=null">AND tb_parent_id=#{tb_parent_id}</if>
+    <if test="tb_title!=null">AND tb_title=#{tb_title}</if>
+    <if test="tb_about!=null">AND tb_about=#{tb_about}</if>
+    <if test="tb_title_url!=null">AND tb_title_url=#{tb_title_url}</if>
+    <if test="tb_content!=null">AND tb_content=#{tb_content}</if>
+    <if test="parent_id!=null">AND parent_id=#{parent_id}</if>
+  </sql>
+  <sql id="Base_select_like_List"><trim suffixOverrides=","> IFNULL(id, ''), IFNULL(create_by, ''), IFNULL(create_time, ''), IFNULL(modify_by, ''), IFNULL(modify_time, ''), IFNULL(tb_menu_id, ''), IFNULL(tb_parent_id, ''), IFNULL(tb_title, ''), IFNULL(tb_about, ''), IFNULL(tb_title_url, ''), IFNULL(tb_content, ''),IFNULL(parent_id, ''), </trim></sql>
+  <sql id="Base_select_like_List2"><trim suffixOverrides=",">IFNULL(bc.tb_title, '') </trim></sql>
+  <insert id="insert">INSERT INTO tb_content (<trim suffixOverrides=","><include refid="Base_Column_List"/></trim>) VALUES (<trim suffixOverrides=","><include refid="Base_property_List"/></trim>);</insert>
+  <delete id="delete">DELETE FROM tb_content WHERE id = #{id};</delete>
+  <update id="update">UPDATE tb_content SET <trim suffixOverrides=","><include refid="Base_update_List"/></trim> WHERE id = #{id};</update>
+  <select id="selectById" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM tb_content WHERE id =#{id};</select>
+  <select id="selectListByModel" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM tb_content<where> <include refid="Base_select_List"/> </where> ORDER BY create_time DESC</select>
+  <select id="selectAll" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM tb_content ORDER BY create_time DESC</select>
+  <select id="selectDataByHtml" resultMap="baseModel" useCache="true">
+    SELECT
+      bc.id,
+      t2.menu_name AS 'tb_menu_id',
+      t1.menu_name AS 'tb_parent_id',
+      bc.tb_title,
+      bc.tb_title_url,
+      bc.create_time
+    FROM
+      tb_content bc
+    LEFT JOIN tb_menu t1 ON bc.tb_parent_id = t1.id
+    LEFT JOIN tb_menu t2 ON bc.tb_menu_id = t2.id
+    <where>
+      bc.parent_id = #{id}
+      <if test="tb_menu_id != null and tb_menu_id!= ''">
+        AND bc.tb_menu_id = #{tb_menu_id}
+      </if>
+      <if test="keyWord != null and keyWord != ''">
+        AND bc.tb_title LIKE  concat ('%',#{keyWord},'%')
+      </if>
+    </where>
+    ORDER BY create_time DESC
+  </select>
+
+  <select id="selectDataByMenuId" resultType="com.lt.body.apiMoudel.ApiContentModel">
+    SELECT
+      parent_id AS 'base_id',
+      tb_parent_id AS 'id',
+      tb_title,
+      tb_title_url,
+      tb_about
+    FROM
+      tb_content
+    WHERE
+      tb_menu_id = #{menu_id}
+  </select>
+
+  <select id="selectMenuId" resultType="int">
+    SELECT
+      count(*)
+    FROM
+      tb_content
+    WHERE
+      tb_parent_id = #{tb_parent_id}
+  </select>
+
+  <select id="selectDataById" resultType="com.lt.body.apiMoudel.ApiContentCopyModel">
+    SELECT
+      tb_parent_id,
+      tb_title,
+      tb_about,
+      tb_title_url,
+      tb_content
+    FROM
+        tb_content
+    WHERE
+	  tb_parent_id = #{menu_id}
+  </select>
+</mapper>

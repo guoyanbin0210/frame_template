@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>消息通知管理</title>
+    <script type="text/javascript" src="/js/initCss.js"></script>
+    <script type="text/javascript" src="/js/initJs.js"></script>
+</head>
+<body>
+<article class="page-container">
+    <form action="" method="post" class="form form-horizontal" id="requestForm">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="base_available"><span class="c-red">*</span>是否启用：</label>
+            <div class="formControls col-xs-8 col-sm-9"> 
+               <span class="select-box">
+                   <select class="select"  id="base_available" name="base_available">
+                       <option value="0">否</option>
+                       <option value="1">是</option>
+                   </select>
+               </span>
+             </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="base_sort"><span class="c-red">*</span>排序(越大越靠前)：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="number" class="input-text"  id="base_sort" name="base_sort">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="un_title"><span class="c-red">*</span>标题：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="un_title" name="un_title">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="news_id"><span class="c-red">*</span>文章id：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="news_id" name="news_id">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="news_type"><span class="c-red">*</span>文章类型：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="news_type" name="news_type">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="un_type"><span class="c-red">*</span>通知类型：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="un_type" name="un_type">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="reply_id"><span class="c-red">*</span>回复id：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="reply_id" name="reply_id">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="user_id"><span class="c-red">*</span>用户id：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="user_id" name="user_id">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="user_is_read"><span class="c-red">*</span>是否已读：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="user_is_read" name="user_is_read">
+            </div>
+        </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+            </div>
+        </div>
+    </form>
+</article>
+<script type="text/javascript">
+    $(document).ready(function () {
+        doSelectOneByIdChild(function (data) {
+            $("#un_title").val(data.un_title);
+            $("#news_id").val(data.news_id);
+            $("#news_type").val(data.news_type);
+            $("#un_type").val(data.un_type);
+            $("#reply_id").val(data.reply_id);
+            $("#user_id").val(data.user_id);
+            $("#user_is_read").val(data.user_is_read);
+        });
+        doUpdateChild($("#requestForm"), {})
+    });
+</script>
+</body>
+</html>

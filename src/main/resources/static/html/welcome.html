@@ -1,0 +1,34 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <script type="text/javascript" src="/js/initCss.js"></script>
+    <script type="text/javascript" src="/js/initJs.js"></script>
+    <title>我的桌面</title>
+</head>
+<body>
+<div class="page-container">
+    <p class="f-20 text-success">欢迎使用后台管理系统！</p>
+ <!--   <p>登录次数：<span id="show_login_count">第一次登陆</span></p>
+    <p>上次登录IP：<span id="show_last_login_ip">第一次登陆</span>上次登录时间：<span id="show_last_login_time">第一次登陆</span></p>-->
+</div>
+<footer class="footer mt-20">
+    <div class="container">
+        <p> 本后台系统由<a href="javascript:;" target="_blank" title="高山">北京通成网联科技有限公司</a>提供技术支持</p>
+    </div>
+</footer>
+<script>
+    var loginUserInfo = parent.loginUserInfo;
+    if (loginUserInfo.lastLoginLog) {
+        $("#show_last_login_time").text(myFormat(loginUserInfo.lastLoginLog.create_time), "yyyy-MM-dd HH:mm:ss")
+        $("#show_last_login_ip").text(loginUserInfo.lastLoginLog.sll_login_ip)
+        $("#show_login_count").text(loginUserInfo.lastLoginLog.login_count)
+    }
+</script>
+</body>
+</html>

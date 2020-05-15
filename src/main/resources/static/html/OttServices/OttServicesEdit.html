@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>服务管理管理</title>
+    <script type="text/javascript" src="/js/initCss.js"></script>
+    <script type="text/javascript" src="/js/initJs.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="/lib/webuploader/my0.1.5/webuploader.css"/>
+    <script type="text/javascript" src="/lib/webuploader/my0.1.5/webuploader.js"></script>
+</head>
+<body>
+<article class="page-container">
+    <form action="" method="post" class="form form-horizontal" id="requestForm">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="base_available"><span class="c-red">*</span>是否启用：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+               <span class="select-box">
+                   <select class="select" id="base_available" name="base_available">
+                       <option value="0">否</option>
+                       <option value="1">是</option>
+                   </select>
+               </span>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="base_sort">
+                排序(越大越靠前)：
+            </label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="number" class="input-text" value="1" id="base_sort" name="base_sort">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="ser_icon"><span class="c-red">*</span>分享图标：</label>
+            <div class="row cl div-file">
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" id="ser_icon"
+                           name="ser_icon" readonly required placeholder="120*120"
+                           style=" width:40%">
+                    <span>
+                    <span id="fileList" class="uploader-list"></span>
+                    <span id="filePicker" class="mr-5">选择图片</span>
+                </span>
+                </div>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="ser_lable"><span class="c-red">*</span>服务名称：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" id="ser_lable" name="ser_lable" required>
+            </div>
+        </div>
+        <!--        <div class="row cl">-->
+        <!--            <label class="form-label col-xs-4 col-sm-2" for="ser_copyRight">版权：</label>-->
+        <!--            <div class="formControls col-xs-8 col-sm-9">-->
+        <!--                <input type="text" class="input-text" id="ser_copyRight" name="ser_copyRight">-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--        <div class="row cl">-->
+        <!--            <label class="form-label col-xs-4 col-sm-2" for="ser_name"><span class="c-red">*</span>服务提供商：</label>-->
+        <!--            <div class="formControls col-xs-8 col-sm-9">-->
+        <!--                <input type="text" class="input-text" required id="ser_name" name="ser_name">-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="ser_hotline">热线：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" id="ser_hotline" name="ser_hotline">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="ser_href"><span class="c-red">*</span>跳转连接：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" id="ser_href" value="#" required name="ser_href">
+            </div>
+        </div>
+
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="ser_type"><span class="c-red">*</span>分类：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+               <span class="select-box">
+                   <select class="select" id="ser_type" name="ser_type" required>
+
+                   </select>
+               </span>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="ser_show_type"><span class="c-red">*</span>展示类型：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+               <span class="select-box">
+                   <select class="select" id="ser_show_type" name="ser_show_type" required>
+                        <!---->
+                        <option value="1">链接</option>
+                        <option value="2">图文列表</option>
+                   </select>
+               </span>
+            </div>
+        </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+            </div>
+        </div>
+    </form>
+</article>
+<script type="text/javascript">
+
+    var son_SerTypeArr = parent.tran_SerTypeArr
+    $(document).ready(function () {
+        if (!son_SerTypeArr) {
+            layer.alert("请先创建[服务类型]")
+            setTimeout(function () {
+                window.parent.location.reload()
+            }, 3000)
+        } else {
+
+            let html = '<option value="">请选择</option>';
+            for (let key in son_SerTypeArr) {
+                let item = son_SerTypeArr[key];
+                if(item.base_available ==1 ){
+                    html += '<option value="' + key + '">' + item.bd_name + '</option>';
+                }
+            }
+            $("#ser_type").html(html)
+            doSelectOneByIdChild(function (data) {
+                console.log(data)
+                $("#ser_icon").val(data.ser_icon);
+                $("#ser_lable").val(data.ser_lable);
+                $("#ser_copyRight").val(data.ser_copyRight);
+                $("#ser_name").val(data.ser_name);
+                $("#ser_hotline").val(data.ser_hotline);
+                $("#ser_href").val(data.ser_href);
+                $("#ser_type").val(data.ser_type);
+                $("#ser_read_num").val(data.ser_read_num);
+                $("#base_available").val(data.base_available);
+                $("#base_sort").val(data.base_sort);
+                $("#ser_show_type").val(data.ser_show_type);
+            });
+            doUpdateChild($("#requestForm"), {})
+        }
+
+    });
+
+
+    // 图片上传
+    jQuery(function () {
+        let $list = $('#fileList'),
+            // 优化retina, 在retina下这个值是2
+            ratio = window.devicePixelRatio || 1,
+            // 缩略图大小
+            thumbnailWidth = 100 * ratio,
+            thumbnailHeight = 100 * ratio,
+            // Web Uploader实例
+            uploader;
+        // 初始化Web Uploader
+        uploader = WebUploader.create({
+            // 自动上传。
+            auto: true,
+
+            // swf文件路径
+            swf: '/static/lib/my0.1.5/Uploader.swf',
+
+            // 文件接收服务端。
+            server: '/fileManager/upload',
+
+            // 选择文件的按钮。可选。
+            // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+            pick: {id: '#filePicker', multiple: false},
+            //只能选择一个文件上传
+            multiple: false,
+
+            // 只允许选择文件，可选。
+            accept: {
+                title: 'Images',
+                extensions: 'gif,jpg,jpeg,bmp,png,mp4',
+                // mimeTypes: 'image/*,video/*'
+                mimeTypes: 'image/*'
+            }
+        });
+        // 当有文件添加进来的时候
+        uploader.on('fileQueued', function (file) {
+            let $li =
+                    $('<div id="' + file.id + '" class="file-item thumbnail"><img alt="" src=""><div class="info">' + file.name + '</div></div>'),
+                $img = $li.find('img');
+            $list.html($li);//todo 单张 如果需要多张 这里换成 append
+            // 创建缩略图
+            uploader.makeThumb(file, function (error, src) {
+                if (error) {
+                    $img.replaceWith('<span>不能预览</span>');
+                    return;
+                }
+                $img.attr('src', src);
+            }, thumbnailWidth, thumbnailHeight);
+        });
+
+        // 文件上传过程中创建进度条实时显示。
+        uploader.on('uploadProgress', function (file, percentage) {
+            let $li = $('#' + file.id),
+                $percent = $li.find('.progress span');
+            // 避免重复创建
+            if (!$percent.length) {
+                $percent = $('<p class="progress"><span></span></p>')
+                    .appendTo($li)
+                    .find('span');
+            }
+            $percent.css('width', percentage * 100 + '%');
+        });
+
+        // 文件上传成功，给item添加成功class, 用样式标记上传成功。
+        uploader.on('uploadSuccess', function (file, responseMENU) {
+            $("#ser_icon").val(responseMENU.urlPath);
+            // $("#bd_image").val(responseMENU.id);
+            $('#' + file.id).addClass('upload-state-done');
+        });
+
+        // 文件上传失败，现实上传出错。
+        uploader.on('uploadError', function (file) {
+            let $li = $('#' + file.id),
+                $error = $li.find('error');
+            // 避免重复创建
+            if (!$error.length) {
+                $error = $('<div class="error"></div>').appendTo($li);
+            }
+            $error.text('上传失败');
+        });
+
+        // 完成上传完了，成功或者失败，先删除进度条。
+        uploader.on('uploadComplete', function (file) {
+            $('#' + file.id).find('.progress').remove();
+        });
+    });
+</script>
+</body>
+</html>

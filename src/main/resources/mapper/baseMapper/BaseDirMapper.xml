@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lt.base.dao.BaseDirDao">
+    <resultMap id="baseModel" type="com.lt.base.model.BaseDirModel">
+        <id column="id" property="id"/>
+        <id column="create_by" property="create_by"/>
+        <id column="create_time" property="create_time"/>
+        <id column="modify_by" property="modify_by"/>
+        <id column="modify_time" property="modify_time"/>
+        <id column="base_status" property="base_status"/>
+        <id column="base_available" property="base_available"/>
+        <id column="base_sort" property="base_sort"/>
+        <id column="bd_name" property="bd_name"/>
+        <id column="bd_des" property="bd_des"/>
+        <id column="bd_data" property="bd_data"/>
+        <id column="bd_other" property="bd_other"/>
+        <id column="bd_type" property="bd_type"/>
+        <id column="p_id" property="p_id"/>
+    </resultMap>
+    <sql id="select_all">id, create_by, create_time, modify_by,
+modify_time, base_status, base_available, base_sort, bd_name, bd_des, bd_data,
+bd_other
+, bd_type
+, p_id
+</sql>
+    <sql id="Base_Column_List">
+        <if test="id!=null">id,</if>
+        <if test="create_by!=null">create_by,</if>
+        <if test="create_time!=null">create_time,</if>
+        <if test="modify_by!=null">modify_by,</if>
+        <if test="modify_time!=null">modify_time,</if>
+        <if test="base_status!=null">base_status,</if>
+        <if test="base_available!=null">base_available,</if>
+        <if test="base_sort!=null">base_sort,</if>
+        <if test="bd_name!=null">bd_name,</if>
+        <if test="bd_des!=null">bd_des,</if>
+        <if test="bd_data!=null">bd_data,</if>
+        <if test="bd_other!=null">bd_other,</if>
+        <if test="bd_type!=null">bd_type,</if>
+        <if test="p_id!=null">p_id,</if>
+    </sql>
+    <sql id="Base_property_List">
+        <if test="id!=null">#{id},</if>
+        <if test="create_by!=null">#{create_by},</if>
+        <if test="create_time!=null">#{create_time},</if>
+        <if test="modify_by!=null">#{modify_by},</if>
+        <if test="modify_time!=null">#{modify_time},</if>
+        <if test="base_status!=null">#{base_status},</if>
+        <if test="base_available!=null">#{base_available},</if>
+        <if test="base_sort!=null">#{base_sort},</if>
+        <if test="bd_name!=null">#{bd_name},</if>
+        <if test="bd_des!=null">#{bd_des},</if>
+        <if test="bd_data!=null">#{bd_data},</if>
+        <if test="bd_other!=null">#{bd_other},</if>
+        <if test="bd_type!=null">#{bd_type},</if>
+        <if test="p_id!=null">#{p_id},</if>
+    </sql>
+    <sql id="Base_update_List">
+        <if test="id!=null">id=#{id},</if>
+        <if test="create_by!=null">create_by=#{create_by},</if>
+        <if test="create_time!=null">create_time=#{create_time},</if>
+        <if test="modify_by!=null">modify_by=#{modify_by},</if>
+        <if test="modify_time!=null">modify_time=#{modify_time},</if>
+        <if test="base_status!=null">base_status=#{base_status},</if>
+        <if test="base_available!=null">base_available=#{base_available},</if>
+        <if test="base_sort!=null">base_sort=#{base_sort},</if>
+        <if test="bd_name!=null">bd_name=#{bd_name},</if>
+        <if test="bd_des!=null">bd_des=#{bd_des},</if>
+        <if test="bd_data!=null">bd_data=#{bd_data},</if>
+        <if test="bd_other!=null">bd_other=#{bd_other},</if>
+        <if test="bd_type!=null">bd_type=#{bd_type},</if>
+        <if test="p_id!=null">p_id=#{p_id},</if>
+    </sql>
+    <sql id="Base_select_List">
+        <if test="id!=null">AND id=#{id}</if>
+        <if test="create_by!=null">AND create_by=#{create_by}</if>
+        <if test="create_time!=null">AND create_time=#{create_time}</if>
+        <if test="modify_by!=null">AND modify_by=#{modify_by}</if>
+        <if test="modify_time!=null">AND modify_time=#{modify_time}</if>
+        <if test="base_status!=null">AND base_status=#{base_status}</if>
+        <if test="base_available!=null">AND base_available=#{base_available}</if>
+        <if test="base_sort!=null">AND base_sort=#{base_sort}</if>
+        <if test="bd_name!=null">AND bd_name=#{bd_name}</if>
+        <if test="bd_des!=null">AND bd_des=#{bd_des}</if>
+        <if test="bd_data!=null">AND bd_data=#{bd_data}</if>
+        <if test="bd_other!=null">AND bd_other=#{bd_other}</if>
+        <if test="bd_type!=null">AND bd_type=#{bd_type}</if>
+        <if test="p_id!=null">AND p_id=#{p_id}</if>
+    </sql>
+    <sql id="Base_select_like_List">
+        <trim suffixOverrides=",">IFNULL(bd_name, ''), IFNULL(bd_des, ''), IFNULL(bd_data, ''), IFNULL(bd_other, ''),
+            IFNULL(bd_type, ''),
+            IFNULL(p_id, ''),
+        </trim>
+    </sql>
+    <insert id="insert">INSERT INTO tb_base_dir (
+        <trim suffixOverrides=",">
+            <include refid="Base_Column_List"/>
+        </trim>
+        ) VALUES (
+        <trim suffixOverrides=",">
+            <include refid="Base_property_List"/>
+        </trim>
+        )
+    </insert>
+    <delete id="delete">DELETE
+                        FROM tb_base_dir
+                        WHERE id = #{id}</delete>
+    <update id="update">UPDATE tb_base_dir SET
+        <trim suffixOverrides=",">
+            <include refid="Base_update_List"/>
+        </trim>
+        WHERE id = #{id}
+    </update>
+    <select id="selectById" resultMap="baseModel" useCache="true">SELECT
+        <include refid="select_all"/>
+        FROM tb_base_dir WHERE id =#{id}
+    </select>
+    <select id="selectListByModel" resultMap="baseModel" useCache="true">
+        SELECT
+        <include refid="select_all"/>
+        FROM tb_base_dir
+        <where>
+            <include refid="Base_select_List"/>
+        </where>
+        ORDER BY base_sort DESC,create_time desc
+    </select>
+    <select id="selectAll" resultMap="baseModel" useCache="true">SELECT
+        <include refid="select_all"/>
+        FROM tb_base_dir ORDER BY create_time DESC
+    </select>
+    <select id="selectListByKeyWord" resultMap="baseModel" useCache="true">
+        SELECT
+        <include refid="select_all"/>
+        FROM tb_base_dir
+        <where>CONCAT(<include refid="Base_select_like_List"/>) LIKE concat(concat('%',#{keyWord}),'%')
+        </where>
+        ORDER BY create_time DESC
+    </select>
+    <select id="selectOneByName" resultMap="baseModel">
+        SELECT
+        <include refid="select_all"/>
+        FROM tb_base_dir WHERE bd_name =#{bd_name} ORDER BY bd_name DESC limit 1
+    </select>
+    <select id="selectListByType" resultMap="baseModel">
+        SELECT
+        <include refid="select_all"/>
+        FROM tb_base_dir WHERE bd_type =#{bd_type} ORDER BY base_sort DESC,create_time DESC
+    </select>
+    <select id="selectListLikeName" resultMap="baseModel">
+        SELECT
+        <include refid="select_all"/>
+        FROM tb_base_dir WHERE bd_name like concat(concat('%',#{bd_name}),'%')
+    </select>
+    <select id="selectListByTypeAndAvailable" resultMap="baseModel">
+        SELECT
+        <include refid="select_all"/>
+        FROM tb_base_dir
+        WHERE bd_type =#{bd_type}
+        <if test="base_available!=null">and base_available =#{base_available}</if>
+
+        ORDER BY base_sort DESC,create_time DESC
+    </select>
+    <select id="selectListByTypeAndAvailableAndBdData" resultMap="baseModel">
+        SELECT
+        <include refid="select_all"/>
+        FROM tb_base_dir
+        WHERE bd_type =#{bd_type}
+        and base_available =#{base_available}
+        and bd_data =#{bd_data}
+        ORDER BY base_sort DESC,create_time
+        DESC
+
+    </select>
+    <select id="selectListByPTypeAndPId" resultMap="baseModel">
+        SELECT
+        <include refid="select_all"/>
+        FROM tb_base_dir
+        <where>
+            <if test="bd_type!=null">AND bd_type=#{bd_type}</if>
+            <if test="base_available!=null">AND base_available=#{base_available}</if>
+            <if test="p_id!=null">AND p_id=#{p_id}</if>
+        </where>
+        ORDER BY base_sort DESC,create_time DESC
+    </select>
+</mapper>

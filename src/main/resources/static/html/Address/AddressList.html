@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>底部信息管理</title>
+    <script type="text/javascript" src="/js/initCss.js"></script>
+    <script type="text/javascript" src="/js/initJs.js"></script>
+    <link rel="stylesheet" type="text/css" href="/lib/pagination/pagination.css"/>
+    <script type="text/javascript" src="/lib/pagination/jquery.pagination.js"></script>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页
+    <span class="c-gray en">&gt;</span>底部信息<span class="c-gray en">&gt;</span> 底部信息管理
+    <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"
+       href="javascript:location.replace(location.href);" title="刷新">
+        <i class="Hui-iconfont">&#xe68f;
+        </i>
+    </a>
+</nav>
+<div class="page-container">
+    <div class="text-c">
+        <div class="btn-group">
+            <input type="text" name="" id="in_search_text" placeholder="请输入你想查询的内容" style="width:250px"
+                   class="input-text">
+            <button name="" id="btn_search" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i>
+                搜索
+            </button>
+        </div>
+    </div>
+    <div class="cl pd-5 bg-1 bk-gray mt-20">
+        <span class="l" id="btn_group">
+            <a class="btn btn-primary radius" click-info="add"><i class="Hui-iconfont">&#xe600;</i>添加 </a>
+            <a class="btn disabled radius multiple-choice" click-info="delete"><i
+                    class="Hui-iconfont">&#xe6e2;</i>删除</a>
+            <a class="btn disabled radius single-choice" click-info="edit"><i class="Hui-iconfont">&#xe60c;</i>编辑</a>
+        </span>
+    </div>
+    <div class="cl pd-5 bg-1 bk-gray mt-20">
+        <span class="r">数据总数: <span id="show_total">暂未查询到数据</span></span>
+    </div>
+    <div class="mt-20">
+        <table class="table table-border table-bordered table-hover table-bg table-sort" id="">
+            <thead>
+            <tr class="text-c text-overflow">
+                <th width="5%"><input type="checkbox" id="checkBoxGroup"></th>
+                <th>地址</th>
+                <th>邮政编码</th>
+                <th>联系方式</th>
+                <th>传真</th>
+                <th>电子邮件</th>
+                <th>logo</th>
+                <th>微信二维码</th>
+                <th>创建时间</th>
+            </tr>
+            </thead>
+            <tbody id="mytbody">
+            </tbody>
+        </table>
+        <span class="r mt-10 mb-20">
+            <div class="M-box3"></div>
+        </span>
+    </div>
+</div>
+<script type="text/javascript">
+    initPath(
+        '/address/Address/selectListByPageHelper.do',
+        '/address/Address/deleteById.do',
+        '/address/Address/updateById.do',
+        '/address/Address/insert.do',
+        '/address/Address/selectById.do',
+        '/html/Address/AddressAdd.html',
+        '/html/Address/AddressEdit.html',
+    );
+    $(document).ready(function () {
+        doSelectList(selectListParams, initAppendHtml);
+    });
+    function initAppendHtml(item) {
+        return '<tr class="text-c" id=' + item.id + '>' +
+            '<td><input type="checkbox" class="checkItemTag" ></td>' +
+
+                '<td>' + item.address + '</td>' +
+                '<td>' + item.postal_code + '</td>' +
+                '<td>' + item.contact + '</td>' +
+                '<td>' + item.fax + '</td>' +
+                '<td>' + item.email + '</td>' +
+                '<td><img class="img-responsive zoomify" alt="" style="height:50px" src="' + item.logo_url + '"></td>' +
+                '<td><img class="img-responsive zoomify" alt="" style="height:50px" src="' + item.picture_url + '"></td>' +
+                '<td>' + item.create_time + '</td>' +
+            '</tr>';
+    }
+</script>
+</body>
+</html>
