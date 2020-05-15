@@ -31,7 +31,7 @@ public class JdbcDone {
         jdbcUtils.initDateInfo();
     }
 
-    @Test
+    @org.junit.Test
     public void done() throws IOException, SQLException {
         ArrayList<JdbcColumnModel> init = getJdbcColumnModels();
         init.add(new JdbcColumnModel("address", VARCHAR, "255", "地址"));
