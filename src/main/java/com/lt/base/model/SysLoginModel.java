@@ -5,12 +5,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.Date;
 import java.util.List;
-
-/**
- * Created with GaoShan.
- * Description:
- * Create Time: 2018-12-17 11:36
- */
 @Component
 public class SysLoginModel extends BaseModel {
     /**

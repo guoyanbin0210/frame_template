@@ -6,7 +6,6 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Created with GaoShan.
  * Description:
  * Date: 2018-12-14
  * Time: 14:08

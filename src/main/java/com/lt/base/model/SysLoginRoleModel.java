@@ -2,11 +2,6 @@ package com.lt.base.model;
 
 import com.lt.base.poi.annotation.GsExcelProperty;
 import org.springframework.stereotype.Component;
-/**
- * Created with GaoShan.
- * Description:
- * Create Time: 2018-12-20 10:16
- */
 @Component
 public class SysLoginRoleModel extends BaseModel{
     /**

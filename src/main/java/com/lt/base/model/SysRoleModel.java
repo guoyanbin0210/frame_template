@@ -5,11 +5,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-/**
- * Created with GaoShan.
- * Description:
- * Create Time: 2018-12-20 09:52
- */
 @Component
 public class SysRoleModel extends BaseModel {
 

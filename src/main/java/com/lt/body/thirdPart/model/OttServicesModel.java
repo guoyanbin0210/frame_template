@@ -4,28 +4,11 @@ import com.lt.base.poi.annotation.GsExcelProperty;
 import org.springframework.stereotype.Component;
 
 /**
- * Created with GaoShan.
  * Description:服务管理
  * Create Time: 2019-05-17 09:38
  */
 @Component
 public class OttServicesModel extends BaseModel{
-    //icon:ser_icon,类型：字符串
-
-    //标签:ser_lable,类型：字符串
-
-    //版权:ser_copyRight,类型：字符串
-
-    //服务提供商:ser_name,类型：字符串
-
-    //热线:ser_hotline,类型：字符串
-
-    //跳转连接:ser_href,类型：字符串
-
-    //类型:ser_type,类型：字符串
-
-    //访问次数:ser_read_num,类型：整型
-
     /**
     * icon
     */

@@ -3,11 +3,6 @@ package com.lt.base.model;
 import com.lt.base.poi.annotation.GsExcelProperty;
 import org.springframework.stereotype.Component;
 
-/**
- * Created with GaoShan.
- * Description:
- * Create Time: 2018-12-20 09:53
- */
 @Component
 public class SysPermissionModel extends BaseModel {
     /**

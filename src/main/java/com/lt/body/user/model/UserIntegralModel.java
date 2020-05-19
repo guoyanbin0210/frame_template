@@ -5,7 +5,6 @@ import com.lt.base.model.BaseModel;
 import org.springframework.stereotype.Component;
 
 /**
- * Created with GaoShan.
  * Description:积分管理
  * Create Time: 2019-05-20 04:58
  */

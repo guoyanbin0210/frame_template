@@ -5,11 +5,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 
-/**
- * Created with GaoShan.
- * Description:
- * Create Time: 2018-12-24 09:03
- */
 @Component
 public class SysMenuModel extends BaseModel {
     /**

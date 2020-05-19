@@ -3,11 +3,6 @@ package com.lt.base.model;
 import com.lt.base.poi.annotation.GsExcelProperty;
 import org.springframework.stereotype.Component;
 
-/**
- * Created with GaoShan.
- * Description:
- * Create Time: 2018-12-27 09:41
- */
 @Component
 public class SysOperationLogModel extends BaseModel {
 
