@@ -48,9 +48,9 @@ public class JdbcDone {
         ArrayList<JdbcColumnModel> init = new ArrayList<>();
         init.add(new JdbcColumnModel("id", VARCHAR, "64", "id"));
         init.add(new JdbcColumnModel("create_by", VARCHAR, "64", "create_by"));
-        init.add(new JdbcColumnModel("create_time", VARCHAR, "64", "create_time"));
+        init.add(new JdbcColumnModel("create_time", DATETIME, "64", "create_time"));
         init.add(new JdbcColumnModel("modify_by", VARCHAR, "64", "modify_by"));
-        init.add(new JdbcColumnModel("modify_time", VARCHAR, "64", "modify_time"));
+        init.add(new JdbcColumnModel("modify_time", DATETIME, "64", "modify_time"));
         LinkedHashMap<String, String> dataList = new LinkedHashMap<>();
         dataList.put("0", "否");
         dataList.put("1", "是");

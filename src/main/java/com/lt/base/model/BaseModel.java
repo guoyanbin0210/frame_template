@@ -1,5 +1,6 @@
 package com.lt.base.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.lt.base.util.BaseUtils;
 import com.lt.base.util.BeanRefUtil;
 import com.lt.body.user.utils.JwtUtil;
@@ -14,24 +15,85 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Created with GaoShan.
- * Description:
- * Date: 2018-11-26
- * Time: 17:10
- */
 @Component
 @Getter
 @Setter
 public class BaseModel implements Serializable {
     private String id;
     private String create_by;
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date create_time;
     private String modify_by;
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date modify_time;
     private Integer base_status;
     private Integer base_available;
     private Integer base_sort;
+
+
+    public String getId() {
+        return id;
+    }
+
+    public String getCreate_by() {
+        return create_by;
+    }
+
+    public Date getCreate_time() {
+        return create_time;
+    }
+
+    public String getModify_by() {
+        return modify_by;
+    }
+
+    public Date getModify_time() {
+        return modify_time;
+    }
+
+    public Integer getBase_status() {
+        return base_status;
+    }
+
+    public Integer getBase_available() {
+        return base_available;
+    }
+
+    public Integer getBase_sort() {
+        return base_sort;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setCreate_by(String create_by) {
+        this.create_by = create_by;
+    }
+
+    public void setCreate_time(Date create_time) {
+        this.create_time = create_time;
+    }
+
+    public void setModify_by(String modify_by) {
+        this.modify_by = modify_by;
+    }
+
+    public void setModify_time(Date modify_time) {
+        this.modify_time = modify_time;
+    }
+
+    public void setBase_status(Integer base_status) {
+        this.base_status = base_status;
+    }
+
+    public void setBase_available(Integer base_available) {
+        this.base_available = base_available;
+    }
+
+    public void setBase_sort(Integer base_sort) {
+        this.base_sort = base_sort;
+    }
 
     /**
      * 初始化对象
