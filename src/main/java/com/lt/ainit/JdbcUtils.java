@@ -21,13 +21,6 @@ import java.util.Map;
 import static com.lt.ainit.JdbcColumnModelType.LONGTEXT;
 import static com.lt.ainit.JdbcColumnModelType.getOneByName;
 
-/**
- * * Created with GuoYanBin.
- * Description:
- * Date: 2020-5-20
- * Time: 10:42
- * 118.19079.13
- */
 public class JdbcUtils {
     private final Logger LOGGER = LogManager.getLogger(getClass());
 

@@ -9,16 +9,9 @@ import java.util.LinkedHashMap;
 
 import static com.lt.ainit.JdbcColumnModelType.*;
 
-/**
- * ClassName: JdbcDone
- * Description:
- * date: 2019/4/26 10:30
- *
- * @author GaoShan
- */
 public class JdbcDone {
     private String PACKAGE_NAME = "address";//项目包名
-    private String TABLE_NAME = "tb_address";//表名
+    private String TABLE_NAME =    "tb_address";//表名
     private String ANNOTATION_NAME = "信息";//表名对应中文
     private String MENU_PARENT_NAME = "信息";//父级菜单名称
     JdbcUtils jdbcUtils = new JdbcUtils(PACKAGE_NAME, TABLE_NAME, ANNOTATION_NAME, MENU_PARENT_NAME);

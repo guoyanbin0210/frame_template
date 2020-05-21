@@ -1,11 +1,5 @@
 package com.lt.ainit;
 
-/**
- * * Created with GuoYanBin.
- * Description:
- * Date: 2018-11-28
- * Time: 11:33
- */
 public enum JdbcColumnModelType {
     VARCHAR("varchar","String", 1),
     DATETIME("datetime", "Date",2),

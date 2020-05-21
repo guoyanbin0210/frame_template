@@ -2,12 +2,6 @@ package com.lt.ainit;
 
 import java.util.LinkedHashMap;
 
-/**
- * * Created with GuoYanBin.
- * Description:
- * Date: 2017-08-18
- * Time: 11:39
- */
 public class JdbcColumnModel {
     private String column_name,//userName
             column_comment,//用户名
