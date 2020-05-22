@@ -1,4 +1,4 @@
-package com.lt.xinlianxin.config;
+package com.lt.config;
 
 import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
 import org.springframework.context.annotation.Bean;
@@ -51,9 +51,9 @@ public class MySwagger2Config {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("接口文档")
-                .description("不想写描述")
+                .description("swagger:测试接口")
                 .termsOfServiceUrl("")
-                .contact(new Contact("高山","",""))
+                .contact(new Contact("水火不容","",""))
                 .version("1.0")
                 .build();
     }

@@ -67,6 +67,7 @@ public class ShiroConfig {
 //        filterChainDefinitionMap.put("/", "anon");
 
         //用户注册
+        filterChainDefinitionMap.put("/*/**", "anon");
         filterChainDefinitionMap.put("/api/UserMain/create.do", "anon");
         filterChainDefinitionMap.put("/api/**", "anon");
         filterChainDefinitionMap.put("/api_p/**", "anon");
