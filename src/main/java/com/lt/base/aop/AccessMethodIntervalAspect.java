@@ -19,12 +19,7 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/**
- * Created with GaoShan.
- * Description:
- * Date: 2018-12-03
- * Time: 16:17
- */
+
 @Component
 @Aspect
 public class AccessMethodIntervalAspect {

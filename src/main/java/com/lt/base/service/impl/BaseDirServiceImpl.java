@@ -10,7 +10,6 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * Created with GaoShan.
  * Description:字典 serviceImpl
  * Date: 2019-05-07
  * Time: 02:40

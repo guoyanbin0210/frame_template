@@ -2,11 +2,7 @@ package com.lt.body.comBanner.model;
 import com.lt.base.model.BaseModel;
 import org.springframework.stereotype.Component;
 import java.util.Date;
-/**
- * Created with GaoShan.
- * Description:banner管理
- * Create Time: 2020-02-28 09:34
- */
+
 @Component
 public class BannerModel extends BaseModel{
 

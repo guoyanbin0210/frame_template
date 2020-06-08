@@ -15,12 +15,6 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created with GaoShan.
- * Description:
- * Date: 2018-11-16
- * Time: 13:45
- */
 public class BaseUtils {
 
     /**

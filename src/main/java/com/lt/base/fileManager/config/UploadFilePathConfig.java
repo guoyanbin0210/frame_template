@@ -14,7 +14,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import javax.servlet.MultipartConfigElement;
 
 /**
- * Created with GaoShan.
  * Description: 用于访问磁盘文件做映射
  * Date: 2018-12-13
  * Time: 9:58

@@ -1,7 +1,6 @@
 package com.lt.base.sms;
 
 /**
- * Created with GaoShan.
  * Description:
  * Date: 2018-11-27
  * Time: 13:41

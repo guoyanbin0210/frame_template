@@ -4,12 +4,7 @@ import com.lt.base.service.BaseService;
 
 import java.util.List;
 
-/**
- * Created with GaoShan.
- * Description:app版本更新 service
- * Date: 2020-01-08
- * Time: 10:18
- */
+
 public interface AppManagerService extends BaseService<AppManagerModel>{
 
     //查询最新版本

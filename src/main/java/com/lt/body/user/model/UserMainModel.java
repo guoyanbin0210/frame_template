@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 
 /**
- * Created with GaoShan.
  * Description:用户信息
  * Create Time: 2019-05-10 03:31
  */

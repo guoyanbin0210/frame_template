@@ -1,7 +1,6 @@
 package com.lt.base.order.constant;
 
 /**
- * Created with GaoShan.
  * Description: 订单模块常量
  * Date: 2018-11-27
  * Time: 13:41

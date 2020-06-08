@@ -35,7 +35,7 @@ public class NettyServer {
                     .childHandler(new ChannelInitializer<SocketChannel>() { // 绑定客户端连接时候触发操作
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
-                            log.info("收到新连接");
+                    //        log.info("收到新连接");
                             //websocket协议本身是基于http协议的，所以这边也要使用http解编码器
                             ch.pipeline().addLast(new HttpServerCodec());
                             //以块的方式来写的处理器
@@ -46,7 +46,7 @@ public class NettyServer {
                         }
                     });
             ChannelFuture cf = sb.bind().sync(); // 服务器异步创建绑定
-            log.info(NettyServer.class + " 启动正在监听： " + cf.channel().localAddress());
+           // log.info(NettyServer.class + " 启动正在监听： " + cf.channel().localAddress());
             cf.channel().closeFuture().sync(); // 关闭服务器通道
         } finally {
             group.shutdownGracefully().sync(); // 释放线程池资源

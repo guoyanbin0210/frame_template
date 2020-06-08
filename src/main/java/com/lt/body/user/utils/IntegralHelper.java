@@ -7,13 +7,7 @@ import com.lt.body.user.service.UserIntegralService;
 
 import java.util.List;
 
-/**
- * ClassName: IntegralHelper
- * Description:
- * date: 2019/7/2 16:10
- *
- * @author GaoShan
- */
+
 public class IntegralHelper {
     private static final int code_0 = 0;//默认
     private static final String STATUS_FAILED = "FAILED";

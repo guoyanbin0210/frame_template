@@ -5,12 +5,7 @@ import com.lt.base.service.BaseService;
 
 import java.util.List;
 
-/**
- * Created with GaoShan.
- * Description:菜单管理 service
- * Date: 2020-02-27
- * Time: 10:47
- */
+
 public interface MenuService extends BaseService<MenuModel>{
 
     //返回前端数据

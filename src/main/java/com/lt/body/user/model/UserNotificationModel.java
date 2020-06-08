@@ -4,25 +4,11 @@ import com.lt.base.model.BaseModel;
 import com.lt.base.poi.annotation.GsExcelProperty;
 import org.springframework.stereotype.Component;
 /**
- * Created with GaoShan.
  * Description:消息通知
  * Create Time: 2019-07-04 09:29
  */
 @Component
 public class UserNotificationModel extends BaseModel{
-    //标题:un_title,类型：字符串
-
-    //文章id:news_id,类型：字符串
-
-    //文章类型:news_type,类型：字符串
-
-    //通知类型:un_type,类型：字符串
-
-    //回复id:reply_id,类型：字符串
-
-    //用户id:user_id,类型：字符串
-
-    //是否已读:user_is_read,类型：字符串
 
     /**
     * 标题

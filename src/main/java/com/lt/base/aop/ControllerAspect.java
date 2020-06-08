@@ -22,12 +22,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Method;
 
-/**
- * Created with GaoShan.
- * Description:
- * Date: 2018-12-03
- * Time: 16:17
- */
+
 @Component
 @Aspect
 public class ControllerAspect {

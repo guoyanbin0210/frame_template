@@ -1,31 +1,20 @@
-package com.lt.body.account.controller;
+package com.lt.body.aboutUs.controller;
+
 import com.lt.base.aop.ControllerMethodLog;
 import com.lt.base.controller.BaseController;
-import com.lt.base.model.BaseModel;
 import com.lt.body.account.model.AccountModel;
 import com.lt.body.account.service.AccountService;
-import springfox.documentation.annotations.ApiIgnore;
-import com.lt.base.model.SysLoginModel;
-import com.lt.base.service.SysLoginService;
-import com.lt.base.util.BeanRefUtil;
-import com.lt.base.poi.PoiExcelUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import springfox.documentation.annotations.ApiIgnore;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
-/**
- * Created with GaoShan.
- * Description:
- * Date: 2020-02-20
- * Time: 02:21
- */
+
 @RestController
 @ApiIgnore
 public class AccountController extends BaseController {

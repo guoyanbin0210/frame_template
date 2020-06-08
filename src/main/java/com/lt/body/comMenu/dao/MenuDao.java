@@ -8,12 +8,6 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-/**
- * Created with GaoShan.
- * Description:菜单管理 mapper
- * Date: 2020-02-27
- * Time: 10:47
- */
 @Mapper
 public interface MenuDao extends BaseDao<MenuModel>{
 

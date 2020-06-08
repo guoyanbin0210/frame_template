@@ -6,7 +6,6 @@ import com.lt.base.dao.BaseDao;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 /**
- * Created with GaoShan.
  * Description:
  * Date: 2019-01-24
  * Time: 01:18

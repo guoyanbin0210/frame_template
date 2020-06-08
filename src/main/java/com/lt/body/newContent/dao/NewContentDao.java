@@ -8,12 +8,7 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-/**
- * Created with GaoShan.
- * Description:新闻管理 mapper
- * Date: 2020-02-28
- * Time: 10:34
- */
+
 @Mapper
 public interface NewContentDao extends BaseDao<NewContentModel>{
 

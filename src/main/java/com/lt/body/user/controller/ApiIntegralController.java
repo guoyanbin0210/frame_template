@@ -17,12 +17,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * Created with GaoShan.
- * Description:
- * Date: 2019-05-20
- * Time: 04:58
- */
+
+
 @RestController
 @Api(value = "m积分", tags = {"m积分操作接口"})
 @ApiIgnore

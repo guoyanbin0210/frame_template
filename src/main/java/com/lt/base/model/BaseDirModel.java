@@ -5,7 +5,6 @@ import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 /**
- * Created with GaoShan.
  * Description:字典
  * Create Time: 2019-05-07 02:40
  */

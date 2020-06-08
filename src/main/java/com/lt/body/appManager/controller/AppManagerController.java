@@ -20,12 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
-/**
- * Created with GaoShan.
- * Description:
- * Date: 2020-01-08
- * Time: 10:18
- */
+
 @RestController
 @ApiIgnore
 public class AppManagerController extends BaseController {

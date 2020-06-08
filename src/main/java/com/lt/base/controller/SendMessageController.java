@@ -21,7 +21,7 @@ public class SendMessageController {
     @Autowired
     RabbitTemplate rabbitTemplate;  //使用RabbitTemplate,这提供了接收/发送等等方法
 
-    @ApiOperation("测试")
+    @ApiOperation("直连型交换机")
     @RequestMapping("/rabbitServer/sendDirectMessage")
     public String sendDirectMessage() {
         String messageId = String.valueOf(UUID.randomUUID());
@@ -33,7 +33,22 @@ public class SendMessageController {
         map.put("createTime", createTime);
         //将消息携带绑定键值：TestDirectRouting 发送到交换机TestDirectExchange
         rabbitTemplate.convertAndSend("TestDirectExchange", "TestDirectRouting", map);
-        return "ok";
+        return "sendDirectMessage，ok";
+    }
+
+    @GetMapping("/sendFanoutMessage")
+    public String sendFanoutMessage() {
+        String messageId = String.valueOf(UUID.randomUUID());
+        String messageData = "水火不容, hello!";
+        String createTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        Map<String, Object> map = new HashMap<>();
+        map.put("messageId", messageId);
+        map.put("messageData", messageData);
+        map.put("createTime", createTime);
+        map.put("testTime", LocalDateTime.now());
+
+        rabbitTemplate.convertAndSend("fanoutExchange", null, map);
+        return "sendFanoutMessage，ok";
     }
 
 }

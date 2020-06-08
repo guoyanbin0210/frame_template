@@ -22,12 +22,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * Created with GaoShan.
- * Description:
- * Date: 2019-05-17
- * Time: 09:27
- */
+
 @RestController
 @ApiIgnore
 public class DefaultOOTController extends BaseController {

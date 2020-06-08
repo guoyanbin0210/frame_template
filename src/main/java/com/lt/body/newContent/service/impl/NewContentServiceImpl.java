@@ -9,12 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 
-/**
- * * Created with GuoYanBin.
- * Description:新闻管理 serviceImpl
- * Date: 2020-02-28
- * Time: 10:34
- */
+
 @Service
 public class NewContentServiceImpl extends BaseServiceImpl<NewContentModel> implements NewContentService{
     @Resource 

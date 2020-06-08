@@ -9,12 +9,6 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 
-/**
- * Created with GaoShan.
- * Description:关于我们 serviceImpl
- * Date: 2020-02-28
- * Time: 11:18
- */
 @Service
 public class AboutUsServiceImpl extends BaseServiceImpl<AboutUsModel> implements AboutUsService{
     @Resource 

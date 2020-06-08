@@ -21,12 +21,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
-/**
- * Created with GaoShan.
- * Description:
- * Date: 2019-05-20
- * Time: 04:58
- */
+
+
 @RestController
 @ApiIgnore
 public class DefaultIntegralController extends BaseController {

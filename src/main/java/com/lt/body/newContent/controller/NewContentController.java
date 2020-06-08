@@ -24,12 +24,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-/**
- * * Created with GuoYanBin.
- * Description:
- * Date: 2020-02-28
- * Time: 10:34
- */
+
+
 @RestController
 @ApiIgnore
 public class NewContentController extends BaseController {

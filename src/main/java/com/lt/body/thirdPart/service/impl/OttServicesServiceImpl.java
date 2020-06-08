@@ -8,12 +8,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 
-/**
- * Created with GaoShan.
- * Description:服务管理 serviceImpl
- * Date: 2019-05-17
- * Time: 09:38
- */
+
 @Service
 public class OttServicesServiceImpl extends BaseServiceImpl<OttServicesModel> implements OttServicesService{
     @Resource 

@@ -1,12 +1,7 @@
-package com.lt.body.address.model;
+package com.lt.body.aboutUs.model;
 import com.lt.base.model.BaseModel;
 import org.springframework.stereotype.Component;
-import java.util.Date;
-/**
- * Created with GaoShan.
- * Description:底部信息
- * Create Time: 2020-03-02 09:02
- */
+
 @Component
 public class AddressModel extends BaseModel{
     //地址:address,类型：字符串

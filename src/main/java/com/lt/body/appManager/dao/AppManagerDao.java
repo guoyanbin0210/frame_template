@@ -6,12 +6,6 @@ import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
-/**
- * Created with GaoShan.
- * Description:app版本更新 mapper
- * Date: 2020-01-08
- * Time: 10:18
- */
 @Mapper
 public interface AppManagerDao extends BaseDao<AppManagerModel>{
 

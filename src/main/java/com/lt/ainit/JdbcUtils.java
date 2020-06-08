@@ -668,7 +668,7 @@ public class JdbcUtils {
                         "    }\n" +
                         "\n" +
                         "    @ControllerMethodLog(remark = \"" + ANNOTATION_NAME + "-查询多个\")\n" +
-                        "    @PostMapping(\"/" + PACKAGE_NAME + "/" + TABLE_NAME_URL + "/selectAll.do\")\n" +
+                        "    @PostMapping(\"/" + PACKAGE_NAME + "/" + TABLE_NAME_URL + "/selectAll\")\n" +
                         "    public HashMap selectList_" + TABLE_NAME_URL + "(HttpServletRequest request) {\n" +
                         "        return selectListByCondition(request, " + SERVICE_Instance + ", new " + MODEL_NAME_JAVA + "());\n" +
                         "    }\n" +
@@ -1364,13 +1364,13 @@ public class JdbcUtils {
         MAPPER_RESULT_MAP_TYPE = BASE_PACKAGE_NAME + ".model." + MODEL_NAME_JAVA;
 
         //url &view
-        DATA_URL_selectListByPageHelper = "/" + PACKAGE_NAME + "/" + TABLE_NAME_URL + "/selectListByPageHelper.do";
-        DATA_URL_delete = "/" + PACKAGE_NAME + "/" + TABLE_NAME_URL + "/deleteById.do";
-        DATA_URL_update = "/" + PACKAGE_NAME + "/" + TABLE_NAME_URL + "/updateById.do";
-        DATA_URL_insert = "/" + PACKAGE_NAME + "/" + TABLE_NAME_URL + "/insert.do";
-        DATA_URL_selectById = "/" + PACKAGE_NAME + "/" + TABLE_NAME_URL + "/selectById.do";
-        // DATA_URL_insertByExcel = "/" + PACKAGE_NAME + "/" + TABLE_NAME_URL + "/insertMoreByExcel.do";
-        // DATA_URL_downloadTemplate = "/" + PACKAGE_NAME + "/" + TABLE_NAME_URL + "/downloadTemplate.do";
+        DATA_URL_selectListByPageHelper = "/" + PACKAGE_NAME + "/" + TABLE_NAME_URL + "/selectListByPageHelper";
+        DATA_URL_delete = "/" + PACKAGE_NAME + "/" + TABLE_NAME_URL + "/deleteById";
+        DATA_URL_update = "/" + PACKAGE_NAME + "/" + TABLE_NAME_URL + "/updateById";
+        DATA_URL_insert = "/" + PACKAGE_NAME + "/" + TABLE_NAME_URL + "/insert";
+        DATA_URL_selectById = "/" + PACKAGE_NAME + "/" + TABLE_NAME_URL + "/selectById";
+        // DATA_URL_insertByExcel = "/" + PACKAGE_NAME + "/" + TABLE_NAME_URL + "/insertMoreByExcel";
+        // DATA_URL_downloadTemplate = "/" + PACKAGE_NAME + "/" + TABLE_NAME_URL + "/downloadTemplate";
         VIEW_PATH_ADD = "/html/" + TABLE_NAME_JAVA + "/" + HTML_ADD_FILE;
         VIEW_PATH_EDIT = "/html/" + TABLE_NAME_JAVA + "/" + HTML_EDIT_FILE;
         //VIEW_PATH_IMPORT = "/static/html/base_import_excel.html";

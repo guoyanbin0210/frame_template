@@ -5,12 +5,7 @@ import com.lt.body.user.model.UserMainModel;
 
 import java.util.HashMap;
 
-/**
- * * Created with GuoYanBin.
- * Description:用户信息 service
- * Date: 2019-05-10
- * Time: 03:31
- */
+
 public interface UserMainService extends BaseService<UserMainModel>{
     //验证是否存在
     Integer selectExitByPhone(String phone);

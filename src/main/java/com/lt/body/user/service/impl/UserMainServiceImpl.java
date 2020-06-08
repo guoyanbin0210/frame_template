@@ -10,12 +10,6 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.HashMap;
 
-/**
- * Created with GaoShan.
- * Description:用户信息 serviceImpl
- * Date: 2019-05-10
- * Time: 03:31
- */
 @Service
 public class UserMainServiceImpl extends BaseServiceImpl<UserMainModel> implements UserMainService{
     @Resource 

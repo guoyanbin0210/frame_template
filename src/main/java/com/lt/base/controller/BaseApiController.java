@@ -37,12 +37,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.FutureTask;
 
-/**
- * Created with GaoShan.
- * Description: 接口
- * Date: 2018-12-03
- * Time: 17:08
- */
+
 @RestController
 @ApiIgnore
 public class BaseApiController extends BaseController {

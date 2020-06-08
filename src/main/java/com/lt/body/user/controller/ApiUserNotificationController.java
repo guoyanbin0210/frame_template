@@ -21,12 +21,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/**
- * Created with GaoShan.
- * Description:
- * Date: 2019-07-04
- * Time: 09:27
- */
+
+
 @Api(value = "消息通知controller", tags = {"n消息通知操作接口"})
 
 @RestController

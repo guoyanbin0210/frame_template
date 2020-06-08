@@ -2,11 +2,7 @@ package com.lt.body.appManager.model;
 import com.lt.base.model.BaseModel;
 import org.springframework.stereotype.Component;
 import java.util.Date;
-/**
- * Created with GaoShan.
- * Description:app版本更新
- * Create Time: 2020-01-08 10:18
- */
+
 @Component
 public class AppManagerModel extends BaseModel{
     //包名:package_name,类型：字符串

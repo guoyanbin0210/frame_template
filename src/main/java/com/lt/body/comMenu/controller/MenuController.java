@@ -22,12 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-/**
- * Created with GaoShan.
- * Description:
- * Date: 2020-02-27
- * Time: 10:47
- */
+
 @RestController
 @ApiIgnore
 public class MenuController extends BaseController {

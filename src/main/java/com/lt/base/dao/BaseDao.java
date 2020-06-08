@@ -5,12 +5,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created with GaoShan.
- * Description:
- * Date: 2018-12-05
- * Time: 9:50
- */
+
 public interface BaseDao<Model> {
     /**
      * 增

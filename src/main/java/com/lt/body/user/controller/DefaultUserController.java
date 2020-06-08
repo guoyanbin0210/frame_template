@@ -19,12 +19,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * Created with GaoShan.
- * Description:
- * Date: 2019-05-10
- * Time: 03:31
- */
+
 @RestController
 @ApiIgnore
 public class DefaultUserController extends BaseController {

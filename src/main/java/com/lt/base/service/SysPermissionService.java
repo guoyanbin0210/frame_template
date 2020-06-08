@@ -3,7 +3,6 @@ package com.lt.base.service;
 import com.lt.base.model.SysPermissionModel;
 
 /**
- * Created with GaoShan.
  * Description:
  * Date: 2018-12-20
  * Time: 09:53

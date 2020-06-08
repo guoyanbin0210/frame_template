@@ -5,12 +5,7 @@ import com.lt.body.user.model.UserIntegralModel;
 
 import java.util.List;
 
-/**
- * Created with GaoShan.
- * Description:积分管理 service
- * Date: 2019-05-20
- * Time: 04:58
- */
+
 public interface UserIntegralService extends BaseService<UserIntegralModel> {
     /**
      * 主要针对 注册

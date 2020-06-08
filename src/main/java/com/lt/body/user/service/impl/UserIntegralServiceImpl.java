@@ -8,12 +8,6 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 
-/**
- * Created with GaoShan.
- * Description:积分管理 serviceImpl
- * Date: 2019-05-20
- * Time: 04:58
- */
 @Service
 public class UserIntegralServiceImpl extends BaseServiceImpl<UserIntegralModel> implements UserIntegralService{
     @Resource 

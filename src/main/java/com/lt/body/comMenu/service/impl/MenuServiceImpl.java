@@ -10,12 +10,6 @@ import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created with GaoShan.
- * Description:菜单管理 serviceImpl
- * Date: 2020-02-27
- * Time: 10:47
- */
 @Service
 public class MenuServiceImpl extends BaseServiceImpl<MenuModel> implements MenuService{
     @Resource 

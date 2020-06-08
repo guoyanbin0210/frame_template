@@ -10,12 +10,6 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 
-/**
- * Created with GaoShan.
- * Description:文章管理 serviceImpl
- * Date: 2020-02-28
- * Time: 03:27
- */
 @Service
 public class ContentServiceImpl extends BaseServiceImpl<ContentModel> implements ContentService{
     @Resource 

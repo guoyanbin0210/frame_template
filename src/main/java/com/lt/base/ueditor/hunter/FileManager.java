@@ -20,8 +20,6 @@ public class FileManager {
     private int count;
 
     /**
-     * 2017年8月28日 14:12:34
-     * create by GS
      * 用于替换rootath
      */
     private String basePath;

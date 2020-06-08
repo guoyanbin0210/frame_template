@@ -3,7 +3,6 @@ package com.lt.base.shrio;
 import org.apache.shiro.authc.UsernamePasswordToken;
 
 /**
- * Created with GaoShan.
  * Description: 默认登陆方式为密码登陆
  * Date: 2019-01-03
  * Time: 13:15

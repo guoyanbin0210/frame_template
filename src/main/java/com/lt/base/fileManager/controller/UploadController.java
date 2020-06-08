@@ -23,12 +23,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Objects;
 
-/**
- * Created with GaoShan.
- * Description:
- * Date: 2018-12-12
- * Time: 15:58
- */
+
 @Api(value = "文件上传操作接口", tags = {"e文件上传操作接口"})
 @RestController
 public class UploadController extends BaseController {

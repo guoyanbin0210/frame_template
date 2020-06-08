@@ -7,12 +7,7 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.HashMap;
 
-/**
- * Created with GaoShan.
- * Description:用户信息 mapper
- * Date: 2019-05-10
- * Time: 03:31
- */
+
 @Mapper
 public interface UserMainDao extends BaseDao<UserMainModel>{
     UserMainModel selectByPhone(@Param("user_phone") String phone);

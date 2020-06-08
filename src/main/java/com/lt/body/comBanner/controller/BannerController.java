@@ -24,12 +24,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-/**
- * Created with GaoShan.
- * Description:
- * Date: 2020-02-28
- * Time: 09:34
- */
+
+
 @RestController
 @ApiIgnore
 public class BannerController extends BaseController {

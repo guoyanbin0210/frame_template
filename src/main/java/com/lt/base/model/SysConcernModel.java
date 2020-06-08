@@ -5,7 +5,6 @@ import com.lt.body.constant.ConcernTypeEnum;
 import org.springframework.stereotype.Component;
 
 /**
- * Created with GaoShan.
  * Description:关系表
  * Create Time: 2019-04-18 04:52
  */

@@ -8,8 +8,6 @@ import net.sourceforge.pinyin4j.format.HanyuPinyinVCharType;
 import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
 
 /**
- * Created by GaoShan on 2017/7/7.
- *
  * @see 如果出现问题，可能是多音字问题
  */
 public class PinYinHelper {

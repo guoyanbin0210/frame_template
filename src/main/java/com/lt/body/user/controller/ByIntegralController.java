@@ -10,12 +10,8 @@ import springfox.documentation.annotations.ApiIgnore;
 
 import javax.annotation.Resource;
 
-/**
- * Created with GaoShan.
- * Description:
- * Date: 2019-05-20
- * Time: 04:58
- */
+
+
 @RestController
 @ApiIgnore
 public class ByIntegralController extends BaseController {

@@ -10,10 +10,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * Created with GaoShan.
  * Description:文章管理 mapper
- * Date: 2020-02-28
- * Time: 03:27
  */
 @Mapper
 public interface ContentDao extends BaseDao<ContentModel>{

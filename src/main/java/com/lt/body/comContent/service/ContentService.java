@@ -6,12 +6,6 @@ import com.lt.base.service.BaseService;
 
 import java.util.List;
 
-/**
- * Created with GaoShan.
- * Description:文章管理 service
- * Date: 2020-02-28
- * Time: 03:27
- */
 public interface ContentService extends BaseService<ContentModel>{
 
     //返回后台前端数据

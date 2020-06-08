@@ -4,12 +4,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-/**
- * Created with GaoShan.
- * Description:
- * Date: 2018-11-27
- * Time: 10:48
- */
 public class DateUtils {
     /**
      * DateUtils.getDateAfter(Calendar.MINUTE,5); //表示5分钟之后

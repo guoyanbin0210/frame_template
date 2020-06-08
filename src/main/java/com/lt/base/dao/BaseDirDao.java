@@ -6,12 +6,7 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-/**
- * Created with GaoShan.
- * Description:字典 mapper
- * Date: 2019-05-07
- * Time: 02:40
- */
+
 @Mapper
 public interface BaseDirDao extends BaseDao<BaseDirModel>{
     BaseDirModel selectOneByName(@Param("bd_name") String bd_name);

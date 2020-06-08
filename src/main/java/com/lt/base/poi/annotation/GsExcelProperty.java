@@ -5,11 +5,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-/**
- * Description:
- * Date: 2018-12-14
- * Time: 14:08
- */
 
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)

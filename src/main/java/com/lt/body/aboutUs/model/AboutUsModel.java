@@ -2,11 +2,7 @@ package com.lt.body.aboutUs.model;
 import com.lt.base.model.BaseModel;
 import org.springframework.stereotype.Component;
 import java.util.Date;
-/**
- * Created with GaoShan.
- * Description:关于我们
- * Create Time: 2020-02-28 11:18
- */
+
 @Component
 public class AboutUsModel extends BaseModel{
     //菜单id:paretn_id,类型：字符串

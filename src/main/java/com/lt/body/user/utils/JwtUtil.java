@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import java.util.*;
 
 public class JwtUtil {
-    private final static String SECRET = "gaoshan443256291";
+    private final static String SECRET = "ggg443256291";
     private final static String IS_SUER = "SERVICE";//签名是有谁生成 例如 服务器
     private final static String SUBJECT = "SUBJECT";//签名的主题
     private final static String AUDIENCE = "H5";//签名的观众 也可以理解谁接受签名的
@@ -21,7 +21,7 @@ public class JwtUtil {
 
         //eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJTVUJKRUNUIiwiYXVkIjoiSDUiLCJpc3MiOiJTRVJWSUNFIiwidXNlck5hbWUiOiIwREY5MkRBOUI5OEY0QTA3OEYwRjQ3NzJBNEYzOTY1MiIsImV4cCI6MTU2MjMwNDY2MywiaWF0IjoxNTYxNjk5ODYzfQ.rapYZxsTTgWPOWmRQaii5cKFUWJ_V7j3td6L02XoJuw
         //0DF92DA9B98F4A078F0F4772A4F39652
-        String token = createTokenWithClaim("15022048477");
+        String token = createTokenWithClaim("15501022222");
         System.out.println(token);
 
         String userName2 = JwtUtil.verifyToken(token);

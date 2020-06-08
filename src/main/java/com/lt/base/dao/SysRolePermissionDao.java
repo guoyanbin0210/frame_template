@@ -6,17 +6,15 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-/**
- * Created with GaoShan.
- * Description:
- * Date: 2018-12-20
- * Time: 10:17
- */
+
 @Mapper
 public interface SysRolePermissionDao extends BaseDao<SysRolePermissionModel>{
     List<SysRolePermissionModel> selectListByRoleId(@Param("role_id")String role_id);
+
     Integer deleteByRoleId(@Param("role_id")String role_id);
+
     Integer deleteByPermissionId(@Param("permission_id")String permission_id);
+
     Integer deleteByPermissionIdAndRoleId(@Param("permission_id")String permission_id, @Param("role_id") String role_id);
 
     SysRolePermissionModel selectOneByLoginIdAndRoleId(@Param("permission_id")String permission_id,@Param("role_id") String role_id);

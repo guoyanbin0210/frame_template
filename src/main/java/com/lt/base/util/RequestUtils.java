@@ -5,13 +5,7 @@ import java.util.HashMap;
 import java.util.Objects;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/**
- * ClassName: ReqeutsUtils
- * Description:
- * date: 2019/5/10 15:54
- *
- * @author GaoShan
- */
+
 public class RequestUtils {
 
     /**

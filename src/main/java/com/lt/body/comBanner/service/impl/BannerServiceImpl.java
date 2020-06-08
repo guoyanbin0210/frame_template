@@ -9,12 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 
-/**
- * Created with GaoShan.
- * Description:banner管理 serviceImpl
- * Date: 2020-02-28
- * Time: 09:34
- */
+
 @Service
 public class BannerServiceImpl extends BaseServiceImpl<BannerModel> implements BannerService{
     @Resource 

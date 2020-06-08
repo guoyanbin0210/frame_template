@@ -8,10 +8,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * Created with GaoShan.
  * Description:积分管理 mapper
- * Date: 2019-05-20
- * Time: 04:58
  */
 @Mapper
 public interface UserIntegralDao extends BaseDao<UserIntegralModel>{

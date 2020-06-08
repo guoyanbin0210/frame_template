@@ -5,12 +5,6 @@ import com.lt.body.apiMoudel.ApiAboutMoudel;
 
 import java.util.List;
 
-/**
- * Created with GaoShan.
- * Description:关于我们 service
- * Date: 2020-02-28
- * Time: 11:18
- */
 public interface AboutUsService extends BaseService<AboutUsModel>{
 
     //返回后台数据

@@ -2,11 +2,7 @@ package com.lt.body.comMenu.model;
 import com.lt.base.model.BaseModel;
 import org.springframework.stereotype.Component;
 import java.util.Date;
-/**
- * Created with GaoShan.
- * Description:菜单管理
- * Create Time: 2020-02-27 10:47
- */
+
 @Component
 public class MenuModel extends BaseModel{
 

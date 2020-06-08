@@ -2,24 +2,10 @@ package com.lt.body.comContent.model;
 import com.lt.base.model.BaseModel;
 import org.springframework.stereotype.Component;
 import java.util.Date;
-/**
- * Created with GaoShan.
- * Description:文章管理
- * Create Time: 2020-02-28 03:27
- */
+
 @Component
 public class ContentModel extends BaseModel{
-    //菜单id:tb_menu_id,类型：字符串
 
-    //继承菜单id:tb_parent_id,类型：字符串
-
-    //标题:tb_title,类型：字符串
-
-    //简介:tb_about,类型：字符串
-
-    //标题照片链接:tb_title_url,类型：字符串
-
-    //文本内容:tb_content,类型：字符串
 
     /**
     * 菜单id

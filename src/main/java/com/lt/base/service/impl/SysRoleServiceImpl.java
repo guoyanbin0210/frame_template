@@ -15,7 +15,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.FutureTask;
 
 /**
- * Created with GaoShan.
  * Description:
  * Date: 2018-12-20
  * Time: 09:52

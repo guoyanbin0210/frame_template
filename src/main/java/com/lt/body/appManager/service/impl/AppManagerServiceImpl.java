@@ -8,12 +8,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 
-/**
- * Created with GaoShan.
- * Description:app版本更新 serviceImpl
- * Date: 2020-01-08
- * Time: 10:18
- */
+
 @Service
 public class AppManagerServiceImpl extends BaseServiceImpl<AppManagerModel> implements AppManagerService{
     @Resource 

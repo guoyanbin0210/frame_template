@@ -1,12 +1,7 @@
 package com.lt.body.constant;
 
-/**
- * ClassName: ConcernTypeEnum
- * Description:
- * date: 2019/5/8 14:10
- *
- * @author GaoShan
- */
+
+
 public enum ConcernTypeEnum {
     EmNews_GOOD("EmNews_GOOD", "点赞"),
     EmNews_SHARE("EmNews_SHARE", "分享"),

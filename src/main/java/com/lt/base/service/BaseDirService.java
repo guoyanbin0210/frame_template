@@ -5,7 +5,6 @@ import com.lt.base.model.BaseDirModel;
 import java.util.List;
 
 /**
- * Created with GaoShan.
  * Description:字典 service
  * Date: 2019-05-07
  * Time: 02:40

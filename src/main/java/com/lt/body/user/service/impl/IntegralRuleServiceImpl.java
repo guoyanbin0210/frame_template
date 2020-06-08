@@ -6,12 +6,9 @@ import com.lt.base.dao.BaseDao;
 import com.lt.base.service.impl.BaseServiceImpl;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
-/**
- * Created with GaoShan.
- * Description:积分规则 serviceImpl
- * Date: 2019-07-02
- * Time: 03:27
- */
+
+
+
 @Service
 public class IntegralRuleServiceImpl extends BaseServiceImpl<IntegralRuleModel> implements IntegralRuleService{
     @Resource 

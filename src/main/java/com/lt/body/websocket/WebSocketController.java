@@ -8,11 +8,7 @@ import springfox.documentation.annotations.ApiIgnore;
 
 import javax.annotation.Resource;
 
-/**
- * Created with GaoShan.
- * Create Time: 2019/9/11 14:05
- * Description:
- */
+
 @RestController
 @Log4j2
 @ApiIgnore

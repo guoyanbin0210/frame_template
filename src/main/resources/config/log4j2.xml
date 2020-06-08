@@ -7,9 +7,9 @@
 <configuration status="warn" monitorInterval="30">
     <Properties>
         <!-- 配置日志文件输出目录，此配置将日志输出到tomcat根目录下的指定文件夹 -->
-        <Property name="FILE_NAME_PRE">/server/gs/web_file/logs/</Property>
+        <Property name="FILE_NAME_PRE">/server/logs/</Property>
     </Properties>
-    <!--先定义所有的appender-->w
+    <!--先定义所有的appender-->
 
     <appenders>
         <!--这个输出控制台的配置-->

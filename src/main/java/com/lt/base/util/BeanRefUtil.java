@@ -8,10 +8,7 @@ import java.util.*;
 
 import static com.lt.base.util.DateUtils.parseDate;
 
-/**
- * Created by GaoShan on 2017/3/27.
- * Description: 初始化实例对象工具类
- */
+
 public class BeanRefUtil {
 
     /**

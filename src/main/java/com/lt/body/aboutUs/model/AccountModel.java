@@ -1,7 +1,10 @@
-package com.lt.body.account.model;
+package com.lt.body.aboutUs.model;
+
 import com.lt.base.model.BaseModel;
 import org.springframework.stereotype.Component;
+
 import java.util.Date;
+
 /**
  * Created with GaoShan.
  * Description:账号管理

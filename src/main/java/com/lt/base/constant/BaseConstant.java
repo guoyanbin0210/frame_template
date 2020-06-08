@@ -1,11 +1,6 @@
 package com.lt.base.constant;
 
-/**
- * Created with GaoShan.
- * Description:
- * Date: 2018-11-27
- * Time: 13:41
- */
+
 public class BaseConstant {
     /**
      * 管理员角色id 锁定在这里不可删除不可修改

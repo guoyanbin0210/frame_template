@@ -19,7 +19,6 @@ import org.apache.shiro.util.ByteSource;
 import javax.annotation.Resource;
 
 /**
- * Created with GaoShan.
  * Description:
  * Date: 2019-01-03
  * Time: 13:27

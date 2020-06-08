@@ -6,10 +6,6 @@ import org.springframework.core.annotation.Order;
 import java.lang.annotation.*;
 
 /**
- * Created with GaoShan.
- * Description:
- * Date: 2018-12-03
- * Time: 16:16
  * ‘@interface’ 用来声明注解
  */
 @Target({ElementType.TYPE, ElementType.METHOD})

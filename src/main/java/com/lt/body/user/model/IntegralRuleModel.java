@@ -4,23 +4,10 @@ import com.lt.base.model.BaseModel;
 import com.lt.base.poi.annotation.GsExcelProperty;
 import org.springframework.stereotype.Component;
 
-/**
- * Created with GaoShan.
- * Description:积分规则
- * Create Time: 2019-07-02 03:27
- */
+
 @Component
 public class IntegralRuleModel extends BaseModel {
 
-    //标题:ir_title,类型：字符串
-
-    //分值:ir_val,类型：整型
-
-    //日上限:ir_day_max,类型：整型
-
-    //备注:ir_des,类型：字符串
-
-    //类型:ir_type,类型：字符串
 
     /**
      * 标题

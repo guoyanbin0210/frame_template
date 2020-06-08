@@ -3,10 +3,7 @@ import com.lt.base.model.BaseModel;
 import com.lt.base.poi.annotation.GsExcelProperty;
 import org.springframework.stereotype.Component;
 
-/**
- * Description:服务管理
- * Create Time: 2019-05-17 09:38
- */
+
 @Component
 public class OttServicesModel extends BaseModel{
     /**

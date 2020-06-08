@@ -5,7 +5,6 @@ import com.lt.base.model.SysRoleModel;
 import java.util.List;
 
 /**
- * Created with GaoShan.
  * Description:
  * Date: 2018-12-20
  * Time: 09:52

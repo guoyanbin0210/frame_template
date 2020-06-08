@@ -3,7 +3,7 @@ package com.lt.body.apiController;
 import com.lt.base.aop.ControllerMethodLog;
 import com.lt.base.constant.BaseConstant;
 import com.lt.base.controller.BaseController;
-import com.lt.body.address.service.AddressService;
+import com.lt.body.aboutUs.service.AddressService;
 import com.lt.body.apiMoudel.ApiAddressMoudel;
 import com.lt.body.apiMoudel.ApiBannerModel;
 import com.lt.body.comBanner.service.BannerService;

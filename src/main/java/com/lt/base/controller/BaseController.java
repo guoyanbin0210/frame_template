@@ -24,12 +24,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-/**
- * Created with GaoShan.
- * Description:
- * Date: 2018-11-26
- * Time: 17:10
- */
 public class BaseController {
 
 

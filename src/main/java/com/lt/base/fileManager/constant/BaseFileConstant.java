@@ -4,12 +4,6 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 
 import java.io.File;
 
-/**
- * Created with GaoShan.
- * Description:
- * Date: 2018-11-27
- * Time: 13:41
- */
 public class BaseFileConstant {
     /**
      * 枚举 常量 详单与代码注释
@@ -18,38 +12,38 @@ public class BaseFileConstant {
     public enum StaticPath {
         UPLOAD_LOCAL_PATH(
                 0,
-                "E:/comwinwin/file/uploads/",
-                "/server/lt/file/my360_financial/"),
+                "E:/file/uploads/",
+                "/server/templete/file/"),
         STATIC_UPLOAD(
                 1,
                 "/uploads/**",
-                "E:/comwinwin/file/uploads/",
-                "/server/lt/file/my360_financial/"),
+                "E:/file/uploads/",
+                "/server/templete/file/"),
         STATIC_APK(
                 2,
                 "/download/**",
-                "E:/comwinwin/file/uploads/",
-                "/server/lt/file/my360_financial/"),
+                "E:/file/uploads/",
+                "/server/templete/file/"),
         STATIC_UE(
                 3,
                 "/ue/**",
-                "E:/comwinwin/file/uploads//ue/",//这个在java 源码中添加了 ueditor
-                "/server/lt/file/my360_financial/ue/"),
-        STATIC_MP(//密云生活网：
+                "E:/file/uploads//ue/",//这个在java 源码中添加了 ueditor
+                "/server/templete/file/ue/"),
+        STATIC_MP( 
                 4,
                 "/MP_verify_pzo7Gi2YRdxupVnw.txt",
-                "E:/comwinwin/file/uploads/mp/MP_verify_pzo7Gi2YRdxupVnw.txt",//这个在java 源码中添加了 ueditor
-                "/server/lt/file/my360_financial/mp/MP_verify_pzo7Gi2YRdxupVnw.txt"),
-        STATIC_MP2(//北京密云（生态密云
+                "E:/file/uploads/mp/MP_verify_pzo7Gi2YRdxupVnw.txt",//这个在java 源码中添加了 ueditor
+                "/server/templete/file/mp/MP_verify_pzo7Gi2YRdxupVnw.txt"),
+        STATIC_MP2( 
                 5,
                 "/MP_verify_iF6msRZ1zGy00JGw.txt",
-                "E:/comwinwin/file/uploads/mp/MP_verify_iF6msRZ1zGy00JGw.txt",//这个在java 源码中添加了 ueditor
-                "/server/lt/file/my360_financial/mp/MP_verify_iF6msRZ1zGy00JGw.txt"),
-        STATIC_MP3(//北京密云（生态密云
+                "E:/file/uploads/mp/MP_verify_iF6msRZ1zGy00JGw.txt",//这个在java 源码中添加了 ueditor
+                "/server/templete/file/mp/MP_verify_iF6msRZ1zGy00JGw.txt"),
+        STATIC_MP3( 
                 5,
                 "/tool/ueditor/php/**",
-                "E:/comwinwin/file/uploads/",//这个在java 源码中添加了 ueditor
-                "/server/lt/file/my360_financial/mp/MP_verify_iF6msRZ1zGy00JGw.txt"),
+                "E:/file/uploads/",//这个在java 源码中添加了 ueditor
+                "/server/templete/file/mp/MP_verify_iF6msRZ1zGy00JGw.txt"),
         ;
 
         private int code;

@@ -8,12 +8,7 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-/**
- * Created with GaoShan.
- * Description:关于我们 mapper
- * Date: 2020-02-28
- * Time: 11:18
- */
+
 @Mapper
 public interface AboutUsDao extends BaseDao<AboutUsModel>{
     //返回后台数据

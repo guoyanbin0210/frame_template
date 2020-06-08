@@ -2,7 +2,6 @@ package com.lt.base.service;
 import com.lt.base.model.SysOperationLogModel;
 
 /**
- * Created with GaoShan.
  * Description:
  * Date: 2018-12-27
  * Time: 09:41

@@ -5,12 +5,7 @@ import com.lt.base.service.BaseService;
 
 import java.util.List;
 
-/**
- * Created with GaoShan.
- * Description:新闻管理 service
- * Date: 2020-02-28
- * Time: 10:34
- */
+
 public interface NewContentService extends BaseService<NewContentModel>{
 
 

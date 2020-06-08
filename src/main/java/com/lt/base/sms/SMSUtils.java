@@ -24,7 +24,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created with GaoShan.
  * Description:
  * Date: 2018-08-06
  * Time: 11:13

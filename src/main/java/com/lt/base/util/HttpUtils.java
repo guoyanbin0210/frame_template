@@ -10,12 +10,6 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-/**
- * Created with GaoShan.
- * Description:
- * Date: 2018-07-27
- * Time: 14:51
- */
 public class HttpUtils {
     private static Logger logger = LogManager.getLogger(HttpUtils.class.getName());
 
