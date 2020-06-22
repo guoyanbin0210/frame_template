@@ -2,8 +2,8 @@ package com.lt.body.aboutUs.controller;
 
 import com.lt.base.aop.ControllerMethodLog;
 import com.lt.base.controller.BaseController;
-import com.lt.body.account.model.AccountModel;
-import com.lt.body.account.service.AccountService;
+import com.lt.body.aboutUs.model.AccountModel;
+import com.lt.body.aboutUs.service.AccountService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PostMapping;
