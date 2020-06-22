@@ -13,13 +13,6 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-/**
- * ClassName: ApkUtils
- * Description:
- * date: 2019/5/22 14:53
- *
- * @author GaoShan
- */
 public class ApkUtils {
 
 

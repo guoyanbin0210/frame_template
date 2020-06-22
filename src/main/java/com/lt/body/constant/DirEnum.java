@@ -1,12 +1,5 @@
 package com.lt.body.constant;
 
-/**
- * ClassName: DirEnum
- * Description:
- * date: 2019/5/8 14:09
- *
- * @author GaoShan
- */
 public enum DirEnum {
 
     /**

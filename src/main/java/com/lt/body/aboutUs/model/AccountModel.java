@@ -6,9 +6,7 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 
 /**
- * Created with GaoShan.
  * Description:账号管理
- * Create Time: 2020-02-20 02:21
  */
 @Component
 public class AccountModel extends BaseModel{

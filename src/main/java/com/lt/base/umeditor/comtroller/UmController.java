@@ -11,13 +11,6 @@ import springfox.documentation.annotations.ApiIgnore;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * ClassName: MyController
- * Description:
- * date: 2019/5/24 19:32
- *
- * @author GaoShan
- */
 @Controller
 @ApiIgnore
 public class UmController {

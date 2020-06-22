@@ -12,10 +12,7 @@ import javax.servlet.ServletResponse;
 import java.io.Serializable;
 
 /**
- * Created with GaoShan.
  * Description: 自定义获取sessionid的方式，定义请求头中 Authorization 则其值为sessionId
- * Date: 2018-12-20
- * Time: 15:31
  */
 public class MySessionManager extends DefaultWebSessionManager {
     private Logger logger = LogManager.getLogger(getClass());
