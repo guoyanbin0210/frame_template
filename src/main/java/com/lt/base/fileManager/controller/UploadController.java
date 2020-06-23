@@ -32,11 +32,13 @@ public class UploadController extends BaseController {
     private SysFileService sysFileService;
     private Logger LOGGER = LoggerFactory.getLogger(getClass());
 
-    @ApiIgnore
-    @ApiOperation(value = "文件上传", notes = "")
-    @PostMapping(value = "/api/fileManager/upload")
-    public HashMap uploadFile2(HttpServletRequest request, @RequestParam("file") MultipartFile multipartFile) {
-        return uploadFile(request, multipartFile);
+    @ApiOperation(value = "删除文件" )
+    @PostMapping(value = "/api_p/Eleditor/fileManager/delete")
+    public HashMap api_p(@RequestParam("path") String path) {
+        HashMap<String, Object> returnMap = getReturnMap();
+        File file = new File(  path);
+        file.delete();
+        return returnMap;
     }
 
     @ApiOperation(value = "文件上传", notes = "")
@@ -67,29 +69,10 @@ public class UploadController extends BaseController {
                 fileType = "other";
                 filename = System.currentTimeMillis() + "";
             }
-            //http://localhost:8080/projeptName/
-            //保存时添加域名
-           // String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath() + "/upload/";
-          //  String basePath = "/upload/";
             String basePath = "/uploads/";
-            // /upload/image/20170905
-           // String videoPath = fileType + "/" + new SimpleDateFormat("yyyyMMdd").format(new Date()) + "/";
             String path;
             path = BaseUtils.getSystemTypePath();
-          //  path += videoPath;
-            // /upload/image/20170905/文件名
-           // videoPath += filename;
             File newFile = new File(path, filename);
-            //判断路径是否存在，如果不存在就创建一个SysFileService
-           /* if (!newFile.getParentFile().exists()) {
-                if (!newFile.getParentFile().mkdirs()) {
-                    returnMap.put("message", "上传路径创建失败,请联系管理员");
-                    return returnMap;
-                }
-            }*/
-            //添加访问前缀
-            //http://localhost:8080/projeptName/upload/image/20170905/文件名
-           // String urlPath = basePath + videoPath;
             String urlPath = basePath + filename;
             //将上传文件保存到一个目标文件当中
             try {
