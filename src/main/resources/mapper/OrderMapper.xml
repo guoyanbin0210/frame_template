@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lt.body.weixin.dao.OrderDao">
+  <resultMap id="baseModel" type="com.lt.body.weixin.model.OrderModel">
+    <id column="id" property="id"/>
+    <id column="orderNo" property="orderNo"/>
+    <id column="userId" property="userId"/>
+    <id column="parkId" property="parkId"/>
+    <id column="parkName" property="parkName"/>
+    <id column="leaseType" property="leaseType"/>
+    <id column="isPay" property="isPay"/>
+    <id column="payTime" property="payTime"/>
+    <id column="payType" property="payType"/>
+    <id column="amount" property="amount"/>
+    <id column="orderTimeA" property="orderTimeA"/>
+    <id column="orderTimeB" property="orderTimeB"/>
+    <id column="parkAddress" property="parkAddress"/>
+    <id column="tb_park_pic" property="tb_park_pic"/>
+    <id column="isAppraise" property="isAppraise"/>
+    <id column="unitPrice" property="unitPrice"/>
+    <id column="buyCount" property="buyCount"/>
+    <id column="status" property="status"/>
+    <id column="btweenDays" property="btweenDays"/>
+    <id column="create_by" property="create_by"/>
+    <id column="create_time" property="create_time"/>
+    <id column="modify_by" property="modify_by"/>
+    <id column="modify_time" property="modify_time"/>
+  </resultMap>
+  <sql id="select_all">id, orderNo, userId, parkId, parkName, leaseType, isPay, payTime, payType, amount, orderTimeA, orderTimeB, parkAddress, tb_park_pic,isAppraise, unitPrice, buyCount,status,btweenDays, create_by, create_time, modify_by, modify_time</sql>
+  <sql id="Base_Column_List">
+    <if test="id!=null">id,</if>
+    <if test="orderNo!=null">orderNo,</if>
+    <if test="userId!=null">userId,</if>
+    <if test="parkId!=null">parkId,</if>
+    <if test="parkName!=null">parkName,</if>
+    <if test="leaseType!=null">leaseType,</if>
+    <if test="isPay!=null">isPay,</if>
+    <if test="payTime!=null">payTime,</if>
+    <if test="payType!=null">payType,</if>
+    <if test="amount!=null">amount,</if>
+    <if test="orderTimeA!=null">orderTimeA,</if>
+    <if test="orderTimeB!=null">orderTimeB,</if>
+    <if test="parkAddress!=null">parkAddress,</if>
+    <if test="tb_park_pic!=null">tb_park_pic,</if>
+    <if test="isAppraise!=null">isAppraise,</if>
+    <if test="unitPrice!=null">unitPrice,</if>
+    <if test="buyCount!=null">buyCount,</if>
+    <if test="status!=null">status,</if>
+    <if test="btweenDays!=null">btweenDays,</if>
+    <if test="create_by!=null">create_by,</if>
+    <if test="create_time!=null">create_time,</if>
+    <if test="modify_by!=null">modify_by,</if>
+    <if test="modify_time!=null">modify_time,</if>
+  </sql>
+  <sql id="Base_property_List">
+    <if test="id!=null">#{id},</if>
+    <if test="orderNo!=null">#{orderNo},</if>
+    <if test="userId!=null">#{userId},</if>
+    <if test="parkId!=null">#{parkId},</if>
+    <if test="parkName!=null">#{parkName},</if>
+    <if test="leaseType!=null">#{leaseType},</if>
+    <if test="isPay!=null">#{isPay},</if>
+    <if test="payTime!=null">#{payTime},</if>
+    <if test="payType!=null">#{payType},</if>
+    <if test="amount!=null">#{amount},</if>
+    <if test="orderTimeA!=null">#{orderTimeA},</if>
+    <if test="orderTimeB!=null">#{orderTimeB},</if>
+    <if test="parkAddress!=null">#{parkAddress},</if>
+    <if test="tb_park_pic!=null">#{tb_park_pic},</if>
+    <if test="isAppraise!=null">#{isAppraise},</if>
+    <if test="unitPrice!=null">#{unitPrice},</if>
+    <if test="buyCount!=null">#{buyCount},</if>
+    <if test="status!=null">#{status},</if>
+    <if test="btweenDays!=null">#{btweenDays},</if>
+    <if test="create_by!=null">#{create_by},</if>
+    <if test="create_time!=null">#{create_time},</if>
+    <if test="modify_by!=null">#{modify_by},</if>
+    <if test="modify_time!=null">#{modify_time},</if>
+  </sql>
+  <sql id="Base_update_List">
+    <if test="id!=null">id=#{id},</if>
+    <if test="orderNo!=null">orderNo=#{orderNo},</if>
+    <if test="userId!=null">userId=#{userId},</if>
+    <if test="parkId!=null">parkId=#{parkId},</if>
+    <if test="parkName!=null">parkName=#{parkName},</if>
+    <if test="leaseType!=null">leaseType=#{leaseType},</if>
+    <if test="isPay!=null">isPay=#{isPay},</if>
+    <if test="payTime!=null">payTime=#{payTime},</if>
+    <if test="payType!=null">payType=#{payType},</if>
+    <if test="amount!=null">amount=#{amount},</if>
+    <if test="orderTimeA!=null">orderTimeA=#{orderTimeA},</if>
+    <if test="orderTimeB!=null">orderTimeB=#{orderTimeB},</if>
+    <if test="parkAddress!=null">parkAddress=#{parkAddress},</if>
+    <if test="tb_park_pic!=null">tb_park_pic=#{tb_park_pic},</if>
+    <if test="isAppraise!=null">isAppraise=#{isAppraise},</if>
+    <if test="unitPrice!=null">unitPrice=#{unitPrice},</if>
+    <if test="buyCount!=null">buyCount = #{buyCount},</if>
+    <if test="status!=null">status=#{status},</if>
+    <if test="btweenDays!=null">btweenDays=#{btweenDays}</if>
+    <if test="create_by!=null">create_by=#{create_by},</if>
+    <if test="create_time!=null">create_time=#{create_time},</if>
+    <if test="modify_by!=null">modify_by=#{modify_by},</if>
+    <if test="modify_time!=null">modify_time=#{modify_time},</if>
+  </sql>
+  <sql id="Base_select_List">
+    <if test="id!=null">AND id=#{id}</if>
+    <if test="orderNo!=null">AND orderNo=#{orderNo}</if>
+    <if test="userId!=null">AND userId=#{userId}</if>
+    <if test="parkId!=null">AND parkId=#{parkId}</if>
+    <if test="parkName!=null">AND parkName=#{parkName}</if>
+    <if test="leaseType!=null">AND leaseType=#{leaseType}</if>
+    <if test="isPay!=null">AND isPay=#{isPay}</if>
+    <if test="payTime!=null">AND payTime=#{payTime}</if>
+    <if test="payType!=null">AND payType=#{payType}</if>
+    <if test="amount!=null">AND amount=#{amount}</if>
+    <if test="orderTimeA!=null">AND orderTimeA=#{orderTimeA}</if>
+    <if test="orderTimeB!=null">AND orderTimeB=#{orderTimeB}</if>
+    <if test="parkAddress!=null">AND parkAddress=#{parkAddress}</if>
+    <if test="tb_park_pic!=null">AND tb_park_pic=#{tb_park_pic}</if>
+    <if test="isAppraise!=null">AND isAppraise=#{isAppraise}</if>
+    <if test="unitPrice!=null">AND unitPrice=#{unitPrice}</if>
+    <if test="buyCount!=null and buyCount!=0">AND buyCount = #{buyCount}</if>
+    <if test="status!=null">AND status=#{status}</if>
+    <if test="btweenDays!=null">AND btweenDays=#{btweenDays}</if>
+    <if test="create_by!=null">AND create_by=#{create_by}</if>
+    <if test="create_time!=null">AND create_time=#{create_time}</if>
+    <if test="modify_by!=null">AND modify_by=#{modify_by}</if>
+    <if test="modify_time!=null">AND modify_time=#{modify_time}</if>
+  </sql>
+  <sql id="Base_select_like_List"><trim suffixOverrides=","> IFNULL(id, ''), IFNULL(orderNo, ''), IFNULL(userId, ''), IFNULL(parkId, ''), IFNULL(parkName, ''), IFNULL(leaseType, ''), IFNULL(isPay, ''), IFNULL(payTime, ''), IFNULL(payType, ''), IFNULL(amount, ''), IFNULL(orderTimeA, ''), IFNULL(orderTimeB, ''), IFNULL(parkAddress, ''), IFNULL(isAppraise, ''), IFNULL(unitPrice, ''), IFNULL(status, ''), IFNULL(create_by, ''), IFNULL(create_time, ''), IFNULL(modify_by, ''), IFNULL(modify_time, ''), </trim></sql>
+  <insert id="insert">INSERT INTO sk_order (<trim suffixOverrides=","><include refid="Base_Column_List"/></trim>) VALUES (<trim suffixOverrides=","><include refid="Base_property_List"/></trim>);</insert>
+  <delete id="delete">DELETE FROM sk_order WHERE id = #{id};</delete>
+  <update id="update">UPDATE sk_order SET <trim suffixOverrides=","><include refid="Base_update_List"/></trim> WHERE id = #{id};</update>
+  <select id="selectById" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM sk_order WHERE id =#{id};</select>
+  <select id="selectListByModel" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM sk_order<where> <include refid="Base_select_List"/> </where> ORDER BY create_time DESC</select>
+  <select id="selectAll" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM sk_order ORDER BY create_time DESC</select>
+  <select id="selectListByKeyWord" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM sk_order<where> CONCAT(<include refid="Base_select_like_List"/>) LIKE concat(concat('%',#{keyWord}),'%')</where> ORDER BY create_time DESC</select>
+    <select id="selectCountByUserIdAndParkId" resultType="com.park.body.order.model.OrderModel">
+     SELECT
+		leaseType,
+		orderTimeB
+       FROM
+       sk_order
+       WHERE
+       userId=#{userId}
+       AND parkId = #{parkId}
+       AND status = '1'
+	   ORDER BY orderTimeB DESC
+	   LIMIT 0,1
+    </select>
+</mapper>
