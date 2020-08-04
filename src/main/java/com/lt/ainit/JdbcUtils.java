@@ -1321,7 +1321,7 @@ public class JdbcUtils {
         //根路径
         CANONICAL_PATH = System.getProperty("user.dir");
 //        TABLE_SCHEMA = CANONICAL_PATH.substring(CANONICAL_PATH.lastIndexOf("\\") + 1).toLowerCase();
-        TABLE_SCHEMA = "my360_comwinwin";
+        TABLE_SCHEMA = "g_template";
         //java 文件
         TABLE_NAME_JAVA = getTableNameForJava(TABLE_NAME);
         MODEL_NAME_JAVA = TABLE_NAME_JAVA + "Model";
@@ -1382,7 +1382,7 @@ public class JdbcUtils {
 
 
         //数据库相关
-        DRIVER = "com.mysql.cj.jdbc.Driver";
+        DRIVER = "com.mysql.jdbc.Driver";
         url = "jdbc:mysql://localhost:3306/" + TABLE_SCHEMA + "?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true";
         username = "root";
         password = "root";

@@ -19,6 +19,7 @@ import com.lt.body.weixin.service.impl.Access_tokenServiceImp;
 import com.lt.body.weixin.service.impl.WeixinParmsService;
 import com.lt.body.weixin.utils.Sign;
 import com.lt.body.weixin.utils.WeiXinUtils;
+import com.lt.config.WechatConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
@@ -30,7 +31,7 @@ import net.sf.json.JSONObject;
  * 微信H5页面专用
  */
 @Controller
-@RequestMapping(value = "weiXinController")
+@RequestMapping(value = "h5")
 public class WeiXinH5Controller {
 
 
@@ -43,10 +44,10 @@ public class WeiXinH5Controller {
 	@ResponseBody
 	public HashMap sendGet(String code, HttpServletRequest request) {
 		HashMap<Object, Object> hashMap = new HashMap<>();
-		String appid = WeiXinUtils.appid;
-		String secret = WeiXinUtils.secret;
-		String grant_type = WeiXinUtils.grant_type;
-		String grant_type_access_token = WeiXinUtils.grant_type_access_token;
+		String appid = WechatConfig.appid;
+		String secret = WechatConfig.secret;
+		String grant_type = WechatConfig.grant_type;
+		String grant_type_access_token = WechatConfig.grant_type_access_token;
 		String result = null;
 		// 此access_token用来获取用户信息
 		String access_token = "";
