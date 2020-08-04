@@ -246,4 +246,26 @@ public class PayUtil {
         Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").enableComplexMapKeySerialization().create();
         return gson.toJson(obj);
     }
+
+
+    /**
+     * map 转换XML
+     * @param map
+     * @return
+     */
+    public static String map2XmlString(Map<String, String> map) {
+        String xmlResult = "";
+
+        StringBuffer sb = new StringBuffer();
+        sb.append("<xml>");
+        for (String key : map.keySet()) {
+            String value = "<![CDATA[" + map.get(key) + "]]>";
+            sb.append("<" + key + ">" + value + "</" + key + ">");
+            System.out.println();
+        }
+        sb.append("</xml>");
+        xmlResult = sb.toString();
+
+        return xmlResult;
+    }
 }

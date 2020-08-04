@@ -16,6 +16,11 @@ public class WechatConfig {
     //微信统一下单接口地址
     public static final String pay_url = "https://api.mch.weixin.qq.com/pay/unifiedorder";
 
+    //微信退款接口地址
+    public static final String refund_url = "https://api.mch.weixin.qq.com/secapi/pay/refund";
+    //退款成功回调地址
+    public static final String notify_refund_url = "shequtong.comwinwin.com/api_p/pay/wxRefundNotify";
+
 //========================================H5========================================
 
  //   public static final String appid="wx0054d5c3797d920e";
