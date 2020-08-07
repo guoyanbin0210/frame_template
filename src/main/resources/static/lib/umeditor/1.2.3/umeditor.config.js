@@ -311,7 +311,7 @@
             p: ['style', 'class', 'id'],
             pre: ['style', 'class', 'id'],
             s: [],
-            // section: [],//添加秀米插件 2019年5月30日 14:58:40 高山
+            // section: [],//添加秀米插件 2019年5月30日 14:58:40
             section:['class', 'style'],
             small: ['style', 'class', 'id'],
             span: ['style', 'class', 'id'],

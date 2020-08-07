@@ -1,7 +1,6 @@
 package com.lt.body.user.controller;
 
 import com.lt.base.controller.BaseController;
-import com.lt.base.service.BaseDirService;
 import com.lt.body.user.service.UserIntegralService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,8 +19,7 @@ public class ByIntegralController extends BaseController {
     @Resource
     private UserIntegralService userIntegralService;
 
-    @Resource
-    private BaseDirService baseDirService;
+
 
 
 

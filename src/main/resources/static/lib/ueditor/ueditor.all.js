@@ -8292,19 +8292,6 @@
                     return '';
                 }
 
-                // 高山 修改 2019年5月31日 16:46:53
-                // if (action == 'uploadimage' ||
-                //     action == 'uploadscrawl' ||
-                //     action == 'uploadvideo'
-                // ) {
-                //     return '/uEditor/uploadUe.do';
-                // } else if (action == 'catchimage') {
-                //     return '/uEditor/uploadUeList.do';
-                // } else {
-                //
-                // }
-
-
             }
         };
         utils.inherits(Editor, EventBase);

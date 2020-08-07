@@ -3,9 +3,13 @@ package com.lt.body.weixin.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.lt.base.constant.BaseConstant;
 import com.lt.base.controller.BaseController;
+import com.lt.body.business.model.UserModel;
+import com.lt.body.business.service.UserService;
 import com.lt.body.user.utils.JwtUtil;
+import com.lt.config.WechatConfig;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,30 +29,32 @@ import java.util.Map;
 @Api(value = "微信授权登录", tags = {"微信授权登录"})
 public class WeiXinXCXController extends BaseController {
 
+    @Autowired
+    private UserService userService;
+
+
+
     @ApiOperation("微信授权登录返回openId")
     @PostMapping("/api_p/ParkeUser/getOpenId")
     public HashMap getOpenId(@RequestParam(name = "code") String code) {
         HashMap<String, Object> resultMap = getReturnMap(BaseConstant.Response_MENU.REQUEST_DO_SUCCESS);
         String url = "https://api.weixin.qq.com/sns/jscode2session";
-        String codeParams = "appid=wx8cc9919353422d5d&secret=f134482a2814d5e71423c949e6dfd8cc&js_code=" + code +
-                "&grant_type=authorization_code";
+        String codeParams = "appid="+WechatConfig.appid +"&secret="+WechatConfig.secret+"&js_code=" + code +
+                "&grant_type="+WechatConfig.grant_type;
         JSONObject jsonObject = JSONObject.parseObject(sendGet(url,codeParams));
         String openId = jsonObject.getString("openid");
         if (openId == null){
             return getReturnMap(BaseConstant.Response_MENU.REQUEST_OPENID_NOTFAILED);
         }
         String token = JwtUtil.createTokenWithClaim(openId);
-      /*  ParkUserModel model = parkUserService.findDataByOpenId(openId);
-        //根据openId 查询生效的停车场订单
-        String str = "";
+        UserModel model = userService.selectById(openId);
         if (model == null){
-            str = "0";
-        }else{
-            str = model.getUser_status();
-        }*/
+            model = new UserModel();
+            model.init(model);
+            model.setId(openId);
+            userService.insert(model);
+        }else
         resultMap.put("openId",openId);
-        //返回用户认证状态
-       // resultMap.put("userStatus",str);
         return resultMap;
     }
 
@@ -63,7 +69,6 @@ public class WeiXinXCXController extends BaseController {
             URL reaurl = new URL(urlNameString);
 
             URLConnection connection  = reaurl.openConnection();
-
             //设置通用
             connection.setRequestProperty("accept", "*/*");
             connection.setRequestProperty("connection", "keep-Alive");

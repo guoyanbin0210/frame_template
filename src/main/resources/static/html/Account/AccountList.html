@@ -63,9 +63,9 @@
             <span class="select-box">
                 <select class="select" id="select_Com" onchange="findDataByType()">
                     <option value="">主体公司</option>
-                     <option value="0">北京心连心热力有限公司</option>
-                     <option value="1">北京通成网联科技有限公司</option>
-                     <option value="2">北京云末科技服务有限公司</option>
+                     <option value="0">A有限公司</option>
+                     <option value="1">B有限公司</option>
+                     <option value="2">C有限公司</option>
                 </select>
             </span>
         </span>
@@ -160,13 +160,13 @@
     function checkComType(type) {
         switch (type) {
             case "0":
-                return '<span style="color: green;">北京心连心热力有限公司</span>'
+                return '<span style="color: green;">A</span>'
                 break;
             case "1":
-                return '<span style="color: red;">北京通成网联科技有限公司</span>'
+                return '<span style="color: red;">B</span>'
                 break;
             case "2":
-                return '<span style="color: deeppink;">北京云末科技服务有限公司</span>'
+                return '<span style="color: deeppink;">C</span>'
                 break;
         }
     }

@@ -162,7 +162,7 @@ public class JdbcUtils {
         waitString
                 .append("package ").append(BASE_PACKAGE_NAME).append(".model;\n")
                 .append("import com.lt.base.model.BaseModel;\n" +
-                        // "import com.lt.base.excel.annotation.ltExcelProperty;\n" +
+                        "import io.swagger.annotations.ApiModelProperty;\n" +
                         "import org.springframework.stereotype.Component;\n" +
                         "import java.util.Date;\n")
                 .append("/**\n")
@@ -243,7 +243,7 @@ public class JdbcUtils {
                         .append("    /**\n    * ")
                         .append(column_comment).append("\n")
                         .append("    */\n")
-                        //.append("    @ltExcelProperty(index = ").append(index).append(", description = \"").append(column_comment).append("\")\n")
+                        .append("    @ApiModelProperty(value =").append("\"" + column_comment + "\"").append(",position = " + index + "").append(")\n")
                         .append("    private ").append(jdbcColumnModel.getColumn_type().getName_java()).append(" ").append(column_name).append(";\n\n");
                 index++;
             }
@@ -1321,7 +1321,7 @@ public class JdbcUtils {
         //根路径
         CANONICAL_PATH = System.getProperty("user.dir");
 //        TABLE_SCHEMA = CANONICAL_PATH.substring(CANONICAL_PATH.lastIndexOf("\\") + 1).toLowerCase();
-        TABLE_SCHEMA = "g_template";
+        TABLE_SCHEMA = "g_community";
         //java 文件
         TABLE_NAME_JAVA = getTableNameForJava(TABLE_NAME);
         MODEL_NAME_JAVA = TABLE_NAME_JAVA + "Model";
@@ -1355,7 +1355,7 @@ public class JdbcUtils {
         TABLE_NAME_URL = TABLE_NAME_JAVA;
         BASE_PACKAGE_NAME = "com.lt.body." + PACKAGE_NAME;
         PACKAGE_DAO_PATH = BASE_PACKAGE_NAME + ".dao";
-        JAVA_PATH = CANONICAL_PATH + "/src/main/java/com/lt/body/" + PACKAGE_NAME;
+        JAVA_PATH = CANONICAL_PATH + "/src/main/java/com/community/body/" + PACKAGE_NAME;
         MODEL_PATH = JAVA_PATH + "/model";
         DAO_PATH = JAVA_PATH + "/dao";
         CONTROLLER_PATH = JAVA_PATH + "/controller";
@@ -1382,7 +1382,7 @@ public class JdbcUtils {
 
 
         //数据库相关
-        DRIVER = "com.mysql.jdbc.Driver";
+        DRIVER = "com.mysql.cj.jdbc.Driver";
         url = "jdbc:mysql://localhost:3306/" + TABLE_SCHEMA + "?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true";
         username = "root";
         password = "root";

@@ -1,7 +1,7 @@
 package com.lt.body.weixin.dao;
 
 import com.lt.base.dao.BaseDao;
-import com.lt.body.weixin.model.OrderModel;
+import com.lt.body.business.model.OrderModel;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;

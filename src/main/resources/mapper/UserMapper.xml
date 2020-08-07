@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lt.body.business.dao.UserDao">
+  <resultMap id="baseModel" type="com.lt.body.business.model.UserModel">
+    <id column="id" property="id"/>
+    <id column="userId" property="userId"/>
+    <id column="userName" property="userName"/>
+    <id column="wxUserName" property="wxUserName"/>
+    <id column="cardId" property="cardId"/>
+    <id column="phone" property="phone"/>
+    <id column="headImg" property="headImg"/>
+    <id column="cardUrlA" property="cardUrlA"/>
+    <id column="cardUrlB" property="cardUrlB"/>
+    <id column="userType" property="userType"/>
+    <id column="verifyStatus" property="verifyStatus"/>
+    <id column="audit_cause" property="audit_cause"/>
+    <id column="isAgreeTip" property="isAgreeTip"/>
+    <id column="surplusMoney" property="surplusMoney"/>
+    <id column="status" property="status"/>
+    <id column="Spare1" property="Spare1"/>
+    <id column="Spare2" property="Spare2"/>
+    <id column="Spare3" property="Spare3"/>
+    <id column="create_time" property="create_time"/>
+    <id column="create_by" property="create_by"/>
+    <id column="modify_by" property="modify_by"/>
+    <id column="modify_time" property="modify_time"/>
+  </resultMap>
+  <sql id="select_all">id, userId, userName, wxUserName, cardId, phone, headImg, cardUrlA, cardUrlB, userType, verifyStatus, audit_cause, isAgreeTip, surplusMoney, status, Spare1, Spare2, Spare3, create_time, create_by, modify_by, modify_time</sql>
+  <sql id="Base_Column_List">
+    <if test="id!=null">id,</if>
+    <if test="userId!=null">userId,</if>
+    <if test="userName!=null">userName,</if>
+    <if test="wxUserName!=null">wxUserName,</if>
+    <if test="cardId!=null">cardId,</if>
+    <if test="phone!=null">phone,</if>
+    <if test="headImg!=null">headImg,</if>
+    <if test="cardUrlA!=null">cardUrlA,</if>
+    <if test="cardUrlB!=null">cardUrlB,</if>
+    <if test="userType!=null">userType,</if>
+    <if test="verifyStatus!=null">verifyStatus,</if>
+    <if test="audit_cause!=null">audit_cause,</if>
+    <if test="isAgreeTip!=null">isAgreeTip,</if>
+    <if test="surplusMoney!=null">surplusMoney,</if>
+    <if test="status!=null">status,</if>
+    <if test="Spare1!=null">Spare1,</if>
+    <if test="Spare2!=null">Spare2,</if>
+    <if test="Spare3!=null">Spare3,</if>
+    <if test="create_time!=null">create_time,</if>
+    <if test="create_by!=null">create_by,</if>
+    <if test="modify_by!=null">modify_by,</if>
+    <if test="modify_time!=null">modify_time,</if>
+  </sql>
+  <sql id="Base_property_List">
+    <if test="id!=null">#{id},</if>
+    <if test="userId!=null">#{userId},</if>
+    <if test="userName!=null">#{userName},</if>
+    <if test="wxUserName!=null">#{wxUserName},</if>
+    <if test="cardId!=null">#{cardId},</if>
+    <if test="phone!=null">#{phone},</if>
+    <if test="headImg!=null">#{headImg},</if>
+    <if test="cardUrlA!=null">#{cardUrlA},</if>
+    <if test="cardUrlB!=null">#{cardUrlB},</if>
+    <if test="userType!=null">#{userType},</if>
+    <if test="verifyStatus!=null">#{verifyStatus},</if>
+    <if test="audit_cause!=null">#{audit_cause},</if>
+    <if test="isAgreeTip!=null">#{isAgreeTip},</if>
+    <if test="surplusMoney!=null">#{surplusMoney},</if>
+    <if test="status!=null">#{status},</if>
+    <if test="Spare1!=null">#{Spare1},</if>
+    <if test="Spare2!=null">#{Spare2},</if>
+    <if test="Spare3!=null">#{Spare3},</if>
+    <if test="create_time!=null">#{create_time},</if>
+    <if test="create_by!=null">#{create_by},</if>
+    <if test="modify_by!=null">#{modify_by},</if>
+    <if test="modify_time!=null">#{modify_time},</if>
+  </sql>
+  <sql id="Base_update_List">
+    <if test="id!=null">id=#{id},</if>
+    <if test="userId!=null">userId=#{userId},</if>
+    <if test="userName!=null">userName=#{userName},</if>
+    <if test="wxUserName!=null">wxUserName=#{wxUserName},</if>
+    <if test="cardId!=null">cardId=#{cardId},</if>
+    <if test="phone!=null">phone=#{phone},</if>
+    <if test="headImg!=null">headImg=#{headImg},</if>
+    <if test="cardUrlA!=null">cardUrlA=#{cardUrlA},</if>
+    <if test="cardUrlB!=null">cardUrlB=#{cardUrlB},</if>
+    <if test="userType!=null">userType=#{userType},</if>
+    <if test="verifyStatus!=null">verifyStatus=#{verifyStatus},</if>
+    <if test="audit_cause!=null">audit_cause=#{audit_cause},</if>
+    <if test="isAgreeTip!=null">isAgreeTip=#{isAgreeTip},</if>
+    <if test="surplusMoney!=null">surplusMoney=#{surplusMoney},</if>
+    <if test="status!=null">status=#{status},</if>
+    <if test="Spare1!=null">Spare1=#{Spare1},</if>
+    <if test="Spare2!=null">Spare2=#{Spare2},</if>
+    <if test="Spare3!=null">Spare3=#{Spare3},</if>
+    <if test="create_time!=null">create_time=#{create_time},</if>
+    <if test="create_by!=null">create_by=#{create_by},</if>
+    <if test="modify_by!=null">modify_by=#{modify_by},</if>
+    <if test="modify_time!=null">modify_time=#{modify_time},</if>
+  </sql>
+  <sql id="Base_select_List">
+    <if test="id!=null">AND id=#{id}</if>
+    <if test="userId!=null">AND userId=#{userId}</if>
+    <if test="userName!=null">AND userName=#{userName}</if>
+    <if test="wxUserName!=null">AND wxUserName=#{wxUserName}</if>
+    <if test="cardId!=null">AND cardId=#{cardId}</if>
+    <if test="phone!=null">AND phone=#{phone}</if>
+    <if test="headImg!=null">AND headImg=#{headImg}</if>
+    <if test="cardUrlA!=null">AND cardUrlA=#{cardUrlA}</if>
+    <if test="cardUrlB!=null">AND cardUrlB=#{cardUrlB}</if>
+    <if test="userType!=null">AND userType=#{userType}</if>
+    <if test="verifyStatus!=null">AND verifyStatus=#{verifyStatus}</if>
+    <if test="audit_cause!=null">AND audit_cause=#{audit_cause}</if>
+    <if test="isAgreeTip!=null">AND isAgreeTip=#{isAgreeTip}</if>
+    <if test="surplusMoney!=null">AND surplusMoney=#{surplusMoney}</if>
+    <if test="status!=null">AND status=#{status}</if>
+    <if test="Spare1!=null">AND Spare1=#{Spare1}</if>
+    <if test="Spare2!=null">AND Spare2=#{Spare2}</if>
+    <if test="Spare3!=null">AND Spare3=#{Spare3}</if>
+    <if test="create_time!=null">AND create_time=#{create_time}</if>
+    <if test="create_by!=null">AND create_by=#{create_by}</if>
+    <if test="modify_by!=null">AND modify_by=#{modify_by}</if>
+    <if test="modify_time!=null">AND modify_time=#{modify_time}</if>
+  </sql>
+  <sql id="Base_select_like_List"><trim suffixOverrides=","> IFNULL(id, ''), IFNULL(userId, ''), IFNULL(userName, ''), IFNULL(wxUserName, ''), IFNULL(cardId, ''), IFNULL(phone, ''), IFNULL(headImg, ''), IFNULL(cardUrlA, ''), IFNULL(cardUrlB, ''), IFNULL(userType, ''), IFNULL(verifyStatus, ''), IFNULL(audit_cause, ''), IFNULL(isAgreeTip, ''), IFNULL(surplusMoney, ''), IFNULL(status, ''), IFNULL(Spare1, ''), IFNULL(Spare2, ''), IFNULL(Spare3, ''), IFNULL(create_time, ''), IFNULL(create_by, ''), IFNULL(modify_by, ''), IFNULL(modify_time, ''), </trim></sql>
+  <insert id="insert">INSERT INTO g_user (<trim suffixOverrides=","><include refid="Base_Column_List"/></trim>) VALUES (<trim suffixOverrides=","><include refid="Base_property_List"/></trim>);</insert>
+  <delete id="delete">DELETE FROM g_user WHERE id = #{id};</delete>
+  <update id="update">UPDATE g_user SET <trim suffixOverrides=","><include refid="Base_update_List"/></trim> WHERE id = #{id};</update>
+  <select id="selectById" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM g_user WHERE id =#{id};</select>
+  <select id="selectListByModel" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM g_user<where> <include refid="Base_select_List"/> </where> ORDER BY create_time DESC</select>
+  <select id="selectAll" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM g_user ORDER BY create_time DESC</select>
+  <select id="selectListByKeyWord" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM g_user<where> CONCAT(<include refid="Base_select_like_List"/>) LIKE concat(concat('%',#{keyWord}),'%')</where> ORDER BY create_time DESC</select>
+</mapper>

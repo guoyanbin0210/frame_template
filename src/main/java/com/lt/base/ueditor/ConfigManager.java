@@ -119,7 +119,7 @@ public final class ConfigManager {
     }
 
     private void initEnv() {
-        //高山 这里修改是为了兼容linux
+        // 这里修改是为了兼容linux
         String configContent = this.readFile("ueConfig.json");
         if (configContent != null) {
             try {
