@@ -1,9 +1,13 @@
 package com.lt.body.weixin.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
+import com.lt.body.weixin.model.TemplateDataVo;
+import com.lt.body.weixin.model.WxMssVo;
 import com.lt.body.weixin.utils.PayUtil;
+import com.lt.body.weixin.utils.WeiXinUtils;
 import com.lt.config.WechatConfig;
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.ParseException;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -18,26 +22,33 @@ import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.RestTemplate;
 
 import javax.net.ssl.SSLContext;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import javax.servlet.http.HttpServletRequest;
+import java.io.*;
 import java.math.BigDecimal;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.nio.charset.UnsupportedCharsetException;
 import java.security.KeyStore;
 import java.security.SecureRandom;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
 /**
  * * Created with GuoYanBin.
- * Description:停车场订单 serviceImpl
+ * Description:  serviceImpl
  * Date: 2020-06-22
  * Time: 11:03
  */
@@ -46,11 +57,18 @@ import java.util.Random;
 public class WeixinServiceImpl {
 
     private static Logger logger = LoggerFactory.getLogger(WeixinServiceImpl.class);
+
     private byte[] certData;
     private static final String SYMBOLS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private static final Random RANDOM = new SecureRandom();
 
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
 
+    @Autowired
+    private RestTemplate restTemplate;
 
     /**
      * 微信支付成功回调后，更改订单支付状态
@@ -126,7 +144,7 @@ public class WeixinServiceImpl {
             logger.info("----------生成签名字符串:" + prestr);
 
             //MD5运算生成签名，这里是第一次签名，用于调用统一下单接口
-            String sign = PayUtil.sign(prestr, WechatConfig.key, "utf-8").toUpperCase();
+            String sign = PayUtil.sign(prestr, WechatConfig.secret, "utf-8").toUpperCase();
             logger.info("----------mysign:" + sign);
             //拼接统一下单接口使用的xml数据，要将上一步生成的签名一起拼接进去
             String xml = "<xml version='1.0' encoding='gbk'>"
@@ -163,7 +181,7 @@ public class WeixinServiceImpl {
                 //拼接签名需要的参数
                 String stringSignTemp = "appId=" + WechatConfig.appid + "&nonceStr=" + nonce_str + "&package=prepay_id=" + prepay_id + "&signType=MD5&timeStamp=" + timeStamp;
                 //再次签名，这个签名用于小程序端调用wx.requesetPayment方法
-                String paySign = PayUtil.sign(stringSignTemp, WechatConfig.key, "utf-8").toUpperCase();
+                String paySign = PayUtil.sign(stringSignTemp, WechatConfig.secret, "utf-8").toUpperCase();
                 logger.info("=======================第二次签名：", paySign + "============ ======");
                 payMap.put("paySign", paySign);
             } else {
@@ -201,7 +219,7 @@ public class WeixinServiceImpl {
             String prestr = PayUtil.createLinkString(packageParams); // 把数组所有元素，按照“参数=参数值”的模式用“&”字符拼接成字符串
             logger.info("----------生成签名字符串:" + prestr);
             //MD5运算生成签名，这里是第一次签名，用于调用统一下单接口
-            String sign = PayUtil.sign(prestr, WechatConfig.key, "utf-8").toUpperCase();
+            String sign = PayUtil.sign(prestr, WechatConfig.secret, "utf-8").toUpperCase();
             packageParams.put("sign", sign);
             logger.info("----------mysign:" + sign);
             //拼接统一下单接口使用的xml数据，要将上一步生成的签名一起拼接进去
@@ -271,14 +289,6 @@ public class WeixinServiceImpl {
             httpclient.close();
         }
     }
-
-
-
-
-
-
-
-
 
 
 
@@ -392,5 +402,50 @@ public class WeixinServiceImpl {
             e.printStackTrace();
             return "1";
         }
+    }
+    /**
+     * @Description  消息推送
+     * @param access_token  app的token
+     * @param openid 用户openid
+     * @param formId 表单ID
+     * @param templateId 模板ID
+     * @param keywords {与模板字段一一对应}
+     * @return
+     */
+    public String pushOneUser(String access_token,String openid, String formId,String templateId,String[] keywords) {
+        //如果access_token为空则从新获取
+        if(StringUtils.isEmpty(access_token)){
+            access_token = WeiXinUtils.getAccessToken();
+        }
+        String url = WechatConfig.message_send + access_token;
+
+        //拼接推送的模版
+        WxMssVo wxMssVo = new WxMssVo();
+        wxMssVo.setTouser(openid);//用户openid
+        wxMssVo.setForm_id(formId);//formId
+        wxMssVo.setTemplate_id(templateId);//模版id
+        Map<String, TemplateDataVo> m = new HashMap<>();
+
+        //封装数据
+        if(keywords.length>0){
+            for(int i=1;i<=keywords.length;i++){
+                TemplateDataVo keyword = new TemplateDataVo();
+                keyword.setValue(keywords[i-1]);
+                m.put("keyword"+i, keyword);
+            }
+            wxMssVo.setData(m);
+        }else{
+            logger.error("keywords长度为空");
+            return null;
+        }
+
+        if(restTemplate==null){
+            restTemplate = new RestTemplate();
+        }
+
+        ResponseEntity<String> responseEntity =
+                restTemplate.postForEntity(url, wxMssVo, String.class);
+        logger.error("小程序推送结果={}", responseEntity.getBody());
+        return responseEntity.getBody();
     }
 }

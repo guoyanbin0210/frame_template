@@ -30,8 +30,6 @@ public class WeiXinPayController extends BaseController {
     @Autowired
     private WeixinServiceImpl weixinService;
 
-
-
     @RequestMapping(value = "/api_p/pay/wxPay", method = RequestMethod.POST)
     @ApiOperation("微信支付")
     public String wxPay(String openId, String orderNumber ,int price ,HttpServletRequest request) {
@@ -84,7 +82,7 @@ public class WeiXinPayController extends BaseController {
             Map<String, String> validParams = PayUtil.paraFilter(map);  //回调验签时需要去除sign和空值参数
             String prestr = PayUtil.createLinkString(validParams);
             //根据微信官网的介绍，此处不仅对回调的参数进行验签，还需要对返回的金额与系统订单的金额进行比对等
-            if (PayUtil.verify(prestr, (String) map.get("sign"), WechatConfig.key, "utf-8")) {
+            if (PayUtil.verify(prestr, (String) map.get("sign"), WechatConfig.secret, "utf-8")) {
 
                 /**此处添加自己的业务逻辑代码start**/
                 String orderNo = (String) map.get("out_trade_no");// 商户订单号
@@ -283,7 +281,7 @@ public class WeiXinPayController extends BaseController {
 
 
 
-    @RequestMapping(value = "/api_p/pay/wxPay", method = RequestMethod.POST)
+    @RequestMapping(value = "/api_p/pay/businessPay", method = RequestMethod.POST)
     @ApiOperation("商户支付-商户支付")
     public HashMap wxPayByEnterprise(HttpServletRequest request, String openid, Double money) {
         HashMap<Object, Object> hashMap = new HashMap<>();
@@ -343,7 +341,7 @@ public class WeiXinPayController extends BaseController {
         String prestr = PayUtil.createLinkString(parameters); // 把数组所有元素，按照“参数=参数值”的模式用“&”字符拼接成字符串
         logger.info("----------生成签名字符串:" + prestr);
         //MD5运算生成签名，这里是第一次签名，用于调用统一下单接口
-        String sign = PayUtil.sign(prestr, WechatConfig.key, "utf-8").toUpperCase();
+        String sign = PayUtil.sign(prestr, WechatConfig.secret, "utf-8").toUpperCase();
         parameters.put("sign", sign);
         logger.info("----------mysign:" + sign);
         //拼接统一下单接口使用的xml数据，要将上一步生成的签名一起拼接进去

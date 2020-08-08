@@ -1,23 +1,44 @@
 package com.lt.body.weixin.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.lt.base.constant.BaseConstant;
 import com.lt.base.controller.BaseController;
 import com.lt.body.business.model.UserModel;
 import com.lt.body.business.service.UserService;
 import com.lt.body.user.utils.JwtUtil;
+import com.lt.body.weixin.service.impl.WeixinServiceImpl;
+import com.lt.body.weixin.utils.WeiXinUtils;
 import com.lt.config.WechatConfig;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.protocol.HTTP;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.http.*;
+import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.net.ConnectException;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,11 +52,11 @@ public class WeiXinXCXController extends BaseController {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private WeixinServiceImpl weixinService;
 
-
-
-    @ApiOperation("微信授权登录返回openId")
-    @PostMapping("/api_p/ParkeUser/getOpenId")
+    @ApiOperation("微信小程序登录返回openId")
+    @PostMapping("/api_p/Wechat/getOpenId")
     public HashMap getOpenId(@RequestParam(name = "code") String code) {
         HashMap<String, Object> resultMap = getReturnMap(BaseConstant.Response_MENU.REQUEST_DO_SUCCESS);
         String url = "https://api.weixin.qq.com/sns/jscode2session";
@@ -59,6 +80,170 @@ public class WeiXinXCXController extends BaseController {
     }
 
 
+
+    public static void main(String[] args) {
+
+        getminiqrQrTwo();
+    }
+
+    /**
+     * 小程序二维码到本地  有效
+     */
+    public static void getminiqrQrTwo() {
+        PrintWriter printWriter = null;
+        BufferedInputStream bis = null;
+        ByteArrayOutputStream swapStream = null;
+        ByteArrayInputStream inputStream = null;
+        OutputStream outputStream = null;
+        try {
+            URL url = new URL("https://api.weixin.qq.com/cgi-bin/wxaapp/createwxaqrcode?access_token=" + WeiXinUtils.getAccessToken());
+            HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+            httpURLConnection.setRequestMethod("POST");// 提交模式
+            // 发送POST请求必须设置如下两行
+            httpURLConnection.setDoOutput(true);
+            httpURLConnection.setDoInput(true);
+            // 获取URLConnection对象对应的输出流
+            printWriter = new PrintWriter(httpURLConnection.getOutputStream());
+            // 发送请求参数
+            JSONObject paramJson = new JSONObject();
+            paramJson.put("scene", "");//参数
+            paramJson.put("path", "pages/index");
+            paramJson.put("width", 430);
+            printWriter.write(paramJson.toString());
+            // flush输出流的缓冲
+            printWriter.flush();
+            //开始获取数据
+            bis = new BufferedInputStream(httpURLConnection.getInputStream());
+            swapStream = new ByteArrayOutputStream();
+            byte[] buff = new byte[100];
+            int rc = 0;
+            while ((rc = bis.read(buff, 0, 100)) > 0) {
+                swapStream.write(buff, 0, rc);
+            }
+            inputStream = new ByteArrayInputStream(swapStream.toByteArray());
+            BufferedImage image = ImageIO.read(inputStream);
+            BufferedImage subImage = image.getSubimage(0, 0, image.getWidth(), (int) (image.getHeight() * 0.85));
+            BufferedImage inputbig = new BufferedImage(256, 256, BufferedImage.TYPE_INT_BGR);
+            Graphics2D g = (Graphics2D) inputbig.getGraphics();
+            g.drawImage(subImage, 0, 0, 256, 256, null);
+            g.dispose();
+            inputbig.flush();
+            File file = new File("D:\\1.png");
+            ImageIO.write(inputbig, "jpg", file);
+        /*  outputStream = new FileOutputStream(file);
+            int len = 0;
+            byte[] buf = new byte[1024];
+            while ((len = inputStream.read(buf, 0, 1024)) != -1) {
+                outputStream.write(buf, 0, len);
+            }
+            outputStream.flush();*/
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            if (printWriter != null) {
+                try {
+                    printWriter.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            if (bis != null) {
+                try {
+                    bis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (swapStream != null) {
+                try {
+                    swapStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (inputStream != null) {
+                try {
+                    inputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (outputStream != null) {
+                try {
+                    outputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+
+    /**
+     * 小程序二维码到本地 再到前端  无效
+     */
+    public static Map getminiqrQr(String sceneStr, String accessToken) {
+        RestTemplate rest = new RestTemplate();
+        InputStream inputStream = null;
+        OutputStream outputStream = null;
+        try {
+            String url = "https://api.weixin.qq.com/wxa/getwxacodeunlimit?access_token=" + accessToken;
+            Map<String, Object> param = new HashMap<>();
+            param.put("scene", sceneStr);
+            param.put("page", "pages/index/index");
+            param.put("width", 430);
+            param.put("auto_color", false);
+            MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
+            HttpEntity requestEntity = new HttpEntity(param, headers);
+            ResponseEntity<byte[]> entity = rest.exchange(url, HttpMethod.POST, requestEntity, byte[].class,
+                    new Object[0]);
+            System.out.println("调用小程序生成微信永久小程序码URL接口返回结果:" + entity.getBody());
+            byte[] result = entity.getBody();
+            inputStream = new ByteArrayInputStream(result);
+
+            File file = new File("D:/3.png");
+            if (!file.exists()) {
+                try {
+                    file.createNewFile();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            outputStream = new FileOutputStream(file);
+            int len = 0;
+            byte[] in_b  = null;
+            byte[] buf = new byte[1024];
+            while ((len = inputStream.read(buf, 0, 1024)) != -1) {
+                outputStream.write(buf, 0, len);
+            }
+            outputStream.flush();
+        } catch (Exception e) {
+            System.out.println("调用异常");
+        } finally {
+            if (inputStream != null) {
+                try {
+                    inputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (outputStream != null) {
+                try {
+                    outputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return null;
+    }
+
+
+
+
+
+
+
     //发送GET请求:
     public static String  sendGet (String url,String param) {
         String result ="";
@@ -67,7 +252,6 @@ public class WeiXinXCXController extends BaseController {
             String urlNameString = url +"?" +param;
             System.out.println("发送的链接请求:"+urlNameString);
             URL reaurl = new URL(urlNameString);
-
             URLConnection connection  = reaurl.openConnection();
             //设置通用
             connection.setRequestProperty("accept", "*/*");
@@ -76,11 +260,9 @@ public class WeiXinXCXController extends BaseController {
             connection.setRequestProperty("Authorization", "5e79a44e0f459");
             //建立实际的连接
             connection.connect();
-
             Map<String, List<String>> map = connection.getHeaderFields();
             //定义 BufferedReader输入流来读取URL的响应
-            in = new BufferedReader(new InputStreamReader(
-                    connection.getInputStream()));
+            in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             String line;
             while ((line = in.readLine()) != null) {
                 result += line;
@@ -101,5 +283,30 @@ public class WeiXinXCXController extends BaseController {
         }
         return result;
     }
+
+
+
+
+
+    @ApiOperation("微信小程序推送测试")
+    @PostMapping("/api_p/Wechat/messageSend")
+    public void messageSend( ) {
+
+       String token =  WeiXinUtils.getAccessToken();
+
+        String[] keywords = new String[10];
+        keywords[0] = "合肥";
+        keywords[1] = "滁州";
+        keywords[2] = "蚌埠";
+        keywords[3] = "芜湖";
+        keywords[4] = "安庆";
+        keywords[5] = "马鞍山";
+        keywords[6] = "亳州";
+        keywords[7] = "淮南";
+
+        weixinService.pushOneUser(token,"","","",keywords);
+       //   access_token,  openid,   formId,  templateId,String[] keywords
+    }
+
 
 }

@@ -1,12 +1,5 @@
 package com.lt.body.weixin.controller;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -136,7 +129,7 @@ public class WeiXinH5Controller {
 				access_token = WeiXinUtils.getAccessToken();
 				access_tokenPOJO.setCreateTime(date);
 				access_tokenPOJO.setAccessToken(access_token);
-				access_tokenPOJO.setAppId(WeiXinUtils.appid);
+				access_tokenPOJO.setAppId(WechatConfig.appid);
 				tokenService.update(access_tokenPOJO);
 			}
 		} else {
@@ -145,7 +138,7 @@ public class WeiXinH5Controller {
 			access_token = WeiXinUtils.getAccessToken();
 			access_tokenPOJO.setAccessToken(access_token);
 			access_tokenPOJO.setCreateTime(new Date());
-			access_tokenPOJO.setAppId(WeiXinUtils.appid);
+			access_tokenPOJO.setAppId(WechatConfig.appid);
 			tokenService.insert(access_tokenPOJO);
 		}
 		return access_token;
@@ -226,7 +219,7 @@ public class WeiXinH5Controller {
 		map.put("sgture", wx.getSignature().trim());//签名
 		map.put("timestamp", wx.getTimestamp().trim());//时间戳
 		map.put("noncestr",  wx.getNoncestr().trim());//随即串
-		map.put("appid",WeiXinUtils.appid);//你的公众号APPID
+		map.put("appid",WechatConfig.appid);//你的公众号APPID
 		return map;
 	}
 
@@ -262,7 +255,7 @@ public class WeiXinH5Controller {
 			ticket = WeiXinUtils.getTicket(access_tokenPOJO.getAccessToken());
 			access_tokenPOJO.setTicket(ticket);
 			access_tokenPOJO.setTicketCreateTime(date);
-			access_tokenPOJO.setAppId(WeiXinUtils.appid);
+			access_tokenPOJO.setAppId(WechatConfig.appid);
 			tokenService.updateTicket(access_tokenPOJO);
 		}else{
 			// 存入数据库的时间
@@ -277,7 +270,7 @@ public class WeiXinH5Controller {
 				ticket = WeiXinUtils.getTicket(access_tokenPOJO.getAccessToken());
 				access_tokenPOJO.setTicketCreateTime(date);
 				access_tokenPOJO.setTicket(ticket);
-				access_tokenPOJO.setAppId(WeiXinUtils.appid);
+				access_tokenPOJO.setAppId(WechatConfig.appid);
 				tokenService.updateTicket(access_tokenPOJO);
 			}
 		}

@@ -1,6 +1,8 @@
 package com.lt.body.weixin.model;
 
-
+/**
+ * 微信H5再用  可以删了换别的
+ */
 public class UserEntity {
 	private String id;
 	private String userId;

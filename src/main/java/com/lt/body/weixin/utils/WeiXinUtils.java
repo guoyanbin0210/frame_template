@@ -1,5 +1,6 @@
 package com.lt.body.weixin.utils;
 
+import com.lt.config.WechatConfig;
 import net.sf.json.JSONObject;
 
 import java.io.*;
@@ -11,27 +12,12 @@ import java.security.MessageDigest;
 
 public class WeiXinUtils {
 
-	public static final String appid="wx0054d5c3797d920e";
-	//秘钥shexianz
-	public static final String secret="f6104cc307f69d6625f815ecae4ce956";
-    //授权登录获取用户信息
-    public static final String grant_type="authorization_code";
-    //获取access_token
-    public static final String grant_type_access_token="client_credential";
-    //商户号
-    public static final String MchId="1483571332";
-
-
-    
-    
-
     /**
      * 从微信端获取access_token值
-
      * @return
      */
     public static String getAccessToken() {
-        String url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential"   + "&appid=" + appid + "&secret=" + secret;
+        String url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential" + "&appid=" + WechatConfig.appid + "&secret=" + WechatConfig.secret;
         String access_token = null;
         try {
             URL getUrl = new URL(url);
@@ -51,7 +37,6 @@ public class WeiXinUtils {
             JSONObject json = JSONObject.fromObject(message);
             //获取access_token
             if (json.containsKey("access_token")) {
-                // 赋值
                 access_token = json.getString("access_token");
             }
             if (access_token != null && !access_token.equals("")) {
@@ -105,6 +90,7 @@ public class WeiXinUtils {
   
     /**
      * 获取openId
+     * 微信H5使用
      */
     public static String getOpenId(String code, String appid, String secret, String grant_type) {
         BufferedReader in = null;
