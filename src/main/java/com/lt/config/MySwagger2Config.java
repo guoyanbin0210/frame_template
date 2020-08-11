@@ -1,6 +1,7 @@
 package com.lt.config;
 
 import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -26,6 +27,9 @@ import java.util.List;
 @EnableSwaggerBootstrapUI
 public class MySwagger2Config {
 
+    @Value("$(spring.profiles.active)")
+    private String active;
+
     @Bean
     public Docket buildDocket() {
         List<Parameter> parameters = new ArrayList<Parameter>();
@@ -39,6 +43,7 @@ public class MySwagger2Config {
         parameters.add(parameterBuilder.build());
 
         return new Docket(DocumentationType.SWAGGER_2)
+                .enable(active.equals("dev"))
                 .apiInfo(apiInfo())
                 .globalOperationParameters(parameters)
                 .select()

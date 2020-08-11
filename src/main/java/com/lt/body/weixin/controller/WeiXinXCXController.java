@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.lt.base.constant.BaseConstant;
 import com.lt.base.controller.BaseController;
+import com.lt.base.util.HttpUtils;
 import com.lt.body.business.model.UserModel;
 import com.lt.body.business.service.UserService;
 import com.lt.body.user.utils.JwtUtil;
@@ -62,7 +63,7 @@ public class WeiXinXCXController extends BaseController {
         String url = "https://api.weixin.qq.com/sns/jscode2session";
         String codeParams = "appid="+WechatConfig.appid +"&secret="+WechatConfig.secret+"&js_code=" + code +
                 "&grant_type="+WechatConfig.grant_type;
-        JSONObject jsonObject = JSONObject.parseObject(sendGet(url,codeParams));
+        JSONObject jsonObject = JSONObject.parseObject(HttpUtils.sendGet(url,codeParams));
         String openId = jsonObject.getString("openid");
         if (openId == null){
             return getReturnMap(BaseConstant.Response_MENU.REQUEST_OPENID_NOTFAILED);
@@ -243,69 +244,15 @@ public class WeiXinXCXController extends BaseController {
 
 
 
-
-    //发送GET请求:
-    public static String  sendGet (String url,String param) {
-        String result ="";
-        BufferedReader in  =null;
-        try {
-            String urlNameString = url +"?" +param;
-            System.out.println("发送的链接请求:"+urlNameString);
-            URL reaurl = new URL(urlNameString);
-            URLConnection connection  = reaurl.openConnection();
-            //设置通用
-            connection.setRequestProperty("accept", "*/*");
-            connection.setRequestProperty("connection", "keep-Alive");
-            connection.setRequestProperty("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1)");
-            connection.setRequestProperty("Authorization", "5e79a44e0f459");
-            //建立实际的连接
-            connection.connect();
-            Map<String, List<String>> map = connection.getHeaderFields();
-            //定义 BufferedReader输入流来读取URL的响应
-            in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            String line;
-            while ((line = in.readLine()) != null) {
-                result += line;
-            }
-        } catch (Exception e) {
-            System.out.println("发送GET请求出现异常！" + e);
-            e.printStackTrace();
-        }
-        // 使用finally块来关闭输入流
-        finally {
-            try {
-                if (in != null) {
-                    in.close();
-                }
-            } catch (Exception e2) {
-                e2.printStackTrace();
-            }
-        }
-        return result;
-    }
-
-
-
-
-
     @ApiOperation("微信小程序推送测试")
     @PostMapping("/api_p/Wechat/messageSend")
     public void messageSend( ) {
 
-       String token =  WeiXinUtils.getAccessToken();
 
-        String[] keywords = new String[10];
-        keywords[0] = "合肥";
-        keywords[1] = "滁州";
-        keywords[2] = "蚌埠";
-        keywords[3] = "芜湖";
-        keywords[4] = "安庆";
-        keywords[5] = "马鞍山";
-        keywords[6] = "亳州";
-        keywords[7] = "淮南";
+        String meessage = weixinService.pushOneUser("", "");
 
-        weixinService.pushOneUser(token,"","","",keywords);
-       //   access_token,  openid,   formId,  templateId,String[] keywords
+
+
     }
 
 

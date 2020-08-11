@@ -1,13 +1,11 @@
 package com.lt.body.weixin.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
-import com.lt.body.weixin.model.TemplateDataVo;
+import com.lt.body.weixin.model.TemplateData;
 import com.lt.body.weixin.model.WxMssVo;
 import com.lt.body.weixin.utils.PayUtil;
-import com.lt.body.weixin.utils.WeiXinUtils;
 import com.lt.config.WechatConfig;
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.ParseException;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -23,7 +21,6 @@ import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
@@ -32,16 +29,11 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
 import javax.net.ssl.SSLContext;
-import javax.servlet.http.HttpServletRequest;
 import java.io.*;
 import java.math.BigDecimal;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.nio.charset.UnsupportedCharsetException;
 import java.security.KeyStore;
 import java.security.SecureRandom;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -62,13 +54,27 @@ public class WeixinServiceImpl {
     private static final String SYMBOLS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private static final Random RANDOM = new SecureRandom();
 
-    @Bean
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
-
     @Autowired
     private RestTemplate restTemplate;
+
+
+
+
+    /**
+     * 从微信端获取access_token值
+     * @return
+     */
+    public String getAccess_token() {
+        String access_token = null;
+        String url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential" + "&appid=" + WechatConfig.appid + "&secret=" + WechatConfig.secret;
+        String jsonReturn = restTemplate.getForObject(url, String.class);
+        net.sf.json.JSONObject json = net.sf.json.JSONObject.fromObject(jsonReturn);
+        //获取access_token
+        if (json.containsKey("access_token")) {
+            access_token = json.getString("access_token");
+        }
+        return access_token;
+    }
 
     /**
      * 微信支付成功回调后，更改订单支付状态
@@ -301,151 +307,54 @@ public class WeixinServiceImpl {
         return new String(nonceChars);
     }
 
-    /**
-     * 发送post请求
-     * @param url  路径
-     * @param jsonObject  参数(json类型)
-     * @param encoding 编码格式
-     * @return
-     * @throws ParseException
-     * @throws IOException
-     */
-    public static String send(String url, String jsonObject,String encoding) throws ParseException, IOException{
-        String body = "";
-        //创建httpclient对象
-        CloseableHttpClient client = HttpClients.createDefault();
-        //创建post方式请求对象
-        HttpPost httpPost = new HttpPost(url);
-        //装填参数
-        StringEntity s = new StringEntity(jsonObject, "utf-8");
-        s.setContentEncoding(new BasicHeader(HTTP.CONTENT_TYPE,
-                "application/json"));
-        //设置参数到请求对象中
-        httpPost.setEntity(s);
-        System.out.println("请求地址："+url);
-//        System.out.println("请求参数："+nvps.toString());
 
-        //设置header信息
-        //指定报文头【Content-type】、【User-Agent】
-//        httpPost.setHeader("Content-type", "application/x-www-form-urlencoded");
-        httpPost.setHeader("Content-type", "application/json");
-        httpPost.setHeader("User-Agent", "Mozilla/4.0 (compatible; MSIE 5.0; Windows NT; DigExt)");
-
-        //执行请求操作，并拿到结果（同步阻塞）
-        CloseableHttpResponse response = client.execute(httpPost);
-        //获取结果实体
-        HttpEntity entity = response.getEntity();
-        if (entity != null) {
-            //按指定编码转换结果实体为String类型
-            body = EntityUtils.toString(entity, encoding);
-            System.out.println(body);
-        }
-        EntityUtils.consume(entity);
-        //释放链接
-        response.close();
-        return body;
-    }
-
-
-    /**
-     * 发送post请求
-     * @param url  路径
-     * @param jsonObject  参数(json类型)
-     * @param encoding 编码格式
-     * @return
-     * @throws ParseException
-     * @throws IOException
-     */
-    public static String sendPost(String url, JSONObject jsonObject,String encoding) throws ParseException, IOException{
-        try {
-            String body = "";
-
-            //创建httpclient对象
-            CloseableHttpClient client = HttpClients.createDefault();
-            //创建post方式请求对象
-            HttpPost httpPost = new HttpPost(url);
-
-            //装填参数
-            StringEntity s = new StringEntity(jsonObject.toString(), "utf-8");
-            s.setContentEncoding(new BasicHeader(HTTP.CONTENT_TYPE,
-                    "application/json"));
-            //设置参数到请求对象中
-            httpPost.setEntity(s);
-            System.out.println("请求地址："+url);
-//        System.out.println("请求参数："+nvps.toString());
-
-            //设置header信息
-            //指定报文头【Content-type】、【User-Agent】
-//        httpPost.setHeader("Content-type", "application/x-www-form-urlencoded");
-            httpPost.setHeader("Content-type", "application/json");
-            httpPost.setHeader("User-Agent", "Mozilla/4.0 (compatible; MSIE 5.0; Windows NT; DigExt)");
-
-            //执行请求操作，并拿到结果（同步阻塞）
-            CloseableHttpResponse response = client.execute(httpPost);
-            //获取结果实体
-            HttpEntity entity = response.getEntity();
-            if (entity != null) {
-                //按指定编码转换结果实体为String类型
-                body = EntityUtils.toString(entity, encoding);
-            }
-            EntityUtils.consume(entity);
-            //释放链接
-            response.close();
-            return body;
-        } catch (UnsupportedCharsetException e) {
-            e.printStackTrace();
-            return "1";
-        } catch (IOException e) {
-            e.printStackTrace();
-            return "1";
-        } catch (ParseException e) {
-            e.printStackTrace();
-            return "1";
-        }
-    }
     /**
      * @Description  消息推送
-     * @param access_token  app的token
-     * @param openid 用户openid
-     * @param formId 表单ID
-     * @param templateId 模板ID
-     * @param keywords {与模板字段一一对应}
-     * @return
      */
-    public String pushOneUser(String access_token,String openid, String formId,String templateId,String[] keywords) {
-        //如果access_token为空则从新获取
-        if(StringUtils.isEmpty(access_token)){
-            access_token = WeiXinUtils.getAccessToken();
-        }
+    public String pushOneUser(String openid, String formId) {
+        String access_token =  getAccess_token();
+        //36_fKNozZWt-6ZM4nMQnq7mqZT8orhUzkmYoy45-_EEjEC_pr1eIEVa9sOw9cT-kvQjnsxt5KJuBDGTat0rup6wY_tzo2ZgTP_HhDovQTVImTwBL8RVqRKM5iT9mZo0nNVfobctp2wcdvdAbMZ4AOAaADAUIU
+
         String url = WechatConfig.message_send + access_token;
 
         //拼接推送的模版
         WxMssVo wxMssVo = new WxMssVo();
-        wxMssVo.setTouser(openid);//用户openid
-        wxMssVo.setForm_id(formId);//formId
-        wxMssVo.setTemplate_id(templateId);//模版id
-        Map<String, TemplateDataVo> m = new HashMap<>();
+        wxMssVo.setTouser("of-hX4zMymhRMtatd1nn4ELQ349g");//用户openid
+        wxMssVo.setTemplate_id("DY5t8KCEgnjO7KrlAgJvDatewtLYJnm6u9f-luvMS9M");//模版id
+        wxMssVo.setForm_id("1530046726009");//formid
 
-        //封装数据
-        if(keywords.length>0){
-            for(int i=1;i<=keywords.length;i++){
-                TemplateDataVo keyword = new TemplateDataVo();
-                keyword.setValue(keywords[i-1]);
-                m.put("keyword"+i, keyword);
-            }
-            wxMssVo.setData(m);
-        }else{
-            logger.error("keywords长度为空");
-            return null;
-        }
+        Map<String, TemplateData> m = new HashMap<>(5);
 
-        if(restTemplate==null){
-            restTemplate = new RestTemplate();
-        }
+        //keyword1：订单类型，keyword2：下单金额，keyword3：配送地址，keyword4：取件地址，keyword5备注
+        TemplateData keyword1 = new TemplateData();
+        keyword1.setValue("新下单待抢单");
+        m.put("keyword1", keyword1);
 
-        ResponseEntity<String> responseEntity =
-                restTemplate.postForEntity(url, wxMssVo, String.class);
+        TemplateData keyword2 = new TemplateData();
+        keyword2.setValue("这里填下单金额的值");
+        m.put("keyword2", keyword2);
+        wxMssVo.setData(m);
+
+        TemplateData keyword3 = new TemplateData();
+        keyword3.setValue("这里填配送地址");
+        m.put("keyword3", keyword3);
+        wxMssVo.setData(m);
+
+        TemplateData keyword4 = new TemplateData();
+        keyword4.setValue("这里填取件地址");
+        m.put("keyword4", keyword4);
+        wxMssVo.setData(m);
+
+        TemplateData keyword5 = new TemplateData();
+        keyword5.setValue("这里填备注");
+        m.put("keyword5", keyword5);
+        wxMssVo.setData(m);
+
+        ResponseEntity<String> responseEntity = restTemplate.postForEntity(url, wxMssVo, String.class);
         logger.error("小程序推送结果={}", responseEntity.getBody());
+        System.out.println("小程序推送结果={}"+ responseEntity.getBody());
         return responseEntity.getBody();
+
+
     }
 }
