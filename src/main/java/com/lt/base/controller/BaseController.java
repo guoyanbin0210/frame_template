@@ -32,7 +32,7 @@ public class BaseController {
      * @return 默认返回操作失败
      */
     protected HashMap<String, Object> getReturnMap() {
-        return getReturnMap(BaseConstant.Response_MENU.REQUEST_DO_FAILED);
+        return getReturnMap(BaseConstant.Response_MENU.REQUEST_DO_SUCCESS);
     }
     /**
      * @param returnMap 默认返回操作成功

@@ -12,42 +12,6 @@ import java.security.MessageDigest;
 
 public class WeiXinUtils {
 
-    /**
-     * 从微信端获取access_token值
-     * @return
-     */
-    public static String getAccessToken() {
-        String url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential" + "&appid=" + WechatConfig.appid + "&secret=" + WechatConfig.secret;
-        String access_token = null;
-        try {
-            URL getUrl = new URL(url);
-            HttpURLConnection http = (HttpURLConnection) getUrl.openConnection();
-            http.setRequestMethod("GET");
-            http.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-            http.setDoOutput(true);
-            http.setDoInput(true);
-            http.connect();
-            InputStream is = http.getInputStream();
-            int size = is.available();
-            byte[] b = new byte[size];
-            is.read(b);
-            String message = new String(b, "UTF-8");
-            System.out.println("秘钥："+message);
-            //返回json字符串
-            JSONObject json = JSONObject.fromObject(message);
-            //获取access_token
-            if (json.containsKey("access_token")) {
-                access_token = json.getString("access_token");
-            }
-            if (access_token != null && !access_token.equals("")) {
-            }
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return access_token;
-    }
 
     
     /**
@@ -88,50 +52,6 @@ public class WeiXinUtils {
     }
 
   
-    /**
-     * 获取openId
-     * 微信H5使用
-     */
-    public static String getOpenId(String code, String appid, String secret, String grant_type) {
-        BufferedReader in = null;
-        String result = "";
-        try {
-            String url = "https://api.weixin.qq.com/sns/oauth2/access_token" + "?" + "appid=" + appid + "&secret="
-                    + secret + "&code=" + code + "&grant_type=" + grant_type;
-            URL realUrl = new URL(url);
-            // 打开和URL之间的连接
-            URLConnection connection = realUrl.openConnection();
-            // 设置通用的请求属性
-            connection.setRequestProperty("accept", "*/*");
-            connection.setRequestProperty("connection", "Keep-Alive");
-            connection.setRequestProperty("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1)");
-            // 建立实际的连接
-            connection.connect();
-            // 定义 BufferedReader输入流来读取URL的响应
-            in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            String line;
-            while ((line = in.readLine()) != null) {
-                // 请求返回的json字符串
-                result += line;
-            }
-        } catch (Exception e) {
-            System.out.println("发送GET请求出现异常！" + e);
-            e.printStackTrace();
-        }
-        // 使用finally块来关闭输入流
-        finally {
-            try {
-                if (in != null) {
-                    in.close();
-                }
-            } catch (Exception e2) {
-                e2.printStackTrace();
-            }
-        }
-
-        return result;
-    }
-
 
     private static final char[] HEX_DIGITS = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 

@@ -58,8 +58,6 @@ public class WeixinServiceImpl {
     private RestTemplate restTemplate;
 
 
-
-
     /**
      * 从微信端获取access_token值
      * @return
@@ -75,6 +73,17 @@ public class WeixinServiceImpl {
         }
         return access_token;
     }
+    //微信H5获取openId
+    public String getOpenId_H5(String code) {
+        String access_token = null;
+        String url = "https://api.weixin.qq.com/sns/oauth2/access_token" + "?" + "appid=" + WechatConfig.appid + "&secret="
+                + WechatConfig.secret + "&code=" + code + "&grant_type=" + WechatConfig.grant_type;
+        String jsonReturn = restTemplate.getForObject(url, String.class);
+        net.sf.json.JSONObject json = net.sf.json.JSONObject.fromObject(jsonReturn);
+
+        return json.toString();
+    }
+
 
     /**
      * 微信支付成功回调后，更改订单支付状态
@@ -127,7 +136,7 @@ public class WeixinServiceImpl {
             //生成的随机字符串
             String nonce_str = generateNonceStr();
             //商品名称
-            String body = "密云社区通";
+            String body = "sssssss";
             //int price = 100;//weixin.getAdjustPrice().multiply(￥).intValue();
 
             //组装参数，用户生成统一下单接口的签名

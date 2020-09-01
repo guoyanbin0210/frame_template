@@ -11,7 +11,7 @@ import static com.lt.ainit.JdbcColumnModelType.*;
 
 public class JdbcDone {
     private String PACKAGE_NAME = "business";//项目包名
-    private String TABLE_NAME =    "g_user";//表名
+    private String TABLE_NAME =  "g_user";//表名
     private String ANNOTATION_NAME = "信息";//表名对应中文
     private String MENU_PARENT_NAME = "信息";//父级菜单名称
     JdbcUtils jdbcUtils = new JdbcUtils(PACKAGE_NAME, TABLE_NAME, ANNOTATION_NAME, MENU_PARENT_NAME);

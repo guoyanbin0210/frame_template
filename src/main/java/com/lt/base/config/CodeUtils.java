@@ -15,7 +15,8 @@ import java.util.HashMap;
 
 public class CodeUtils {
     //发送短信验证码模板
-    public static String sendMsg(String phoneNumber){
+    //发送短信验证码模板
+    public static String sendMsg(String phoneNumber,String signName,String msgMode){
         HashMap<String, Object> map = new HashMap<>();
         map.put("status", "0");
         map.put("message", "获取验证码失败");
@@ -24,11 +25,11 @@ public class CodeUtils {
         System.setProperty("sun.net .client.defaultReadTimeout", "10000");
         //初始化ascClient需要的几个参数
         final String product = "Dysmsapi";//短信API产品名称（短信产品名固定，无需修改）
-        final String product1 = "清风巨各庄app";
+        final String product1 = "素质答题抽奖";
         final String domain = "dysmsapi.aliyuncs.com";//短信API产品域名（接口地址固定，无需修改）
         //替换成你的AK
-        final String accessKeyId = "LTAIHsd1fjfiFPxm";//你的accessKeyId,参考本文档步骤2
-        final String accessKeySecret = "IrpukqFVDqxBHbfl5lAAMcL9K5Tu6D";//你的accessKeySecret，参考本文档步骤2
+        final String accessKeyId = "LTAI4Fjit3NB9WDBMCj3QMMB";//你的accessKeyId,参考本文档步骤2
+        final String accessKeySecret = "YIufwODA11gdRquvMd5oWh1OjH5T8X";//你的accessKeySecret，参考本文档步骤2
         //初始化ascClient,暂时不支持多region（请勿修改）
         IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", accessKeyId,
                 accessKeySecret);
@@ -50,12 +51,10 @@ public class CodeUtils {
         //必填:待发送手机号。支持以逗号分隔的形式进行批量调用，批量上限为1000个手机号码,批量调用相对于单条调用及时性稍有延迟,验证码类型的短信推荐使用单条调用的方式
         request.setPhoneNumbers(phoneNumber);
         //必填:短信签名-可在短信控制台中找到
-        request.setSignName("身份验证");
+        request.setSignName(signName);
         // request.setSignName("金融科平台手机注册");
         //必填:短信模板-可在短信控制台中找到
-        request.setTemplateCode("SMS_68265062");
-
-
+        request.setTemplateCode(msgMode);
         //可选:模板中的变量替换JSON串,如模板内容为"亲爱的${name},您的验证码为${code}"时,此处的值为
         //友情提示:如果JSON中需要带换行符,请参照标准的JSON协议对换行符的要求,比如短信内容中包含\r\n的情况在JSON中需要表示成\\r\\n,否则会导致JSON在服务端解析失败
         //System.out.println((int)((Math.random()*9+1)*10000)
@@ -63,11 +62,7 @@ public class CodeUtils {
 
         //String checkCode = getRandom(5);
         // request.setTemplateParam("{\"product\":\"您的验证码为:\", \"code\":\"" + checkCode + "\"}");
-        //request.setTemplateParam("{\"\"尊敬的用户，您的验证码为\", \"code\":\"请勿告诉他人，5分钟内有效！" + checkCode + "\"}");
-        // request.setTemplateParam("{ \"code\":\"" +"尊敬的用户，您的验证码为:"+ checkCode +"您正在登录心连心热力库房管理系统，若非本人操作，请勿泄露"+ "\"}");
-        // request.setTemplateParam("{ \"code\":\"" +"尊敬的用户，您的验证码为${\"+checkCode +\"}您正在登录心连心热力库房管理系统，若非本人操作，请勿泄露"+ "\"}");
         request.setTemplateParam("{ \"code\":\"" + checkCode + "\",\"product\":\"" + product1 + "\"}");
-        //request.setTemplateParam("{ \"product\":\"" + product1 + "\"}");
         // request.setTemplateParam("{验证码\"code\":${code}，您正在登录${product}，若非本人操作，请勿泄露}");
 
         request.setOutId(phoneNumber);
@@ -84,14 +79,12 @@ public class CodeUtils {
                 e.printStackTrace();
             }
         } catch (ClientException e) {
-
             e.printStackTrace();
         }
         String code = sendSmsResponse.getCode() ;
         System.out.println("**************************"+code);
         if (sendSmsResponse.getCode() != null && sendSmsResponse.getCode().equals("OK")) {
             map.put("sendSmsResponse", sendSmsResponse);
-
             return checkCode;
         } else {
             map.put("sendSmsResponse", sendSmsResponse);
@@ -100,7 +93,6 @@ public class CodeUtils {
         }
         //return null;
     }
-
 
 
     //审核通过模板

@@ -13,7 +13,7 @@ public class newFixedThreadPoolDemo {
 
                 @Override
                 public void run() {
-                    Thread.currentThread().setName(Integer.toString(temp)+"__name");
+                    //Thread.currentThread().setName(Integer.toString(temp)+"__name");
                     System.out.println("ThreadName:"+Thread.currentThread().getName()+" i:"+temp);
                 }
             });

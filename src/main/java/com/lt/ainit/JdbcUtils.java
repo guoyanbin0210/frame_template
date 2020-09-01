@@ -1321,7 +1321,7 @@ public class JdbcUtils {
         //根路径
         CANONICAL_PATH = System.getProperty("user.dir");
 //        TABLE_SCHEMA = CANONICAL_PATH.substring(CANONICAL_PATH.lastIndexOf("\\") + 1).toLowerCase();
-        TABLE_SCHEMA = "g_community";
+        TABLE_SCHEMA = "frame_template";
         //java 文件
         TABLE_NAME_JAVA = getTableNameForJava(TABLE_NAME);
         MODEL_NAME_JAVA = TABLE_NAME_JAVA + "Model";
@@ -1355,7 +1355,7 @@ public class JdbcUtils {
         TABLE_NAME_URL = TABLE_NAME_JAVA;
         BASE_PACKAGE_NAME = "com.lt.body." + PACKAGE_NAME;
         PACKAGE_DAO_PATH = BASE_PACKAGE_NAME + ".dao";
-        JAVA_PATH = CANONICAL_PATH + "/src/main/java/com/community/body/" + PACKAGE_NAME;
+        JAVA_PATH = CANONICAL_PATH + "/src/main/java/com/lt/body/" + PACKAGE_NAME;
         MODEL_PATH = JAVA_PATH + "/model";
         DAO_PATH = JAVA_PATH + "/dao";
         CONTROLLER_PATH = JAVA_PATH + "/controller";

@@ -35,6 +35,9 @@ public class UserController extends BaseController {
     //---------------------------信息-----------------------start
     @Resource
     private UserService userService;
+
+
+
     @ControllerMethodLog(remark = "信息-插入")
     @PostMapping("/business/User/insert")
     public HashMap insert_User(HttpServletRequest request) {

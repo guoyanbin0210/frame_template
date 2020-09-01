@@ -11,6 +11,7 @@ import com.lt.base.sms.SMSUtils;
 import com.lt.base.util.BaseUtils;
 import com.lt.base.util.BeanRefUtil;
 import com.lt.base.util.secretUtils;
+import com.lt.body.user.utils.JwtUtil;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.ExcessiveAttemptsException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
@@ -60,7 +61,7 @@ public class BaseApiController extends BaseController {
 //--------------------------RBAC-------------------------------
 
 
-    @ControllerMethodLog(remark = "RBAC-插入")
+    @ControllerMethodLog(remark = "RBAC-插入",openType="0")
     @PostMapping("/base/RBAC/insert.do")
     public HashMap insert_RBACLoginRole(@RequestParam("login_id") String login_id, @RequestParam("role_id") String role_id) {
         SysLoginRoleModel sysLoginRoleModel = new SysLoginRoleModel();
@@ -225,26 +226,15 @@ public class BaseApiController extends BaseController {
 
 
     @ControllerMethodLog(remark = "登陆")
-    @PostMapping("/base/doLogin.do")
+    @PostMapping("/login")
     public HashMap doLogin(@RequestParam("userName") String userName, @RequestParam("password") String password) {
-
-        //解密
-/*        byte[] name = secretUtils.decode(userName);
-        byte[] pass = secretUtils.decode(password);
-        String realName;
-        String realPass;*/
         HashMap<String, Object> returnMap = getReturnMap();
         try {
-        /*    realName = new String(name,"UTF-8");
-            realPass = new String(pass,"UTF-8");
-            realName=java.net.URLDecoder.decode(realName, "UTF-8");
-            realPass=java.net.URLDecoder.decode(realPass, "UTF-8");*/
-
-             MyUsernamePasswordToken token = new MyUsernamePasswordToken(userName, password);
-             Subject subject = SecurityUtils.getSubject();
-
+            MyUsernamePasswordToken token = new MyUsernamePasswordToken(userName, password);
+            Subject subject = SecurityUtils.getSubject();
             subject.login(token);
             Serializable id = subject.getSession().getId();
+            String tokens = JwtUtil.createTokenWithClaim(userName);
             returnMap.put("token", id);
             SysLoginModel currLoginModel = BaseUtils.getCurrLoginModel();
             if (currLoginModel != null) {
@@ -273,7 +263,6 @@ public class BaseApiController extends BaseController {
                 returnMap.put("login", currLoginModel);
                 getReturnMapSuccess(returnMap);
             }
-
 
         } catch (IncorrectCredentialsException ice) {
             return getReturnMap(BaseConstant.Response_MENU.REQUEST_PASSWORD_FAILED);

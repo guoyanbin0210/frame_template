@@ -5,11 +5,13 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
+import com.lt.base.controller.BaseController;
 import com.lt.body.weixin.model.Access_tokenEntity;
 import com.lt.body.weixin.model.UserEntity;
 import com.lt.body.weixin.model.WeiXinEntity;
 import com.lt.body.weixin.service.impl.Access_tokenServiceImp;
 import com.lt.body.weixin.service.impl.WeixinParmsService;
+import com.lt.body.weixin.service.impl.WeixinServiceImpl;
 import com.lt.body.weixin.utils.Sign;
 import com.lt.body.weixin.utils.WeiXinUtils;
 import com.lt.config.WechatConfig;
@@ -24,84 +26,54 @@ import net.sf.json.JSONObject;
  * 微信H5页面专用
  */
 @Controller
-@RequestMapping(value = "h5")
-public class WeiXinH5Controller {
+@RequestMapping(value = "H5")
+public class WeiXinH5Controller extends BaseController {
 
 
 	@Autowired
 	private Access_tokenServiceImp tokenService;
 	@Autowired
-	private WeixinParmsService weixinParmsService;
+	private WeixinServiceImpl weixinService;
 
-	@RequestMapping(value = "/weixin")
+
+	@RequestMapping(value = "/getOpenId")
 	@ResponseBody
 	public HashMap sendGet(String code, HttpServletRequest request) {
-		HashMap<Object, Object> hashMap = new HashMap<>();
-		String appid = WechatConfig.appid;
-		String secret = WechatConfig.secret;
-		String grant_type = WechatConfig.grant_type;
-		String grant_type_access_token = WechatConfig.grant_type_access_token;
-		String result = null;
-		// 此access_token用来获取用户信息
-		String access_token = "";
-		// 微信唯一标识openid
-		String openid = null;
-		// 微信头像
-		String headimgurl = null;
-		System.out.println("前端传入code："+code);
-		//获取openid
-		result = WeiXinUtils.getOpenId(code, appid, secret, grant_type);
-		// 将json字符串转换为json对象
-		JSONObject jsonObject = JSONObject.fromObject(result);
-		if (jsonObject.containsKey("access_token")) {
-			access_token = jsonObject.getString("access_token");
-		}
-		if (jsonObject.containsKey("openid")) {
-			openid = jsonObject.getString("openid");
-		}
-		System.out.println("获取到的code值为："+code  +"  --openId 为："+openid);
-		//	openid ="1234";
-		if (openid != null && !openid.equals("")) {
-		/*	UserEntity weixin_user = userService.getById(openid);
-			if (weixin_user == null) {
-				//获取微信个人信息// 此方法是带着access_token和openid去访问一个接口，返回json字符串数据(微信用户的信息)
-				String weiXinMessage = WeiXinUtils.getWeiXinMessage(access_token, openid);
-				System.out.println("获取微信个人信息:"+weiXinMessage);
-				//转换为jsonObject对象
-				JSONObject weixin = JSONObject.fromObject(weiXinMessage);
-				//将微信属性赋到WeixinUserPOJO中
-				UserEntity userPOJO =  getWeiXinUser(weixin);//new UserEntity();//
-				userPOJO.setIsAnswer("0");
-				userPOJO.setIsDraw("0");
-				userPOJO.setIsWin("0");
-				userPOJO.setPrize("无");
-				userPOJO.setScore(0);
-				userService.insert(userPOJO);
-				weixin_user=userPOJO;
+		HashMap<String, Object> hashMap = getReturnMap();
+		try {
+			String access_token = "";
+			String result = weixinService.getOpenId_H5(code);
+			System.out.println("result:" + result);
+			String openId = "";
+			String headimgurl = null;
+			// 将json字符串转换为json对象
+			JSONObject jsonObject = JSONObject.fromObject(result);
+			if (jsonObject.containsKey("access_token")) {
+				access_token = jsonObject.getString("access_token");
 			}
-			//增加一次访问量
-			int x = userService.addVisit();*/
-			// 头像
-			//headimgurl = weixin_user.getHeadimgurl()    ;
-		}
-		Access_tokenEntity access_tokenPOJO = tokenService.selectOne();
-		// 获取 access_token
-		String getAccess_token = GetAccess_token(access_tokenPOJO);
-		// 通过access_token和openid获取 subscribe值，判断是否关注该公众号 0：未关注 1：已关注
-		// Integer subscribe = WeiXinUtils.getSubscribe(getAccess_token, openid);
-		if (!StringUtils.isEmpty(openid)) {
-			request.getSession().setAttribute("openid", openid);
-			request.getSession().setAttribute("headimgurl", headimgurl);
-			hashMap.put("status", "1");
-			hashMap.put("userId", openid);
-			hashMap.put("message", "获取用户唯一标识成功");
-		} else {
-			hashMap.put("status", "0");
-			hashMap.put("message", "获取用户唯一标识失败");
-		}
+			if (jsonObject.containsKey("openid")) {
+				openId = jsonObject.getString("openid");
+			}
+			System.out.println("获取到的code值为：" + code + "  --openId 为：" + openId);
 
+			if (openId != null && !openId.equals("")) {
+				//增加一次访问量
+				//	int x = userService.addVisit();
+			}
+			//	Access_tokenEntity access_tokenPOJO = tokenService.selectOne();
+			//String getAccess_token = GetAccess_token(access_tokenPOJO);
+			// 通过access_token和openid获取 subscribe值，判断是否关注该公众号 0：未关注 1：已关注
+			// Integer subscribe = WeiXinUtils.getSubscribe(getAccess_token, openId);
+			if (!StringUtils.isEmpty(openId)) {
+				hashMap.put("openId", openId);
+			} else {
+				hashMap.put("status", "0");
+				hashMap.put("message", "获取用户唯一标识失败");
+			}
+		}catch (Exception e){
+			e.printStackTrace();
+		}
 		return hashMap;
-
 	}
 
 
@@ -126,7 +98,7 @@ public class WeiXinH5Controller {
 				access_token = access_tokenPOJO.getAccessToken();
 			} else {
 				// 不再时间段内：说明access_token已经过期--->请求微信接口获取access_token
-				access_token = WeiXinUtils.getAccessToken();
+				access_token = weixinService.getAccess_token();
 				access_tokenPOJO.setCreateTime(date);
 				access_tokenPOJO.setAccessToken(access_token);
 				access_tokenPOJO.setAppId(WechatConfig.appid);
@@ -135,7 +107,7 @@ public class WeiXinH5Controller {
 		} else {
 			// 若为空说明是第一次，将access_token存入数据库
 			access_tokenPOJO = new Access_tokenEntity();
-			access_token = WeiXinUtils.getAccessToken();
+			access_token = weixinService.getAccess_token();
 			access_tokenPOJO.setAccessToken(access_token);
 			access_tokenPOJO.setCreateTime(new Date());
 			access_tokenPOJO.setAppId(WechatConfig.appid);
