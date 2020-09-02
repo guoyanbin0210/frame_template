@@ -2,11 +2,11 @@ package com.lt.config;
 
 public class WechatConfig {
     //小程序appid  开发者自己拥有的
-    public static final String appid = "wx885db970b0f638ae";
+    public static final String appid = "111";
     //微信支付的商户id   开发者去问自己id的前端同事或者领导。
-    public static final String mch_id = "1235991202";
+    public static final String mch_id = "111";
     //微信支付的商户密钥  开发者问领导，去微信商户平台去申请（要下插件等等）
-    public static final String secret = "5fbd8b12bcf44f7b2e7217586b7c810e";
+    public static final String secret = "111";
     //支付成功后的服务器回调url，这里填PayController里的回调函数地址
     public static final String notify_url = "tongcheng.miyunjingtai.com/api_p/pay/wxNotify";
     //签名方式，固定值
