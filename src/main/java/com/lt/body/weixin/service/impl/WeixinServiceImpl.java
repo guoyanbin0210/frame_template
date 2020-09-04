@@ -54,8 +54,11 @@ public class WeixinServiceImpl {
     private static final String SYMBOLS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private static final Random RANDOM = new SecureRandom();
 
+
+
     @Autowired
     private RestTemplate restTemplate;
+
 
 
     /**

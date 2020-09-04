@@ -1,6 +1,5 @@
 package com.lt.body.weixin.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.lt.base.constant.BaseConstant;
 import com.lt.base.controller.BaseController;
@@ -9,20 +8,11 @@ import com.lt.body.business.model.UserModel;
 import com.lt.body.business.service.UserService;
 import com.lt.body.user.utils.JwtUtil;
 import com.lt.body.weixin.service.impl.WeixinServiceImpl;
-import com.lt.body.weixin.utils.WeiXinUtils;
 import com.lt.config.WechatConfig;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.apache.commons.codec.binary.Base64;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.protocol.HTTP;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.*;
-import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,14 +24,9 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.net.ConnectException;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
-import java.nio.charset.Charset;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -82,7 +67,7 @@ public class WeiXinXCXController extends BaseController {
 
 
 
-    public static void main(String[] args) {
+    public  void main(String[] args) {
 
         getminiqrQrTwo();
     }
@@ -90,14 +75,15 @@ public class WeiXinXCXController extends BaseController {
     /**
      * 小程序二维码到本地  有效
      */
-    public static void getminiqrQrTwo() {
+    public  void getminiqrQrTwo() {
         PrintWriter printWriter = null;
         BufferedInputStream bis = null;
         ByteArrayOutputStream swapStream = null;
         ByteArrayInputStream inputStream = null;
         OutputStream outputStream = null;
+        String token  = weixinService.getAccess_token();
         try {
-            URL url = new URL("https://api.weixin.qq.com/cgi-bin/wxaapp/createwxaqrcode?access_token=" + WeiXinUtils.getAccessToken());
+            URL url = new URL("https://api.weixin.qq.com/cgi-bin/wxaapp/createwxaqrcode?access_token=" + token);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             httpURLConnection.setRequestMethod("POST");// 提交模式
             // 发送POST请求必须设置如下两行
