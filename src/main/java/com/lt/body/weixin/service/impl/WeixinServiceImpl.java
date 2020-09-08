@@ -3,6 +3,7 @@ package com.lt.body.weixin.service.impl;
 import com.alibaba.fastjson.JSONObject;
 import com.lt.body.weixin.model.TemplateData;
 import com.lt.body.weixin.model.WxMssVo;
+import com.lt.body.weixin.utils.OrderUtils;
 import com.lt.body.weixin.utils.PayUtil;
 import com.lt.config.WechatConfig;
 import org.apache.commons.io.IOUtils;
@@ -132,7 +133,14 @@ public class WeixinServiceImpl {
     }
 
 
-
+    /**
+     * 微信支付
+     * @param spbill_create_ip
+     * @param openId
+     * @param orderNumber
+     * @param price
+     * @return
+     */
     public  Map wxPay(String spbill_create_ip, String openId, String orderNumber,int price) {
         Map<String, Object> payMap = new HashMap<String, Object>();//返回给小程序端需要的参数
         try {
@@ -215,6 +223,62 @@ public class WeixinServiceImpl {
     }
 
 
+    /**
+     * 企业付款(提现)
+     * @param openid
+     * @throws Exception
+     */
+    public static HashMap transfers(String openid, Double money,String spbill_create_ip,HashMap<String, Object> returnMap) throws Exception {
+
+        String result = "";
+        //订单号
+        String partner_trade_no = OrderUtils.getRefundCode(openid);
+        // 转换成 单位i/分
+        long b = Math.round(money.doubleValue() * 100.0D);
+        Integer amount = Integer.valueOf(String.valueOf(b));
+
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put("mch_appid", WechatConfig.appid);
+        parameters.put("mchid", WechatConfig.mch_id);
+        parameters.put("nonce_str", generateNonceStr());
+        parameters.put("partner_trade_no", partner_trade_no);
+        parameters.put("openid", openid);
+        parameters.put("check_name", "NO_CHECK");
+        parameters.put("amount", amount+"");
+        parameters.put("spbill_create_ip", spbill_create_ip);
+        parameters.put("desc", "提现");
+
+        // 把数组所有元素，按照“参数=参数值”的模式用“&”字符拼接成字符串
+        String prestr = PayUtil.createLinkString(parameters);
+        //MD5运算生成签名，这里是第一次签名，用于调用统一下单接口
+        String sign = PayUtil.sign(prestr, WechatConfig.PAY_SECRET, "utf-8").toUpperCase();
+        parameters.put("sign", sign);
+
+        //拼接统一下单接口使用的xml数据，要将上一步生成的签名一起拼接进去
+        String xmlInfo = PayUtil.map2XmlString(parameters);
+
+        Map transferMap = new HashMap();
+        try {
+            //发送提现请求
+            result =  doRefund(WechatConfig.merchants_url,xmlInfo);
+            logger.info("提现返回结果"+ result);
+            transferMap =PayUtil.doXMLParse(result);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        if (transferMap.size() > 0) {
+            if ((transferMap.get("result_code").equals("SUCCESS"))) {
+                returnMap.put("message","提现成功");
+                returnMap.put("status","1");
+                //操作减少余额  日志等
+            }
+        }
+        return returnMap;
+    }
+
+
+
     public Map wxRefund(String spbill_create_ip, String openId, String orderNumber, int price) {
         Map<String, Object> payMap = new HashMap<String, Object>();//返回给小程序端需要的参数
         try {
@@ -255,16 +319,17 @@ public class WeixinServiceImpl {
     /**
      * 微信退款接口
      */
-    private String doRefund(String url, String data) throws Exception {
+    private static String doRefund(String url, String data) throws Exception {
+        byte[] certData = null;
         KeyStore keyStore = KeyStore.getInstance("PKCS12"); //证书格式
         try {
             InputStream certStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("apiclient_cert.p12");
-            this.certData = IOUtils.toByteArray(certStream);
+            certData = IOUtils.toByteArray(certStream);
             certStream.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        ByteArrayInputStream is = new ByteArrayInputStream(this.certData);
+        ByteArrayInputStream is = new ByteArrayInputStream(certData);
         try {
             keyStore.load(is, WechatConfig.mch_id.toCharArray());
         } finally {

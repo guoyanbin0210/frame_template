@@ -1,5 +1,6 @@
 package com.lt.body.weixin.controller;
 
+import com.lt.base.constant.BaseConstant;
 import com.lt.base.controller.BaseController;
 import com.lt.body.weixin.service.impl.WeixinServiceImpl;
 import com.lt.body.weixin.utils.PayUtil;
@@ -10,6 +11,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -282,125 +284,32 @@ public class WeiXinPayController extends BaseController {
 
 
     @RequestMapping(value = "/api_p/pay/businessPay", method = RequestMethod.POST)
-    @ApiOperation("商户支付-商户支付")
+    @ApiOperation("小程序-商户支付-提现")
+    @Transactional
     public HashMap wxPayByEnterprise(HttpServletRequest request, String openid, Double money) {
-        HashMap<Object, Object> hashMap = new HashMap<>();
-        hashMap.put("status", "0");
+        HashMap<String, Object> returnMap = getReturnMap(BaseConstant.Response_MENU.REQUEST_DO_FAILED);
         if (money == null || StringUtils.isBlank(openid)) {
-            hashMap.put("message", "支付金额为空或openid为空");
-            return hashMap;
+            returnMap.put("message", "支付金额为空或openid为空");
+            return returnMap;
         }
-
-        if (money.doubleValue() < 1.0D) {
-            hashMap.put("message", "提现金额最低为1元");
-            return hashMap;
+        if (money.doubleValue() < 1.0D || money.doubleValue() > 1000.0D) {
+            returnMap.put("message", "提现金额为1元-1000元之间!");
+            return returnMap;
         }
-        if (money.doubleValue() < 1000.0D) {
-            hashMap.put("message", "提现金额最低为1000元");
-            return hashMap;
-        }
-      //查询用户信息
-
-       /* if (userModel.isEmpty()) {
-            hashMap.put("message", "该账户信息不存在！");
-            return hashMap;
-        }
-*/
-
-  /*      if (((WeiXinUserPOJO) list.get(0)).getMoney().doubleValue() < money.doubleValue()) {
+        //校验用户是否够提现金额
+        /*if (((WeiXinUserPOJO) list.get(0)).getMoney().doubleValue() < money.doubleValue()) {
             hashMap.put("message", "您提现的金额超出账户余额！！！");
             return hashMap;
         }*/
 
-        money = Double.valueOf(money.doubleValue() - 0.03D * money.doubleValue());
-
-
-        String nonce_str = weixinService.generateNonceStr();
-        String checkName = "NO_CHECK";
-        String spbill_create_ip = getIpAddr(request);
-        //  String partner_trade_no = PayUtils.getOrderIdByTime();
-        //订单号
-        String partner_trade_no = "";
-        String total_money = String.valueOf(money);
-        String desc = "提现" + money + "元";
-
-        long b = Math.round(money.doubleValue() * 100.0D);
-
-        Integer amount = Integer.valueOf(String.valueOf(b));
-        Map<String, String> parameters = new HashMap<>();
-        parameters.put("mch_appid", WechatConfig.appid);
-        parameters.put("mchid", WechatConfig.mch_id);
-        parameters.put("partner_trade_no", partner_trade_no);
-        parameters.put("nonce_str", nonce_str);
-        parameters.put("openid", openid);
-        parameters.put("check_name", checkName);
-        parameters.put("amount", amount+"");
-        parameters.put("spbill_create_ip", spbill_create_ip);
-        parameters.put("desc", desc);
-       // String sign = WXSignUtils.createSign("UTF-8", parameters);
-        String prestr = PayUtil.createLinkString(parameters); // 把数组所有元素，按照“参数=参数值”的模式用“&”字符拼接成字符串
-        logger.info("----------生成签名字符串:" + prestr);
-        //MD5运算生成签名，这里是第一次签名，用于调用统一下单接口
-        String sign = PayUtil.sign(prestr, WechatConfig.secret, "utf-8").toUpperCase();
-        parameters.put("sign", sign);
-        logger.info("----------mysign:" + sign);
-        //拼接统一下单接口使用的xml数据，要将上一步生成的签名一起拼接进去
-        String xml = PayUtil.map2XmlString(parameters);
-        //调用统一下单接口，并接受返回的结果
-        String result = PayUtil.httpRequest(WechatConfig.merchants_url, "POST", xml);
-
-           /* this.transfers.setAmount(amount);
-            this.transfers.setCheck_name(checkName);
-            this.transfers.setDesc(desc);
-            this.transfers.setMch_appid(appid);
-            this.transfers.setMchid(mch_id);
-            this.transfers.setNonce_str(nonce_str);
-            this.transfers.setOpenid(openid);
-            this.transfers.setPartner_trade_no(partner_trade_no);
-            this.transfers.setSign(sign);
-            this.transfers.setSpbill_create_ip(spbill_create_ip);*/
-    /*        String xmlInfo = XmlUtils.javaBeanToXml(this.transfers);
-            try {
-                CloseableHttpResponse response = HttpUtil.Post(
-                       WechatConfig.merchants_url, xmlInfo,
-                        weiXinParmsPOJO.getCertificateUrl(), weiXinParmsPOJO.getMchId(), true);
-                String transfersXml = EntityUtils.toString(response.getEntity(), "utf-8");
-                Map transferMap = XmlUtils.getXmlBodyContext(transfersXml);
-                if (transferMap.size() <= 0)
-                    if ((transferMap.get("result_code").equals("SUCCESS"))
-                            && (transferMap.get("return_code").equals("SUCCESS"))) {
-                        ((WeiXinUserPOJO) list.get(0)).setMoney(Double.valueOf(
-                                ((WeiXinUserPOJO) list.get(0)).getMoney().doubleValue() - money.doubleValue()));
-                        int updateByPrimaryKeySelective = this.weiXinUserPOJODAO
-                                .updateByPrimaryKeySelective((WeiXinUserPOJO) list.get(0));
-                        if (updateByPrimaryKeySelective == 0)
-                            hashMap.put("message", "提现成功");
-                        hashMap.put("status", "1");
-                        WeiXinLogPOJO weiXinLogPOJO = new WeiXinLogPOJO();
-                        weiXinLogPOJO.setIp(PayUtils.getIpAddr(request));
-                        weiXinLogPOJO.setMoney(total_money);
-                        weiXinLogPOJO.setType("提现");
-                        weiXinLogPOJO.setOpenid(openid);
-                        weiXinLogPOJO.setOrderId(((WeiXinUserPOJO) list.get(0)).getId());
-                        weiXinLogPOJO.setCreateTime(new Date());
-                        weiXinLogPOJODAO.insert(weiXinLogPOJO);
-                        return hashMap;
-                    }*/
-
-         /*       hashMap.put("message", transferMap.get("err_code_des"));
-            } catch (Exception e) {
-                e.printStackTrace();
-
-                hashMap.put("message", "提现失败");
-            }
-        } else {
-            hashMap.put("message", "提现失败！");
-        }*/
-        return hashMap;
+        try {
+            String spbill_create_ip = getIpAddr(request);
+            returnMap =  weixinService.transfers(openid, money,spbill_create_ip,returnMap);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return returnMap;
     }
-
-
-
 
 
 
