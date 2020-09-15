@@ -19,7 +19,7 @@ public class DistributedLock {
      * 获得锁
      * setIfAbsent方法，就是当键不存在的时候，设置，并且该方法可以设置键的过期时间
      */
-    public boolean getLock(String lockId, long millisecond) {
+        public boolean getLock(String lockId, long millisecond) {
         Boolean success = redisTemplate.opsForValue().setIfAbsent(lockId, "lock",
                 millisecond, TimeUnit.SECONDS);
         return success != null && success;

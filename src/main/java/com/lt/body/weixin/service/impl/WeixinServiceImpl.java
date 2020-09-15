@@ -278,7 +278,14 @@ public class WeixinServiceImpl {
     }
 
 
-
+    /**
+     * 订单退款接口
+     * @param spbill_create_ip
+     * @param openId
+     * @param orderNumber
+     * @param price  单位：分
+     * @return
+     */
     public Map wxRefund(String spbill_create_ip, String openId, String orderNumber, int price) {
         Map<String, Object> payMap = new HashMap<String, Object>();//返回给小程序端需要的参数
         try {
@@ -301,7 +308,7 @@ public class WeixinServiceImpl {
             String prestr = PayUtil.createLinkString(packageParams); // 把数组所有元素，按照“参数=参数值”的模式用“&”字符拼接成字符串
             logger.info("----------生成签名字符串:" + prestr);
             //MD5运算生成签名，这里是第一次签名，用于调用统一下单接口
-            String sign = PayUtil.sign(prestr, WechatConfig.secret, "utf-8").toUpperCase();
+            String sign = PayUtil.sign(prestr, WechatConfig.PAY_SECRET, "utf-8").toUpperCase();
             packageParams.put("sign", sign);
             logger.info("----------mysign:" + sign);
             //拼接统一下单接口使用的xml数据，要将上一步生成的签名一起拼接进去
@@ -317,7 +324,11 @@ public class WeixinServiceImpl {
 
 
     /**
-     * 微信退款接口
+     * 微信退款(读取证书)  订单退款 提现
+     * @param url
+     * @param data
+     * @return
+     * @throws Exception
      */
     private static String doRefund(String url, String data) throws Exception {
         byte[] certData = null;

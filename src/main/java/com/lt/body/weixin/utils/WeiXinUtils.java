@@ -1,19 +1,14 @@
 package com.lt.body.weixin.utils;
 
-import com.lt.config.WechatConfig;
 import net.sf.json.JSONObject;
-
 import java.io.*;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.security.MessageDigest;
 
 public class WeiXinUtils {
 
-
-    
     /**
      * 通过access_token和openid获取 subscribe值，判断是否关注该公众号  0：未关注  1：已关注
      * @param access_token

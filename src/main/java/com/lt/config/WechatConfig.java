@@ -32,7 +32,7 @@ public class WechatConfig {
 
 
     //退款成功回调地址
-    public static final String notify_refund_url = "shequtong.comwinwin.com/api_p/pay/wxRefundNotify";
+    public static final String notify_refund_url = "http://shequtong.comwinwin.com/api_p/pay/wxRefundNotify";
 
 
 //========================================H5========================================
