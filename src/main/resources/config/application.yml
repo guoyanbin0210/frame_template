@@ -2,16 +2,17 @@ spring:
   profiles:
       active: dev
 
-  rabbitmq:
-      host: 127.0.0.1
-      port: 5672
-      username: guest
-      password: guest
-      publisher-confirms: true
-    #确认消息已发送到队列(Queue)
-      publisher-returns: true
-            #虚拟host 可以不设置,使用server默认host
-     # virtual-host: JCcccHost
+
+#  rabbitmq:
+#      host: 127.0.0.1
+#      port: 5672
+#      username: guest
+#      password: guest
+#      publisher-confirms: true
+#    #确认消息已发送到队列(Queue)
+#      publisher-returns: true
+#            #虚拟host 可以不设置,使用server默认host
+#     # virtual-host: JCcccHost
 
   datasource:
     driver-class-name: com.mysql.jdbc.Driver  # mysql8.0使用com.mysql.cj.jdbc.Driver
@@ -43,11 +44,11 @@ spring:
         url-pattern: /druid/*
         reset-enable: true
         # IP 白名单，没有配置或者为空，则允许所有访问
-        allow: 127.0.0.1,111.200.215.131
+        allow: 127.0.0.1
         # IP 黑名单，若白名单也存在，则优先使用
         deny:
         login-username: admin
-        login-password: gaoshan123
+        login-password: admin
 
 
   jackson:
@@ -66,7 +67,7 @@ mybatis:
   type-aliases-package: com.gs.*.model
   config-location: classpath:config/mybatis/mybatis-config.xml
   #mapper.xml所在位置
-  mapper-locations: classpath*:mapper/*.xml,classpath*:mapper/baseMapper/*.xml,classpath*:mapper/politics/*.xml
+  mapper-locations: classpath*:mapper/*.xml,classpath*:mapper/baseMapper/*.xml
 
 #  configuration:
 #    显示sql

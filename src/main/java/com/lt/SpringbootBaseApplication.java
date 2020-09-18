@@ -3,6 +3,7 @@ package com.lt;
 import com.lt.body.user.JwtAuthenticationFilter;
 import com.lt.body.user.service.UserMainService;
 import com.lt.body.websocket.NettyServer;
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
