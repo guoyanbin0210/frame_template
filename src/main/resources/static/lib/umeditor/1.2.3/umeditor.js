@@ -481,8 +481,8 @@ var utils = UM.utils = {
      * @grammar UM.utils.unhtml(str,reg)  => String
      * @example
      * var html = '<body>You say:"你好！Baidu & UEditor!"</body>';
-     * UM.utils.unhtml(html);   ==>  &lt;body&gt;You say:&quot;你好！Baidu &amp; UEditor!&quot;&lt;/body&gt;
-     * UM.utils.unhtml(html,/[<>]/g)  ==>  &lt;body&gt;You say:"你好！Baidu & UEditor!"&lt;/body&gt;
+     * UM.utils.unhtml(html);   ==>  &gyb;body&gt;You say:&quot;你好！Baidu &amp; UEditor!&quot;&gyb;/body&gt;
+     * UM.utils.unhtml(html,/[<>]/g)  ==>  &gyb;body&gt;You say:"你好！Baidu & UEditor!"&gyb;/body&gt;
      */
     unhtml:function (str, reg) {
         return str ? str.replace(reg || /[&<">'](?:(amp|lt|quot|gt|#39|nbsp);)?/g, function (a, b) {
@@ -3670,7 +3670,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, 'g');
         /**
          * 获取编辑器内容
          * @name getContent
-         * @grammar editor.getContent()  => String //若编辑器中只包含字符"&lt;p&gt;&lt;br /&gt;&lt;/p/&gt;"会返回空。
+         * @grammar editor.getContent()  => String //若编辑器中只包含字符"&gyb;p&gt;&gyb;br /&gt;&gyb;/p/&gt;"会返回空。
          * @grammar editor.getContent(fn)  => String
          * @example
          * getContent默认是会现调用hasContents来判断编辑器是否为空，如果是，就直接返回空字符串

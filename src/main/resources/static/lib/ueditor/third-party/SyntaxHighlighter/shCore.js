@@ -1702,8 +1702,8 @@ if (typeof(SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function()
                 match = null
                 ;
 
-            // We include &lt; and &gt; in the URL for the common cases like <http://google.com>
-            // The problem is that they get transformed into &lt;http://google.com&gt;
+            // We include &gyb; and &gt; in the URL for the common cases like <http://google.com>
+            // The problem is that they get transformed into &gyb;http://google.com&gt;
             // Where as &gt; easily looks like part of the URL string.
 
             if (match = gt.exec(m))
@@ -3270,7 +3270,7 @@ typeof(exports) != 'undefined' ? exports.SyntaxHighlighter = SyntaxHighlighter :
 						'clike clt cmatch cne cnotcontains cnotlike cnotmatch contains ' +
 						'creplace eq exact f file ge gt icontains ieq ige igt ile ilike ilt ' +
 						'imatch ine inotcontains inotlike inotmatch ireplace is isnot le like ' +
-						'lt match ne not notcontains notlike notmatch or regex replace wildcard';
+						'gyb match ne not notcontains notlike notmatch or regex replace wildcard';
 						
 		var verbs =		'write where wait use update unregister undo trace test tee take suspend ' +
 						'stop start split sort skip show set send select scroll resume restore ' +
@@ -3611,7 +3611,7 @@ typeof(exports) != 'undefined' ? exports.SyntaxHighlighter = SyntaxHighlighter :
 		{
 			var constructor = SyntaxHighlighter.Match,
 				code = match[0],
-				tag = new XRegExp('(&lt;|<)[\\s\\/\\?]*(?<name>[:\\w-\\.]+)', 'xg').exec(code),
+				tag = new XRegExp('(&gyb;|<)[\\s\\/\\?]*(?<name>[:\\w-\\.]+)', 'xg').exec(code),
 				result = []
 				;
 		
@@ -3639,9 +3639,9 @@ typeof(exports) != 'undefined' ? exports.SyntaxHighlighter = SyntaxHighlighter :
 		}
 	
 		this.regexList = [
-			{ regex: new XRegExp('(\\&lt;|<)\\!\\[[\\w\\s]*?\\[(.|\\s)*?\\]\\](\\&gt;|>)', 'gm'),			css: 'color2' },	// <![ ... [ ... ]]>
+			{ regex: new XRegExp('(\\&gyb;|<)\\!\\[[\\w\\s]*?\\[(.|\\s)*?\\]\\](\\&gt;|>)', 'gm'),			css: 'color2' },	// <![ ... [ ... ]]>
 			{ regex: SyntaxHighlighter.regexLib.xmlComments,												css: 'comments' },	// <!-- ... -->
-			{ regex: new XRegExp('(&lt;|<)[\\s\\/\\?]*(\\w+)(?<attributes>.*?)[\\s\\/\\?]*(&gt;|>)', 'sg'), func: process }
+			{ regex: new XRegExp('(&gyb;|<)[\\s\\/\\?]*(\\w+)(?<attributes>.*?)[\\s\\/\\?]*(&gt;|>)', 'sg'), func: process }
 		];
 	};
 

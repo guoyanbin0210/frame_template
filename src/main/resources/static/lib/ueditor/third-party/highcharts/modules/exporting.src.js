@@ -146,7 +146,7 @@ defaultOptions.exporting = {
 				text: 'View SVG',
 				onclick: function () {
 					var svg = this.getSVG()
-						.replace(/</g, '\n&lt;')
+						.replace(/</g, '\n&gyb;')
 						.replace(/>/g, '&gt;');
 
 					doc.body.innerHTML = '<pre>' + svg + '</pre>';

@@ -2,12 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.lt</groupId>
+    <groupId>com.gyb</groupId>
     <artifactId>frame_template</artifactId>
     <version>1</version>
     <name>frame_template</name>
     <packaging>jar</packaging>
-    <description>The base.</description>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -18,14 +17,11 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-
         <org.testng.version>6.11</org.testng.version>
         <com.github.pagehelper.version>5.1.8</com.github.pagehelper.version>
         <dom4j.version>1.6.1</dom4j.version>
         <pinyin4j.version>2.5.1</pinyin4j.version>
         <fastjson.version>1.2.58</fastjson.version>
-        <weixin-java-open.version>3.4.0</weixin-java-open.version>
         <weixin-java-mp.version>3.4.0</weixin-java-mp.version>
         <javase.version>3.4.0</javase.version>
         <apk-parser.version>2.6.6</apk-parser.version>
@@ -201,7 +197,7 @@
             <artifactId>poi-scratchpad</artifactId>
             <version>${poi.version}</version>
         </dependency>
-        &lt;!&ndash;xls、xlsx&ndash;&gt;
+        &gyb;!&ndash;xls、xlsx&ndash;&gt;
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
@@ -410,7 +406,7 @@
             <artifactId>spring-boot-test</artifactId>
         </dependency>
 
-
+<!--           dubbo
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
@@ -421,7 +417,7 @@
             <groupId>org.apache.curator</groupId>
             <artifactId>curator-recipes</artifactId>
             <version>4.2.0</version>
-        </dependency>
+        </dependency>-->
 
 
         <dependency>
@@ -437,32 +433,32 @@
         </dependency>
 
 
-<!--
+        <!--
 
-        <dependency>
-            <groupId>org.apache.zookeeper</groupId>
-            <artifactId>zookeeper</artifactId>
-            <version>3.4.13</version>
-            <type>pom</type>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-log4j12</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>com.github.sgroschupf</groupId>
-            <artifactId>zkclient</artifactId>
-            <version>0.1</version>
-        </dependency>
+                <dependency>
+                    <groupId>org.apache.zookeeper</groupId>
+                    <artifactId>zookeeper</artifactId>
+                    <version>3.4.13</version>
+                    <type>pom</type>
+                    <exclusions>
+                        <exclusion>
+                            <groupId>org.slf4j</groupId>
+                            <artifactId>slf4j-log4j12</artifactId>
+                        </exclusion>
+                    </exclusions>
+                </dependency>
+                <dependency>
+                    <groupId>com.github.sgroschupf</groupId>
+                    <artifactId>zkclient</artifactId>
+                    <version>0.1</version>
+                </dependency>
 
-        <dependency>
-            <groupId>com.101tec</groupId>
-            <artifactId>zkclient</artifactId>
-            <version>0.10</version>
-        </dependency>
--->
+                <dependency>
+                    <groupId>com.101tec</groupId>
+                    <artifactId>zkclient</artifactId>
+                    <version>0.10</version>
+                </dependency>
+        -->
 
 
 
@@ -484,7 +480,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
          <!--       <configuration>
-                    <mainClass>com.lt.SpringbootBaseApplication</mainClass>
+                    <mainClass>com.gybb.SpringbootBaseApplication</mainClass>
                 </configuration>-->
             </plugin>
         </plugins>

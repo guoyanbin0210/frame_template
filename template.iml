@@ -25,7 +25,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="javax.annotation" level="application" />
+    <orderEntry type="library" name="javax.annotation" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.18.8" level="project" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.11" level="project" />
     <orderEntry type="library" name="Maven: com.google.zxing:javase:3.4.0" level="project" />
@@ -91,7 +91,7 @@
     <orderEntry type="module-library">
       <library name="Maven: com.sun:tools:1.8.0">
         <CLASSES>
-          <root url="jar://D:/Program Files/Java/jdk1.8.0_171/lib/tools.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../Program Files/Java/jdk1.8.0_162/lib/tools.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -250,6 +250,7 @@
     <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.5" level="project" />
     <orderEntry type="library" name="Maven: net.sf.ezmorph:ezmorph:1.0.6" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-test:2.1.7.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.example.demo:demo:0.0.1-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.apache.dubbo:dubbo-spring-boot-starter:2.7.3" level="project" />
     <orderEntry type="library" name="Maven: org.apache.dubbo:dubbo-spring-boot-autoconfigure:2.7.3" level="project" />
     <orderEntry type="library" name="Maven: org.apache.dubbo:dubbo-spring-boot-autoconfigure-compatible:2.7.3" level="project" />

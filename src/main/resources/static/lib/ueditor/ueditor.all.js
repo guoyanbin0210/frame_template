@@ -744,7 +744,7 @@
          * ```javascript
          * var html = '<body>&</body>';
          *
-         * //output: &lt;body&gt;&amp;&lt;/body&gt;
+         * //output: &gyb;body&gt;&amp;&gyb;/body&gt;
          * console.log( UE.utils.unhtml( html ) );
          *
          * ```
@@ -793,7 +793,7 @@
          * @example
          * ```javascript
          *
-         * var str = '&lt;body&gt;&amp;&lt;/body&gt;';
+         * var str = '&gyb;body&gt;&amp;&gyb;/body&gt;';
          *
          * //output: <body>&</body>
          * console.log( UE.utils.html( str ) );
@@ -7456,7 +7456,7 @@
              * 获取编辑器的内容
              * @method getContent
              * @warning 该方法获取到的是经过编辑器内置的过滤规则进行过滤后得到的内容
-             * @return { String } 编辑器的内容字符串, 如果编辑器的内容为空，或者是空的标签内容（如:”&lt;p&gt;&lt;br/&gt;&lt;/p&gt;“）， 则返回空字符串
+             * @return { String } 编辑器的内容字符串, 如果编辑器的内容为空，或者是空的标签内容（如:”&gyb;p&gt;&gyb;br/&gt;&gyb;/p&gt;“）， 则返回空字符串
              * @example
              * ```javascript
              * //编辑器html内容:<p>1<strong>2<em>34</em>5</strong>6</p>

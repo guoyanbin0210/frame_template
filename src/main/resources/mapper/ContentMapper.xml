@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.lt.body.comContent.dao.ContentDao">
-  <resultMap id="baseModel" type="com.lt.body.comContent.model.ContentModel">
+<mapper namespace="com.gyb.body.comContent.dao.ContentDao">
+  <resultMap id="baseModel" type="com.gyb.body.comContent.model.ContentModel">
     <id column="id" property="id"/>
     <id column="create_by" property="create_by"/>
     <id column="create_time" property="create_time"/>
@@ -105,7 +105,7 @@
     ORDER BY create_time DESC
   </select>
 
-  <select id="selectDataByMenuId" resultType="com.lt.body.apiMoudel.ApiContentModel">
+  <select id="selectDataByMenuId" resultType="com.gyb.body.apiMoudel.ApiContentModel">
     SELECT
       parent_id AS 'base_id',
       tb_parent_id AS 'id',
@@ -127,7 +127,7 @@
       tb_parent_id = #{tb_parent_id}
   </select>
 
-  <select id="selectDataById" resultType="com.lt.body.apiMoudel.ApiContentCopyModel">
+  <select id="selectDataById" resultType="com.gyb.body.apiMoudel.ApiContentCopyModel">
     SELECT
       tb_parent_id,
       tb_title,

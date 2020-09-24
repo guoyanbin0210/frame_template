@@ -178,7 +178,7 @@ baidu.browser.opera = /opera(\/| )(\d+(\.\d+)?)(.+?(version\/(\d+(\.\d+)?)))?/i.
  * @remark
  * 
  * 对于position参数，大小写不敏感<br>
- * 参数的意思：beforeBegin&lt;span&gt;afterBegin   this is span! beforeEnd&lt;/span&gt; afterEnd <br />
+ * 参数的意思：beforeBegin&gyb;span&gt;afterBegin   this is span! beforeEnd&gyb;/span&gt; afterEnd <br />
  * 此外，如果使用本函数插入带有script标签的HTML字符串，script标签对应的脚本将不会被执行。
  * 
  * @shortcut insertHTML

@@ -1,5 +1,5 @@
 
-document.writeln('<!--[if lt IE 9]>');
+document.writeln('<!--[if gyb IE 9]>');
 document.writeln('<script type="text/javascript" src="/lib/html5shiv.js"></script>');
 document.writeln('<script type="text/javascript" src="/lib/respond.min.js"></script>');
 document.writeln('<![endif]-->');
