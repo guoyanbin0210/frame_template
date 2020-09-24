@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lt.body.comMenu.dao.MenuDao">
+  <resultMap id="baseModel" type="com.lt.body.comMenu.model.MenuModel">
+    <id column="id" property="id"/>
+    <id column="create_by" property="create_by"/>
+    <id column="create_time" property="create_time"/>
+    <id column="modify_by" property="modify_by"/>
+    <id column="modify_time" property="modify_time"/>
+    <id column="menu_name" property="menu_name"/>
+    <id column="menu_parent_id" property="menu_parent_id"/>
+    <id column="menu_level" property="menu_level"/>
+    <id column="menu_remark" property="menu_remark"/>
+    <id column="menu_sort" property="menu_sort"/>
+      <id column="menu_url" property="menu_url"/>
+  </resultMap>
+  <sql id="select_all">id, create_by, create_time, modify_by, modify_time, menu_name, menu_parent_id, menu_level, menu_remark, menu_sort, menu_url</sql>
+  <sql id="Base_Column_List">
+    <if test="id!=null">id,</if>
+    <if test="create_by!=null">create_by,</if>
+    <if test="create_time!=null">create_time,</if>
+    <if test="modify_by!=null">modify_by,</if>
+    <if test="modify_time!=null">modify_time,</if>
+    <if test="menu_name!=null">menu_name,</if>
+    <if test="menu_parent_id!=null">menu_parent_id,</if>
+    <if test="menu_level!=null">menu_level,</if>
+    <if test="menu_remark!=null">menu_remark,</if>
+    <if test="menu_sort!=null">menu_sort,</if>
+      <if test="menu_url!=null">menu_url,</if>
+  </sql>
+  <sql id="Base_property_List">
+    <if test="id!=null">#{id},</if>
+    <if test="create_by!=null">#{create_by},</if>
+    <if test="create_time!=null">#{create_time},</if>
+    <if test="modify_by!=null">#{modify_by},</if>
+    <if test="modify_time!=null">#{modify_time},</if>
+    <if test="menu_name!=null">#{menu_name},</if>
+    <if test="menu_parent_id!=null">#{menu_parent_id},</if>
+    <if test="menu_level!=null">#{menu_level},</if>
+    <if test="menu_remark!=null">#{menu_remark},</if>
+    <if test="menu_sort!=null">#{menu_sort},</if>
+      <if test="menu_url!=null">#{menu_url},</if>
+  </sql>
+  <sql id="Base_update_List">
+    <if test="id!=null">id=#{id},</if>
+    <if test="create_by!=null">create_by=#{create_by},</if>
+    <if test="create_time!=null">create_time=#{create_time},</if>
+    <if test="modify_by!=null">modify_by=#{modify_by},</if>
+    <if test="modify_time!=null">modify_time=#{modify_time},</if>
+    <if test="menu_name!=null">menu_name=#{menu_name},</if>
+    <if test="menu_parent_id!=null">menu_parent_id=#{menu_parent_id},</if>
+    <if test="menu_level!=null">menu_level=#{menu_level},</if>
+    <if test="menu_remark!=null">menu_remark=#{menu_remark},</if>
+    <if test="menu_sort!=null">menu_sort=#{menu_sort},</if>
+      <if test="menu_sort!=null">menu_url=#{menu_url},</if>
+  </sql>
+  <sql id="Base_select_List">
+    <if test="id!=null">AND id=#{id}</if>
+    <if test="create_by!=null">AND create_by=#{create_by}</if>
+    <if test="create_time!=null">AND create_time=#{create_time}</if>
+    <if test="modify_by!=null">AND modify_by=#{modify_by}</if>
+    <if test="modify_time!=null">AND modify_time=#{modify_time}</if>
+    <if test="menu_name!=null">AND menu_name=#{menu_name}</if>
+    <if test="menu_parent_id!=null">AND menu_parent_id=#{menu_parent_id}</if>
+    <if test="menu_level!=null">AND menu_level=#{menu_level}</if>
+    <if test="menu_remark!=null">AND menu_remark=#{menu_remark}</if>
+    <if test="menu_sort!=null">AND menu_sort=#{menu_sort}</if>
+      <if test="menu_url!=null">AND menu_sor1t=#{menu_url}</if>
+  </sql>
+  <sql id="Base_select_like_List"><trim suffixOverrides=","> IFNULL(id, ''), IFNULL(create_by, ''), IFNULL(create_time, ''), IFNULL(modify_by, ''), IFNULL(modify_time, ''), IFNULL(menu_name, ''), IFNULL(menu_parent_id, ''), IFNULL(menu_level, ''), IFNULL(menu_remark, ''), IFNULL(menu_sort, ''),IFNULL(menu_url, ''),</trim></sql>
+  <insert id="insert">INSERT INTO tb_menu (<trim suffixOverrides=","><include refid="Base_Column_List"/></trim>) VALUES (<trim suffixOverrides=","><include refid="Base_property_List"/></trim>);</insert>
+  <delete id="delete">DELETE FROM tb_menu WHERE id = #{id};</delete>
+  <update id="update">UPDATE tb_menu SET <trim suffixOverrides=","><include refid="Base_update_List"/></trim> WHERE id = #{id};</update>
+  <select id="selectById" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM tb_menu WHERE id =#{id};</select>
+  <select id="selectListByModel" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM tb_menu<where> <include refid="Base_select_List"/> </where> ORDER BY create_time DESC</select>
+  <select id="selectAll" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM tb_menu ORDER BY create_time DESC</select>
+  <select id="selectListByKeyWord" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM tb_menu<where> CONCAT(<include refid="Base_select_like_List"/>) LIKE concat(concat('%',#{keyWord}),'%')</where> ORDER BY create_time DESC</select>
+
+  <select id="selectMenu" resultMap="baseModel">
+    SELECT
+      id,
+      menu_name,
+      menu_parent_id,
+      menu_level,
+      menu_sort,
+      menu_url
+      FROM
+      `tb_menu`
+      WHERE
+      menu_level = #{type}
+      ORDER BY menu_sort ASC
+  </select>
+
+  <select id="selectMenuById" resultMap="baseModel">
+      SELECT
+          id,
+          menu_name,
+          menu_parent_id,
+          menu_level,
+          menu_sort
+      FROM
+          tb_menu
+      WHERE
+          menu_parent_id = #{id}
+          AND menu_level =#{type}
+      ORDER BY
+          menu_sort ASC
+  </select>
+
+  <select id="selectMenuByParentId" resultMap="baseModel">
+      SELECT
+      id,
+      menu_name,
+      menu_parent_id,
+      menu_level,
+      menu_sort
+      FROM
+      `tb_menu`
+      WHERE
+       menu_parent_id = #{parent_id}
+      ORDER BY menu_sort ASC
+  </select>
+
+
+</mapper>

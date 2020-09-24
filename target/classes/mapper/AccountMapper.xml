@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lt.body.aboutUs.dao.AccountDao">
+  <resultMap id="baseModel" type="com.lt.body.aboutUs.model.AccountModel">
+    <id column="id" property="id"/>
+    <id column="create_by" property="create_by"/>
+    <id column="create_time" property="create_time"/>
+    <id column="modify_by" property="modify_by"/>
+    <id column="modify_time" property="modify_time"/>
+    <id column="tb_type" property="tb_type"/>
+    <id column="tb_name" property="tb_name"/>
+    <id column="tb_company" property="tb_company"/>
+    <id column="tb_status" property="tb_status"/>
+    <id column="tb_account" property="tb_account"/>
+    <id column="tb_password" property="tb_password"/>
+    <id column="tb_admin" property="tb_admin"/>
+    <id column="tb_operator" property="tb_operator"/>
+    <id column="tb_phone" property="tb_phone"/>
+    <id column="tb_appId" property="tb_appId"/>
+    <id column="tb_secret_key" property="tb_secret_key"/>
+    <id column="tb_over_time" property="tb_over_time"/>
+    <id column="tb_main_company" property="tb_main_company"/>
+    <id column="tb_remark" property="tb_remark"/>
+  </resultMap>
+  <sql id="select_all">id, create_by,create_time, modify_by,modify_time, tb_type, tb_name, tb_company, tb_status, tb_account, tb_password, tb_admin, tb_operator, tb_phone, tb_appId, tb_secret_key, tb_over_time, tb_main_company, tb_remark</sql>
+  <sql id="Base_Column_List">
+    <if test="id!=null">id,</if>
+    <if test="create_by!=null">create_by,</if>
+    <if test="create_time!=null">create_time,</if>
+    <if test="modify_by!=null">modify_by,</if>
+    <if test="modify_time!=null">modify_time,</if>
+    <if test="tb_type!=null">tb_type,</if>
+    <if test="tb_name!=null">tb_name,</if>
+    <if test="tb_company!=null">tb_company,</if>
+    <if test="tb_status!=null">tb_status,</if>
+    <if test="tb_account!=null">tb_account,</if>
+    <if test="tb_password!=null">tb_password,</if>
+    <if test="tb_admin!=null">tb_admin,</if>
+    <if test="tb_operator!=null">tb_operator,</if>
+    <if test="tb_phone!=null">tb_phone,</if>
+    <if test="tb_appId!=null">tb_appId,</if>
+    <if test="tb_secret_key!=null">tb_secret_key,</if>
+    <if test="tb_over_time!=null">tb_over_time,</if>
+    <if test="tb_main_company!=null">tb_main_company,</if>
+    <if test="tb_remark!=null">tb_remark,</if>
+  </sql>
+  <sql id="Base_property_List">
+    <if test="id!=null">#{id},</if>
+    <if test="create_by!=null">#{create_by},</if>
+    <if test="create_time!=null">#{create_time},</if>
+    <if test="modify_by!=null">#{modify_by},</if>
+    <if test="modify_time!=null">#{modify_time},</if>
+    <if test="tb_type!=null">#{tb_type},</if>
+    <if test="tb_name!=null">#{tb_name},</if>
+    <if test="tb_company!=null">#{tb_company},</if>
+    <if test="tb_status!=null">#{tb_status},</if>
+    <if test="tb_account!=null">#{tb_account},</if>
+    <if test="tb_password!=null">#{tb_password},</if>
+    <if test="tb_admin!=null">#{tb_admin},</if>
+    <if test="tb_operator!=null">#{tb_operator},</if>
+    <if test="tb_phone!=null">#{tb_phone},</if>
+    <if test="tb_appId!=null">#{tb_appId},</if>
+    <if test="tb_secret_key!=null">#{tb_secret_key},</if>
+    <if test="tb_over_time!=null">#{tb_over_time},</if>
+    <if test="tb_main_company!=null">#{tb_main_company},</if>
+    <if test="tb_remark!=null">#{tb_remark},</if>
+  </sql>
+  <sql id="Base_update_List">
+    <if test="id!=null">id=#{id},</if>
+    <if test="create_by!=null">create_by=#{create_by},</if>
+    <if test="create_time!=null">create_time=#{create_time},</if>
+    <if test="modify_by!=null">modify_by=#{modify_by},</if>
+    <if test="modify_time!=null">modify_time=#{modify_time},</if>
+    <if test="tb_type!=null">tb_type=#{tb_type},</if>
+    <if test="tb_name!=null">tb_name=#{tb_name},</if>
+    <if test="tb_company!=null">tb_company=#{tb_company},</if>
+    <if test="tb_status!=null">tb_status=#{tb_status},</if>
+    <if test="tb_account!=null">tb_account=#{tb_account},</if>
+    <if test="tb_password!=null">tb_password=#{tb_password},</if>
+    <if test="tb_admin!=null">tb_admin=#{tb_admin},</if>
+    <if test="tb_operator!=null">tb_operator=#{tb_operator},</if>
+    <if test="tb_phone!=null">tb_phone=#{tb_phone},</if>
+    <if test="tb_appId!=null">tb_appId=#{tb_appId},</if>
+    <if test="tb_secret_key!=null">tb_secret_key=#{tb_secret_key},</if>
+    <if test="tb_over_time!=null">tb_over_time=#{tb_over_time},</if>
+    <if test="tb_main_company!=null">tb_main_company=#{tb_main_company},</if>
+    <if test="tb_remark!=null">tb_remark=#{tb_remark},</if>
+  </sql>
+  <sql id="Base_select_List">
+    <if test="id!=null">AND id=#{id}</if>
+    <if test="create_by!=null">AND create_by=#{create_by}</if>
+    <if test="create_time!=null">AND create_time=#{create_time}</if>
+    <if test="modify_by!=null">AND modify_by=#{modify_by}</if>
+    <if test="modify_time!=null">AND modify_time=#{modify_time}</if>
+    <if test="tb_type!=null">AND tb_type=#{tb_type}</if>
+    <if test="tb_name!=null">AND tb_name=#{tb_name}</if>
+    <if test="tb_company!=null">AND tb_company=#{tb_company}</if>
+    <if test="tb_status!=null">AND tb_status=#{tb_status}</if>
+    <if test="tb_account!=null">AND tb_account=#{tb_account}</if>
+    <if test="tb_password!=null">AND tb_password=#{tb_password}</if>
+    <if test="tb_admin!=null">AND tb_admin=#{tb_admin}</if>
+    <if test="tb_operator!=null">AND tb_operator=#{tb_operator}</if>
+    <if test="tb_phone!=null">AND tb_phone=#{tb_phone}</if>
+    <if test="tb_appId!=null">AND tb_appId=#{tb_appId}</if>
+    <if test="tb_secret_key!=null">AND tb_secret_key=#{tb_secret_key}</if>
+    <if test="tb_over_time!=null">AND tb_over_time=#{tb_over_time}</if>
+    <if test="tb_main_company!=null">AND tb_main_company=#{tb_main_company}</if>
+    <if test="tb_remark!=null">AND tb_remark=#{tb_remark}</if>
+  </sql>
+  <sql id="Base_select_like_List"><trim suffixOverrides=","> IFNULL(id, ''), IFNULL(create_by, ''),IFNULL(create_time, ''), IFNULL(modify_by, ''),IFNULL(modify_time, ''), IFNULL(tb_type, ''), IFNULL(tb_name, ''), IFNULL(tb_company, ''), IFNULL(tb_status, ''), IFNULL(tb_account, ''), IFNULL(tb_password, ''), IFNULL(tb_admin, ''), IFNULL(tb_operator, ''), IFNULL(tb_phone, ''), IFNULL(tb_appId, ''), IFNULL(tb_secret_key, ''), IFNULL(tb_over_time, ''), IFNULL(tb_main_company, ''), IFNULL(tb_remark, ''), </trim></sql>
+  <insert id="insert">INSERT INTO tb_account (<trim suffixOverrides=","><include refid="Base_Column_List"/></trim>) VALUES (<trim suffixOverrides=","><include refid="Base_property_List"/></trim>);</insert>
+  <delete id="delete">DELETE FROM tb_account WHERE id = #{id};</delete>
+  <update id="update">UPDATE tb_account SET <trim suffixOverrides=","><include refid="Base_update_List"/></trim> WHERE id = #{id};</update>
+  <select id="selectById" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM tb_account WHERE id =#{id};</select>
+  <select id="selectListByModel" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM tb_account<where> <include refid="Base_select_List"/> </where> ORDER BY create_time DESC</select>
+  <select id="selectAll" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM tb_account ORDER BY create_time DESC</select>
+  <select id="selectListByKeyWord" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM tb_account<where> CONCAT(<include refid="Base_select_like_List"/>) LIKE concat(concat('%',#{keyWord}),'%')</where> ORDER BY create_time DESC</select>
+</mapper>

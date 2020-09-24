@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>我的浏览管理</title>
+    <script type="text/javascript" src="/js/initCss.js"></script>
+    <script type="text/javascript" src="/js/initJs.js"></script>
+</head>
+<body>
+<article class="page-container">
+    <form action="" method="post" class="form form-horizontal" id="requestForm">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="content_id"><span class="c-red">*</span>文章id：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="content_id" name="content_id" required>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="user_id"><span class="c-red">*</span>问题分类id：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="user_id" name="user_id" required>
+            </div>
+        </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+                <input class="btn btn-primary radius" type="button"  value="&nbsp;&nbsp;取消&nbsp;&nbsp;" onclick="javascript: closed()">            </div>
+        </div>
+    </form>
+</article>
+<script type="text/javascript">
+    $(document).ready(function () {
+        doSelectOneByIdChild(function (data) {
+            $("#content_id").val(data.content_id);
+            $("#user_id").val(data.user_id);
+        });
+        doUpdateChild($("#requestForm"), {})
+    });
+function closed(){
+        var index = parent.layer.getFrameIndex(window.name); //
+        parent.layer.close(index); // 关闭layer
+    }</script>
+</body>
+</html>

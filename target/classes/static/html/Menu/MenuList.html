@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>welcome</title>
+    <script type="text/javascript" src="/js/initCss.js"></script>
+    <script type="text/javascript" src="/js/initJs.js"></script>
+    <link rel="stylesheet" type="text/css" href="/lib/zTree/v3/css/metroStyle/metroStyle.css">
+    <style>
+        #form-user-update .row {
+            width: 95%;
+        }
+    </style>
+</head>
+<body>
+<nav class="breadcrumb">
+    <a id="btn_add_root"
+       class="btn btn-danger  radius l"
+       style="line-height:1.6em;margin-top:3px"
+       href="javascript:;" title="添加根节点">
+        <i class="Hui-iconfont">&#xe600;</i>
+    </a>
+    <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"
+       href="javascript:location.replace(location.href);" title="刷新">
+        <i class="Hui-iconfont">&#xe68f; </i>
+    </a>
+</nav>
+<div class="page-container">
+    <table class="ml-20">
+        <tr>
+            <td width="220" class="va-t">
+                <ul id="treeDemo" class="ztree"></ul>
+            </td>
+            <td>
+                <form action="" method="post" class="form form-horizontal ml-20" id="form-user-update">
+                    <div class="row cl">
+                        <label class="form-label col-xs-3 col-sm-2"> <span class="c-red">*</span> 菜单名称：</label>
+                        <div class="formControls col-xs-6 col-sm-6">
+                            <input type="text" class="input-text" id="menu_name" name="menu_name">
+                        </div>
+                    </div>
+
+                    <div class="row cl">
+                        <label class="form-label col-xs-4 col-sm-2"> <span class="c-red">*</span> 层级：</label>
+                        <div class="formControls col-xs-6 col-sm-6">
+                            <input type="number" class="input-text" id="menu_level" name="menu_level">
+                        </div>
+                    </div>
+                    <div class="row cl">
+                        <label class="form-label col-xs-4 col-sm-2"> <span class="c-red">*</span> 排序：</label>
+                        <div class="formControls col-xs-6 col-sm-6">
+                            <input type="number" class="input-text" id="menu_sort" name="menu_sort">
+                        </div>
+                    </div>
+                    <div class="row cl">
+                        <label class="form-label col-xs-4 col-sm-2"> <span class="c-red">*</span> 菜单用途：</label>
+                        <div class="formControls col-xs-6 col-sm-6">
+                            <span class="select-box">
+                                <select class="select" id="menu_url" name="menu_url" required>
+                                    <option value="">请选择用途</option>
+                                    <option value="list.html">列表展示</option>
+                                    <option value="detail.html">详情展示</option>
+                                    <option value="item.html">新闻党建</option>
+                                </select>
+                            </span>
+
+                        </div>
+                    </div>
+                    <div class="row cl">
+                        <label class="form-label col-xs-4 col-sm-2"> 上级菜单id：</label>
+                        <div class="formControls col-xs-6 col-sm-6">
+                            <input type="text" class="input-text" id="menu_parent" readonly name="menu_parent">
+                        </div>
+                    </div>
+
+                    <div class="row cl">
+                        <label class="form-label col-xs-4 col-sm-2">备注：</label>
+                        <div class="formControls col-xs-6 col-sm-6">
+                        <textarea id="menu_desc" name="menu_desc" class="textarea" placeholder="说点什么..."
+                                  onKeyUp="$.Huitextarealength(this,100)"></textarea>
+                            <p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
+                        </div>
+                    </div>
+                    <div class="row cl">
+                        <div class="col-9 col-offset-2">
+                            <input class="btn btn-primary radius" type="submit" id="btn_submit_update"
+                                   value="&nbsp;&nbsp;修改&nbsp;&nbsp;">
+                        </div>
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table>
+</div>
+<script type="text/javascript" src="/lib/zTree/v3/js/jquery.ztree.all.js"></script>
+<script type="text/javascript">
+
+    var tb_new_menu_id = "";//新增项的id
+    var newCount = 1;//新节点计数
+    var setting, zNodes = [];//初始化zTree
+    var zTree;
+
+    function ajaxDataFilter(treeId, parentNode, responseData) {
+        for (var i = 0; i < responseData.length; i++) {
+            var item = responseData[i];
+            responseData[i].name = item.menu_name;
+            responseData[i].pId = item.menu_parent_id;
+            responseData[i].create_time = item.create_time;
+        }
+        return responseData;
+    }
+
+    setting = {
+        async: {
+            enable: true,
+            url: "/comMenu/Menu/selectAll.do",
+            dataFilter: ajaxDataFilter
+        },
+        view: {
+            addHoverDom: addHoverDom,
+            removeHoverDom: removeHoverDom,
+            selectedMulti: false
+        },
+        check: {
+            enable: true,
+        },
+        data: {
+            simpleData: {
+                enable: true
+            }
+        },
+        edit: {
+            enable: true,
+            showRenameBtn: false
+        },
+        callback: {
+            onClick: treeItemClick,
+            beforeRemove: treeItemRemove
+        }
+    };
+    zTree = $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+
+    function addHoverDom(treeId, treeNode) {
+        var sObj = $("#" + treeNode.tId + "_span");
+        if (treeNode.editNameFlag || $("#addBtn_" + treeNode.tId).length > 0)
+            return;
+        var addStr = "<span class='button add' id='addBtn_" + treeNode.tId + "' title='add node' onfocus='this.blur();'></span>";
+        sObj.after(addStr);
+        var addBtn = $("#addBtn_" + treeNode.tId);
+        if (addBtn) {
+            addBtn.bind("click", function () {
+                var tempMenuName = "new node" + (newCount++)
+                addRootNote(treeNode, tempMenuName);
+                return false;
+            });
+        }
+    }
+
+    /**
+     * @param treeNode
+     * @param tempMenuName
+     */
+    function addRootNote(treeNode, tempMenuName) {
+
+        ajaxPost(
+            "/comMenu/Menu/insert.do",
+            {
+                menu_parent_id: treeNode.id,
+                menu_level: treeNode.level + 2,//从0，treeNode.level获取的是父级，新增级别为当前级别+2 但是我自己的实际从1开始
+                menu_name: tempMenuName,
+                menu_remark: "bg"
+            },
+            function (obj) {
+                if (obj.status === 1) {
+                    tb_new_menu_id = obj.data.id;
+                    zTree.addNodes(treeNode,
+                        {
+                            id: tb_new_menu_id,
+                            pId: treeNode.id,
+                            name: tempMenuName
+                        });
+                }
+            }
+        );
+    }
+
+
+    function removeHoverDom(treeId, treeNode) {
+        $("#addBtn_" + treeNode.tId).unbind().remove();
+    }
+
+    function treeItemClick(event, treeId, treeNode) {
+        $("#menu_name").val(treeNode.name);
+        $("#menu_parent").val(treeNode.pId);
+        $("#menu_level").val(treeNode.level);
+        $("#menu_sort").val(treeNode.menu_sort);
+        $("#menu_url").val(treeNode.menu_url);
+        // $("#create_time").val(treeNode.create_time);
+        $("#menu_remark").val();
+        tb_new_menu_id = treeNode.id;
+        showCheckId(zTree.getCheckedNodes())
+    }
+
+    function showCheckId(CheckedNodes) {
+        var item;
+        for (var i = 0; i < CheckedNodes.length; i++) {
+            item = CheckedNodes[i]
+        }
+    }
+
+    function treeItemRemove(treeId, treeNode) {
+        layer.confirm('你确定要删除么？', {
+            btn: ['确定', '取消'] //按钮
+        }, function () {
+            layer.msg('删除中', {icon: 1});
+            ajaxPost(
+                '/comMenu/Menu/deleteById.do',
+                {id: treeNode.id},
+                function (obj) {
+                    if (obj.status === 1) {
+                        zTree.removeNode(treeNode)
+                    } else {
+                        layer.alert("删除失败请刷新后重试，" + obj.message)
+                    }
+                }
+            );
+        }, function () {
+            console.log("取消" + tag)
+        });
+        return false;
+    }
+
+    $("#btn_add_root").click(function () {
+        ajaxPost(
+            "/comMenu/Menu/insert.do",
+            {
+                menu_parent_id: "无",
+                menu_level: 0,//从0，treeNode.level获取的是父级，新增级别为当前级别+2 但是我自己的实际从1开始
+                menu_name: "新增根节点",
+                menu_sort: 0
+            },
+            function (obj) {
+                if (obj.status === 1) {
+                    tb_new_menu_id = obj.data.id;
+                    zTree.addNodes(null,
+                        {
+                            id: tb_new_menu_id,
+                            name: obj.data.menu_name
+                        }
+                    );
+                }
+            }
+        );
+    });
+
+    $("#btn_submit_update").click(function () {
+        //表单序列化A
+        var jsonArray = $("#form-user-update").serializeArray();
+        var mParameters = {};
+        for (var i = 0; i < jsonArray.length; i++) {
+            mParameters[jsonArray[i].name] = jsonArray[i].value;
+        }
+        mParameters['id'] = tb_new_menu_id;
+        ajaxPost(
+            "/comMenu/Menu/updateById.do",
+            mParameters,
+            function (obj) {
+                layer.msg(obj.message);
+                location.reload()
+            }
+        );
+        return false;
+    });
+</script>
+</body>
+</html>

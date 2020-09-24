@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>bootstrap 例子</title>
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/bootstrap-3.3.4.css">
+    <script src="js/bootstrap.min.js"></script>
+
+    <link href="css/bootstrap-select.css" rel="stylesheet">
+    <script src="js/bootstrap-select.js"></script>
+
+
+    <script type="text/javascript">
+
+
+        function loadInfo() {
+            // 默认数据
+            var area = document.getElementById("id_select");
+            area.options.length = 0;
+            result = {
+                "6": "湖南",
+                "7": "江苏",
+                "8": "江西",
+                "9": "广东",
+                "10": "重庆",
+                "11": "广西",
+                "17": "浙江",
+                "18": "湖北",
+                "19": "山东",
+                "20": "陕西"
+            };
+            for (var item in result) {
+                area.options.add(new Option(result[item], result[item]));
+            }
+
+            $('.selectpicker').selectpicker('refresh');
+        }
+        initInfo();
+        function initInfo() {
+            $(window).on('load', function () {
+                $('.selectpicker').selectpicker({
+                    // 'selectedText': 'cat',
+                    noneSelectedText: '请选择',
+                    noneResultsText: '没有找到匹配的组织 {0}'
+                });
+                loadInfo();
+
+                $("#chooseText").unbind("click").click(function () {
+                    var info = $('#id_select').selectpicker('val');
+
+                    var label = document.getElementById("labelInfo");
+                    label.innerHTML = info;
+                    console.log(info)
+                });
+
+                // 检测浏览器的方法由用户自行决定
+                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                    $('.selectpicker').selectpicker('mobile');
+                }
+
+                // 销毁： $('.selectpicker').selectpicker('destroy');
+
+            });
+        }
+
+    </script>
+
+</head>
+<body>
+<!-- <label for="id_select"></label> -->
+<button style="margin-top: 20px;margin-left: 30px;border-radius: 5px;height: 30px;width: 100px;background-color: #4cae4c;font-size: 18px;color: white"
+        id="showInfo">显示
+</button>
+<button id="hideInfo"
+        style="border-radius: 5px;height: 30px;width: 100px;background-color: #b94a48;font-size: 18px;color: white">
+    隐藏
+</button>
+<button id="chooseText"
+        style="border-radius: 5px;height: 30px;width: 100px;background-color: gold;font-size: 18px;color: white">
+    选中信息
+</button>
+
+<div style="margin-top: 20px;margin-left: 30px">
+    <select id="id_select" class="selectpicker" multiple
+            data-live-search="true"
+            data-width="300px"
+            data-actions-box="true">
+    </select>
+
+</div>
+
+<div>
+    <label style="margin-top: 20px;margin-left: 30px;color: mediumblue">选中结果:</label>
+</div>
+<label id="labelInfo" style="margin-top: 5px;margin-left: 50px"></label>
+
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lt.base.dao.SysMenuDao">
+  <resultMap id="baseModel" type="com.lt.base.model.SysMenuModel">
+    <id column="id" property="id"/>
+    <id column="create_by" property="create_by"/>
+    <id column="create_time" property="create_time"/>
+    <id column="modify_by" property="modify_by"/>
+    <id column="modify_time" property="modify_time"/>
+    <id column="base_status" property="base_status"/>
+    <id column="base_available" property="base_available"/>
+    <id column="base_sort" property="base_sort"/>
+    <id column="menu_code" property="menu_code"/>
+    <id column="menu_name" property="menu_name"/>
+    <id column="menu_url" property="menu_url"/>
+    <id column="menu_parent_id" property="menu_parent_id"/>
+    <id column="menu_level" property="menu_level"/>
+    <id column="menu_des" property="menu_des"/>
+    <id column="menu_type" property="menu_type"/>
+  </resultMap>
+  <sql id="select_all">id, create_by, create_time, modify_by, modify_time, base_status, base_available, base_sort, menu_code, menu_name, menu_url, menu_parent_id, menu_level, menu_des, menu_type</sql>
+  <sql id="Base_Column_List">
+    <if test="id!=null">id,</if>
+    <if test="create_by!=null">create_by,</if>
+    <if test="create_time!=null">create_time,</if>
+    <if test="modify_by!=null">modify_by,</if>
+    <if test="modify_time!=null">modify_time,</if>
+    <if test="base_status!=null">base_status,</if>
+    <if test="base_available!=null">base_available,</if>
+    <if test="base_sort!=null">base_sort,</if>
+    <if test="menu_code!=null">menu_code,</if>
+    <if test="menu_name!=null">menu_name,</if>
+    <if test="menu_url!=null">menu_url,</if>
+    <if test="menu_parent_id!=null">menu_parent_id,</if>
+    <if test="menu_level!=null">menu_level,</if>
+    <if test="menu_des!=null">menu_des,</if>
+    <if test="menu_type!=null">menu_type,</if>
+  </sql>
+  <sql id="Base_property_List">
+    <if test="id!=null">#{id},</if>
+    <if test="create_by!=null">#{create_by},</if>
+    <if test="create_time!=null">#{create_time},</if>
+    <if test="modify_by!=null">#{modify_by},</if>
+    <if test="modify_time!=null">#{modify_time},</if>
+    <if test="base_status!=null">#{base_status},</if>
+    <if test="base_available!=null">#{base_available},</if>
+    <if test="base_sort!=null">#{base_sort},</if>
+    <if test="menu_code!=null">#{menu_code},</if>
+    <if test="menu_name!=null">#{menu_name},</if>
+    <if test="menu_url!=null">#{menu_url},</if>
+    <if test="menu_parent_id!=null">#{menu_parent_id},</if>
+    <if test="menu_level!=null">#{menu_level},</if>
+    <if test="menu_des!=null">#{menu_des},</if>
+    <if test="menu_type!=null">#{menu_type},</if>
+  </sql>
+  <sql id="Base_update_List">
+    <if test="id!=null">id=#{id},</if>
+    <if test="create_by!=null">create_by=#{create_by},</if>
+    <if test="create_time!=null">create_time=#{create_time},</if>
+    <if test="modify_by!=null">modify_by=#{modify_by},</if>
+    <if test="modify_time!=null">modify_time=#{modify_time},</if>
+    <if test="base_status!=null">base_status=#{base_status},</if>
+    <if test="base_available!=null">base_available=#{base_available},</if>
+    <if test="base_sort!=null">base_sort=#{base_sort},</if>
+    <if test="menu_code!=null">menu_code=#{menu_code},</if>
+    <if test="menu_name!=null">menu_name=#{menu_name},</if>
+    <if test="menu_url!=null">menu_url=#{menu_url},</if>
+    <if test="menu_parent_id!=null">menu_parent_id=#{menu_parent_id},</if>
+    <if test="menu_level!=null">menu_level=#{menu_level},</if>
+    <if test="menu_des!=null">menu_des=#{menu_des},</if>
+    <if test="menu_type!=null">menu_type=#{menu_type},</if>
+  </sql>
+  <sql id="Base_select_List">
+    <if test="id!=null">AND id=#{id}</if>
+    <if test="create_by!=null">AND create_by=#{create_by}</if>
+    <if test="create_time!=null">AND create_time=#{create_time}</if>
+    <if test="modify_by!=null">AND modify_by=#{modify_by}</if>
+    <if test="modify_time!=null">AND modify_time=#{modify_time}</if>
+    <if test="base_status!=null">AND base_status=#{base_status}</if>
+    <if test="base_available!=null">AND base_available=#{base_available}</if>
+    <if test="base_sort!=null">AND base_sort=#{base_sort}</if>
+    <if test="menu_code!=null">AND menu_code=#{menu_code}</if>
+    <if test="menu_name!=null">AND menu_name=#{menu_name}</if>
+    <if test="menu_url!=null">AND menu_url=#{menu_url}</if>
+    <if test="menu_parent_id!=null">AND menu_parent_id=#{menu_parent_id}</if>
+    <if test="menu_level!=null">AND menu_level=#{menu_level}</if>
+    <if test="menu_des!=null">AND menu_des=#{menu_des}</if>
+    <if test="menu_type!=null">AND menu_type=#{menu_type}</if>
+  </sql>
+  <sql id="Base_select_like_List"><trim suffixOverrides=",">  IFNULL(menu_code, ''), IFNULL(menu_name, ''), IFNULL(menu_url, ''), IFNULL(menu_parent_id, ''), IFNULL(menu_level, ''), IFNULL(menu_des, ''), IFNULL(menu_type, ''), </trim></sql>
+  <insert id="insert">INSERT INTO tb_sys_menu (<trim suffixOverrides=","><include refid="Base_Column_List"/></trim>) VALUES (<trim suffixOverrides=","><include refid="Base_property_List"/></trim>)</insert>
+  <delete id="delete">DELETE FROM tb_sys_menu WHERE id = #{id}</delete>
+  <update id="update">UPDATE tb_sys_menu SET <trim suffixOverrides=","><include refid="Base_update_List"/></trim> WHERE id = #{id}</update>
+  <select id="selectById" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM tb_sys_menu WHERE id =#{id}</select>
+  <select id="selectListByModel" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM tb_sys_menu<where> <include refid="Base_select_List"/> </where> ORDER BY create_time </select>
+  <select id="selectAll" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM tb_sys_menu ORDER BY create_time </select>
+  <select id="selectListByKeyWord" resultMap="baseModel" useCache="true">SELECT <include refid="select_all"/> FROM tb_sys_menu<where> CONCAT(<include refid="Base_select_like_List"/>) LIKE concat(concat('%',#{keyWord}),'%')</where> ORDER BY create_time DESC</select>
+</mapper>

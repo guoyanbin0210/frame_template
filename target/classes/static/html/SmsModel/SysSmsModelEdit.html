@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>短信模板管理</title>
+    <script type="text/javascript" src="/js/initCss.js"></script>
+    <script type="text/javascript" src="/js/initJs.js"></script>
+</head>
+<body>
+<article class="page-container">
+    <form action="" method="post" class="form form-horizontal" id="requestForm">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="ssm_signature_name"><span
+                    class="c-red">*</span>签名名称：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" id="ssm_signature_name" placeholder="如不填写，则使用程序内置签名，如：云末网"
+                       name="ssm_signature_name">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="ssm_type"><span class="c-red">*</span>模板类型：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" id="ssm_type" name="ssm_type" placeholder="短信通知">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="ssm_code"><span class="c-red">*</span>模版CODE：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" id="ssm_code" name="ssm_code" placeholder="SMS_141581144">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="ssm_name"><span class="c-red">*</span>模版名称：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" id="ssm_name" name="ssm_name" placeholder="云末充电结束">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="ssm_content"><span class="c-red">*</span>模版内容：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <textarea name="ssm_content" id="ssm_content" cols="" rows="" class="textarea radius"
+                          placeholder="您的充电已结束，结束原因${reason};消费金额${spand},余额${balance}."></textarea>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="ssm_parameters"><span class="c-red">*</span>参数：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <textarea name="ssm_parameters" id="ssm_parameters" cols="" rows="" class="textarea radius"
+                          placeholder='{"reason":"","spand":"","balance":""}'></textarea>
+            </div>
+        </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+            </div>
+        </div>
+    </form>
+</article>
+<script type="text/javascript">
+    $(document).ready(function () {
+        doSelectOneByIdChild(function (data) {
+            $("#ssm_signature_name").val(data.ssm_signature_name);
+            $("#ssm_type").val(data.ssm_type);
+            $("#ssm_code").val(data.ssm_code);
+            $("#ssm_name").val(data.ssm_name);
+            $("#ssm_content").val(data.ssm_content);
+            $("#ssm_parameters").val(data.ssm_parameters);
+        });
+        doUpdateChild($("#requestForm"), {})
+    });</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>短信验证码管理</title>
+    <script type="text/javascript" src="/js/initCss.js"></script>
+    <script type="text/javascript" src="/js/initJs.js"></script>
+</head>
+<body>
+<article class="page-container">
+    <form action="" method="post" class="form form-horizontal" id="requestForm">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="ssc_phone"><span class="c-red">*</span>手机号：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="ssc_phone" name="ssc_phone">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="ssl_code"><span class="c-red">*</span>验证码：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="ssl_code" name="ssl_code">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="ssl_out_time"><span class="c-red">*</span>过期时间：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text"
+                       onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm:ss'})"
+                       id="ssl_out_time" name="ssl_out_time" class="input-text Wdate">
+            </div>
+        </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+            </div>
+        </div>
+    </form>
+</article>
+<script type="text/javascript">
+    $(document).ready(function () {
+        doSelectOneByIdChild(function (data) {
+            $("#ssc_phone").val(data.ssc_phone);
+            $("#ssl_code").val(data.ssl_code);
+            $("#ssl_out_time").val(data.ssl_out_time);
+        });
+        doUpdateChild($("#requestForm"), {})
+    });</script>
+</body>
+</html>

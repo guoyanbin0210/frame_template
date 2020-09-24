@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>短信日志管理</title>
+    <script type="text/javascript" src="/js/initCss.js"></script>
+    <script type="text/javascript" src="/js/initJs.js"></script>
+</head>
+<body>
+<article class="page-container">
+    <form action="" method="post" class="form form-horizontal" id="requestForm">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="ssl_type"><span class="c-red">*</span>短信类型：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="ssl_type" name="ssl_type">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="ssl_send_body"><span class="c-red">*</span>模板代码：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="ssl_model_code" name="ssl_model_code">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="ssl_send_body"><span class="c-red">*</span>发送内容：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="ssl_send_body" name="ssl_send_body">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="ssl_receive"><span class="c-red">*</span>接收者：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="ssl_receive" name="ssl_receive">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="ssl_body_len"><span class="c-red">*</span>短信长度：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="number" class="input-text"  id="ssl_body_len" name="ssl_body_len">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="ssl_count"><span class="c-red">*</span>单条短信计数：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="number" class="input-text"  id="ssl_count" name="ssl_count">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="ssl_is_success"><span class="c-red">*</span>短信是否发送成功：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="number" class="input-text"  id="ssl_is_success" name="ssl_is_success">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="ssl_return_msg"><span class="c-red">*</span>请求返回信息：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="ssl_return_msg" name="ssl_return_msg">
+            </div>
+        </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+            </div>
+        </div>
+    </form>
+</article>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        doSelectOneByIdChild(function (data) {
+            console.log(data)
+            $("#ssl_type").val(data.ssl_type);
+            $("#ssl_model_code").val(data.ssl_model_code);
+            $("#ssl_send_body").val(data.ssl_send_body);
+            $("#ssl_receive").val(data.ssl_receive);
+            $("#ssl_body_len").val(data.ssl_body_len);
+            $("#ssl_count").val(data.ssl_count);
+            $("#ssl_is_success").val(data.ssl_is_success);
+            $("#ssl_return_msg").val(data.ssl_return_msg);
+
+
+        });
+        doUpdateChild($("#requestForm"), {})
+    });</script>
+</body>
+</html>

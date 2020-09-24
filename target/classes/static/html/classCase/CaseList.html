@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>文章管理管理</title>
+    <script type="text/javascript" src="/js/initCss.js"></script>
+    <script type="text/javascript" src="/js/initJs.js"></script>
+    <link rel="stylesheet" type="text/css" href="/lib/pagination/pagination.css"/>
+    <script type="text/javascript" src="/lib/pagination/jquery.pagination.js"></script>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页
+    <span class="c-gray en">&gt;</span>文章管理<span class="c-gray en">&gt;</span> 文章管理管理
+    <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"
+       href="javascript:location.replace(location.href);" title="刷新">
+        <i class="Hui-iconfont">&#xe68f;
+        </i>
+    </a>
+</nav>
+<div class="page-container">
+    <div class="text-c">
+        <div class="btn-group">
+            <input type="text" name="" id="in_search_text" placeholder="请输入你想查询的内容" style="width:250px"
+                   class="input-text">
+            <button name="" id="btn_search" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i>
+                搜索
+            </button>
+        </div>
+    </div>
+    <div class="cl pd-5 bg-1 bk-gray mt-20">
+        <span class="l" id="btn_group">
+            <a class="btn btn-primary radius" click-info="add"><i class="Hui-iconfont">&#xe600;</i>添加 </a>
+            <a class="btn disabled radius multiple-choice" click-info="delete"><i
+                    class="Hui-iconfont">&#xe6e2;</i>删除</a>
+            <a class="btn disabled radius single-choice" click-info="edit"><i class="Hui-iconfont">&#xe60c;</i>编辑</a>
+        </span>
+        <span class="r">
+            <span class="select-box">
+                <select class="select" id="select_Type" onchange="findDataByType()">
+                </select>
+            </span>
+        </span>
+    </div>
+    <div class="cl pd-5 bg-1 bk-gray mt-20">
+        <span class="r">数据总数: <span id="show_total">暂未查询到数据</span></span>
+    </div>
+    <div class="mt-20">
+        <table class="table table-border table-bordered table-hover table-bg table-sort" id="">
+            <thead>
+            <tr class="text-c text-overflow">
+                <th width="5%"><input type="checkbox" id="checkBoxGroup"></th>
+                <th>菜单id</th>
+                <th>继承菜单id</th>
+                <th>标题</th>
+                <th>照片</th>
+                <th>创建时间</th>
+            </tr>
+            </thead>
+            <tbody id="mytbody">
+            </tbody>
+        </table>
+        <span class="r mt-10 mb-20">
+            <div class="M-box3"></div>
+        </span>
+    </div>
+</div>
+<script type="text/javascript">
+    initPath(
+        '/comContent/Content/selectListByPageHelper.do',
+        '/comContent/Content/deleteById.do',
+        '/comContent/Content/updateById.do',
+        '/comContent/Content/insert.do',
+        '/comContent/Content/selectById.do',
+        '/html/classCase/CaseAdd.html',
+        '/html/classCase/CaseEdit.html',
+    );
+
+    //查询分类数据
+    ajaxPost("/comMenu/Menu/selectListByMenuId.do", {id:"2bd9290f4b6d4e24a1b1f62cc6c47029",type:1}, function (res) {
+        var html = '<option value="" >请选择分类</option>';
+        for (var i = 0; i < res.data.length; i++) {
+            var item = res.data[i];
+            html += '<option value="' + item.id + '" >' + item.menu_name + '</option>'
+        }
+        $("#tb_menu_id").html(html);
+    })
+
+    $(document).ready(function () {
+        findDataByType();
+    });
+
+    function curr_doSelectList(selectListParams, initAppendHtml) {
+        doSelectList(selectListParams, initAppendHtml, null, function () {
+        });
+    }
+    //根据类型查询数据
+    function findDataByType() {
+       // var tb_menu_id = document.getElementById("tb_menu_id").value;
+        var id = 'f6a312f5290e49fa9904492242531bdc';
+        selectListParams["id"] = id;
+        //selectListParams["tb_menu_id"] = tb_menu_id;
+        resetPageBox();
+        curr_doSelectList(selectListParams, initAppendHtml)
+    }
+    function initAppendHtml(item) {
+        return '<tr class="text-c" id=' + item.id + '>' +
+            '<td><input type="checkbox" class="checkItemTag" ></td>' +
+                '<td>' + item.tb_menu_id + '</td>' +
+                '<td>' + item.tb_parent_id + '</td>' +
+                '<td>' + item.tb_title + '</td>' +
+                '<td><img class="img-responsive zoomify" alt="" style="height:50px" src="' + item.tb_title_url + '"></td>' +
+                '<td>' + myFormat(item.create_time, "yyyy-MM-dd HH:mm:ss")+ '</td>' +
+            '</tr>';
+    }
+</script>
+</body>
+</html>

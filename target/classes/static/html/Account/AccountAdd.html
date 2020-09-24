@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>账号管理管理</title>
+    <script type="text/javascript" src="/js/initCss.js"></script>
+    <script type="text/javascript" src="/js/initJs.js"></script>
+</head>
+<body>
+<article class="page-container">
+    <form action="" method="post" class="form form-horizontal" id="requestForm">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="tb_type"><span class="c-red">*</span>类型：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <span class="select-box" style="width: 200px;">
+                    <select id="tb_type" name="tb_type" class="select">
+                        <option value="0">商户号</option>
+                        <option value="1">服务号</option>
+                        <option value="2">订阅号</option>
+                        <option value="3">小程序</option>
+                    </select>
+                </span>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="tb_name">名称：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="tb_name" name="tb_name">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="tb_company"><span class="c-red">*</span>是否属于本公司：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <span class="select-box" style="width: 200px;">
+                    <select id="tb_company" name="tb_company" class="select" >
+                        <option value="0">是</option>
+                        <option value="1">否</option>
+                    </select>
+                </span>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="tb_status"><span class="c-red">*</span>状态：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <span class="select-box" style="width: 200px;">
+                    <select id="tb_status" name="tb_status" class="select">
+                        <option value="0">未认证</option>
+                        <option value="1">已认证</option>
+                    </select>
+                </span>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="tb_account">账号：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="tb_account" name="tb_account" >
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="tb_password">密码：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="tb_password" name="tb_password" >
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="tb_admin">总管理员：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="tb_admin" name="tb_admin" >
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="tb_operator">运营者：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="tb_operator" name="tb_operator" >
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="tb_phone">管理员手机号：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="tb_phone" name="tb_phone" >
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="tb_appId">appId：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="tb_appId" name="tb_appId" >
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="tb_secret_key">秘钥：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="tb_secret_key" name="tb_secret_key">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="tb_over_time">过期时间：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="date" id="tb_over_time" name="tb_over_time" >
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="tb_main_company">主体公司：</label>
+            <span class="select-box" style="width: 300px;">
+                    <select id="tb_main_company" name="tb_main_company" class="select">
+                        <option value="0">A有限公司</option>
+                        <option value="1">B有限公司</option>
+                        <option value="2">C有限公司</option>
+                    </select>
+                </span>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="tb_remark">备注：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <textarea class="input-text" id="tb_remark" name="tb_remark" style="width: 500px; height: 200px"></textarea>
+            </div>
+        </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+                <input class="btn btn-primary radius" type="button"  value="&nbsp;&nbsp;取消&nbsp;&nbsp;" onclick="javascript: closed()">            </div>
+        </div>
+    </form>
+</article>
+<script type="text/javascript">
+    $(document).ready(function () {doInsertChild($("#requestForm"), {});});
+function closed(){
+        var index = parent.layer.getFrameIndex(window.name); //
+        parent.layer.close(index); // 关闭layer
+    }
+</script>
+</body>
+</html>

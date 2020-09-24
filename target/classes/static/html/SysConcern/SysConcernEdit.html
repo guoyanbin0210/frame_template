@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <title>关系表管理</title>
+    <script type="text/javascript" src="/js/initCss.js"></script>
+    <script type="text/javascript" src="/js/initJs.js"></script>
+</head>
+<body>
+<article class="page-container">
+    <form action="" method="post" class="form form-horizontal" id="requestForm">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="sc_main_id"><span class="c-red">*</span>主表id：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="sc_main_id" name="sc_main_id">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="sc_main_desc"><span class="c-red">*</span>主表id描述：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="sc_main_desc" name="sc_main_desc">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="sc_son_id"><span class="c-red">*</span>子表id：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="sc_son_id" name="sc_son_id">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="sc_son_desc"><span class="c-red">*</span>子表id描述：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="sc_son_desc" name="sc_son_desc">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="sc_type"><span class="c-red">*</span>归属类型：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text"  id="sc_type" name="sc_type">
+            </div>
+        </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+            </div>
+        </div>
+    </form>
+</article>
+<script type="text/javascript">
+    $(document).ready(function () {
+        doSelectOneByIdChild(function (data) {
+$("#sc_main_id").val(data.sc_main_id);
+$("#sc_main_desc").val(data.sc_main_desc);
+$("#sc_son_id").val(data.sc_son_id);
+$("#sc_son_desc").val(data.sc_son_desc);
+$("#sc_type").val(data.sc_type);
+        });
+        doUpdateChild($("#requestForm"), {})
+    });
+</script>
+</body>
+</html>

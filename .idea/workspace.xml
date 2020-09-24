@@ -1,0 +1,1700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="002eb7ac-4cf2-484f-90c5-9f7f3a8e1d0e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_example_demo_demo_0_0_1_SNAPSHOT.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/javax_annotation.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/SpringbootBaseApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/ainit/JdbcColumnModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/ainit/JdbcColumnModelType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/ainit/JdbcDone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/ainit/JdbcUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/advice/ExceptionControllerAdvice.aj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/aop/AccessMethodInterval.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/aop/AccessMethodIntervalAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/aop/ControllerAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/aop/ControllerMethodLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/config/AsyncConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/config/CodeUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/config/DistributedLock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/config/RabbitConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/constant/BaseConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/controller/BaseApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/controller/BaseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/controller/QrCodeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/controller/QuartzController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/controller/SendMessageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/controller/SendMessageTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/controller/SmsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/controller/exception/RequestLimitException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/dao/BaseDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/dao/SysFileDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/dao/SysLoginDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/dao/SysLoginLogDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/dao/SysLoginRoleDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/dao/SysMenuDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/dao/SysOperationLogDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/dao/SysPermissionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/dao/SysRoleDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/dao/SysRolePermissionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/dao/SysSmsCodeDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/dao/SysSmsLogDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/dao/SysSmsModelDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/excel/ExcelColumn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/excel/ExcelUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/fileManager/config/UploadFilePathConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/fileManager/constant/BaseFileConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/fileManager/controller/UploadController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/model/BaseModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/model/SysConcernModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/model/SysFileModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/model/SysLoginLogModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/model/SysLoginModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/model/SysLoginRoleModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/model/SysMenuModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/model/SysOperationLogModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/model/SysPermissionModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/model/SysRoleModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/model/SysRolePermissionModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/model/SysSmsCodeModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/model/SysSmsLogModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/model/SysSmsModelModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/order/constant/BaseOrderConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/poi/PoiExcelUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/poi/annotation/GsExcelProperty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/rabbit/DirectRabbitConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/rabbit/FanoutRabbitConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/rabbit/TopicTabbitConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/BaseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/SysFileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/SysLoginLogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/SysLoginRoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/SysLoginService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/SysMenuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/SysOperationLogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/SysPermissionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/SysRolePermissionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/SysRoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/SysSmsCodeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/SysSmsLogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/SysSmsModelService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/impl/BaseServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/impl/SysFileServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/impl/SysLoginLogServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/impl/SysLoginRoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/impl/SysLoginServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/impl/SysMenuServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/impl/SysOperationLogServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/impl/SysPermissionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/impl/SysRolePermissionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/impl/SysRoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/impl/SysSmsCodeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/impl/SysSmsLogServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/service/impl/SysSmsModelServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/shrio/LoginType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/shrio/MyHashedCredentialsMatcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/shrio/MySessionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/shrio/MyShiroRealm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/shrio/MyUsernamePasswordToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/sms/SMSUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/sms/SmsConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/ueditor/ActionEnter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/ueditor/ConfigManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/ueditor/Encoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/ueditor/PathFormat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/ueditor/controller/UeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/ueditor/define/ActionMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/ueditor/define/AppInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/ueditor/define/BaseState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/ueditor/define/FileType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/ueditor/define/MIMEType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/ueditor/define/MultiState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/ueditor/define/State.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/ueditor/hunter/FileManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/ueditor/hunter/ImageHunter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/ueditor/upload/Base64Uploader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/ueditor/upload/BinaryUploader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/ueditor/upload/StorageManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/ueditor/upload/Uploader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/umeditor/comtroller/UmController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/umeditor/um/Uploader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/util/ApkUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/util/BarcodeUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/util/BaseUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/util/BeanRefUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/util/BufferedImageLuminanceSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/util/DateUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/util/HttpUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/util/PinYinHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/util/QRCodeUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/util/RequestUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/util/secretUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/webSocket/WebSocketConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/base/webSocket/WebSocketServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/aboutUs/controller/AboutUsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/aboutUs/controller/AccountController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/aboutUs/controller/AddressController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/aboutUs/dao/AboutUsDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/aboutUs/dao/AccountDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/aboutUs/dao/AddressDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/aboutUs/model/AboutUsModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/aboutUs/model/AccountModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/aboutUs/model/AddressModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/aboutUs/service/AboutUsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/aboutUs/service/AccountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/aboutUs/service/AddressService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/aboutUs/service/impl/AboutUsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/aboutUs/service/impl/AccountServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/aboutUs/service/impl/AddressServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/apiController/ApiAboutController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/apiController/ApiBannerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/apiController/ApiContentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/apiController/ApiMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/apiController/ApiNewsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/apiMoudel/ApiAboutMoudel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/apiMoudel/ApiAddressMoudel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/apiMoudel/ApiBannerModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/apiMoudel/ApiContentCopyModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/apiMoudel/ApiContentModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/apiMoudel/ApiMenuModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/apiMoudel/ApiNewsMoudel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/appManager/controller/AppManagerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/appManager/dao/AppManagerDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/appManager/model/AppManagerModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/appManager/service/AppManagerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/appManager/service/impl/AppManagerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/business/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/business/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/business/dao/OrderDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/business/dao/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/business/model/OrderModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/business/model/UserModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/business/service/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/business/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/business/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/business/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/comBanner/controller/BannerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/comBanner/dao/BannerDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/comBanner/model/BannerModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/comBanner/service/BannerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/comBanner/service/impl/BannerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/comContent/controller/ContentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/comContent/dao/ContentDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/comContent/model/ContentModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/comContent/service/ContentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/comContent/service/impl/ContentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/comMenu/controller/MenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/comMenu/dao/MenuDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/comMenu/model/MenuCopy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/comMenu/model/MenuModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/comMenu/service/MenuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/comMenu/service/impl/MenuServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/constant/ConcernTypeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/constant/DirEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/excelPort/ExcelModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/excelPort/ExcelModelCopy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/newContent/controller/NewContentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/newContent/dao/NewContentDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/newContent/model/NewContentModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/newContent/service/NewContentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/newContent/service/impl/NewContentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/thirdPart/controller/DefaultOOTController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/thirdPart/dao/OttServicesDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/thirdPart/model/OttServicesModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/thirdPart/service/OttServicesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/thirdPart/service/impl/OttServicesServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/controller/ApiIntegralController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/controller/ApiUserNotificationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/controller/ByIntegralController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/controller/DefaultIntegralController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/controller/DefaultIntegralRuleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/controller/DefaultUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/controller/DefaultUserNotificationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/dao/IntegralRuleDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/dao/UserIntegralDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/dao/UserMainDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/dao/UserNotificationDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/model/IntegralRuleModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/model/UserIntegralModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/model/UserMainModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/model/UserNotificationModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/service/IntegralRuleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/service/UserIntegralService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/service/UserMainService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/service/UserNotificationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/service/impl/IntegralRuleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/service/impl/UserIntegralServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/service/impl/UserMainServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/service/impl/UserNotificationServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/utils/IntegralHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/user/utils/JwtUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/websocket/MyChannelHandlerPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/websocket/MyWebSocketHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/websocket/NettyServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/websocket/WebSocketController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/weixin/controller/WeiXinH5Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/weixin/controller/WeiXinPayController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/weixin/controller/WeiXinXCXController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/weixin/dao/Access_tokenDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/weixin/dao/WeixinParmsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/weixin/model/Access_tokenEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/weixin/model/TemplateData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/weixin/model/UserEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/weixin/model/WeiXinEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/weixin/model/WxMssVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/weixin/service/WeixinService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/weixin/service/impl/Access_tokenServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/weixin/service/impl/WeixinParmsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/weixin/service/impl/WeixinServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/weixin/utils/OrderUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/weixin/utils/PayUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/weixin/utils/Sign.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/body/weixin/utils/WeiXinUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/config/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/config/MySwagger2Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/config/ShiroConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/config/WechatConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/test/JvmTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/test/ThreadTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gyb/test/newFixedThreadPoolDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/.idea/META-INF.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/SpringbootBaseApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/ainit/JdbcColumnModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/ainit/JdbcColumnModelType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/ainit/JdbcDone.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/ainit/JdbcUtils$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/ainit/JdbcUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/aop/AccessMethodInterval.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/aop/AccessMethodIntervalAspect.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/aop/ControllerAspect.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/aop/ControllerMethodLog.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/config/AsyncConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/config/CodeUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/config/DistributedLock.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/config/RabbitConfig$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/config/RabbitConfig$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/config/RabbitConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/config/RedisConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/constant/BaseConstant$PERMISSION_TYPE_ENUM.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/constant/BaseConstant$ROLE_TYPE_ENUM.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/constant/BaseConstant$Response_MENU.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/constant/BaseConstant$SQL_TYPE_ENUM.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/constant/BaseConstant.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/controller/BaseApiController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/controller/BaseController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/controller/QrCodeTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/controller/QuartzController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/controller/SendMessageController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/controller/SendMessageTest$1$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/controller/SendMessageTest$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/controller/SendMessageTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/controller/SmsController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/controller/exception/RequestLimitException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/dao/BaseDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/dao/SysFileDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/dao/SysLoginDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/dao/SysLoginLogDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/dao/SysLoginRoleDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/dao/SysMenuDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/dao/SysOperationLogDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/dao/SysPermissionDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/dao/SysRoleDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/dao/SysRolePermissionDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/dao/SysSmsCodeDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/dao/SysSmsLogDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/dao/SysSmsModelDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/excel/ExcelColumn.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/excel/ExcelUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/fileManager/config/UploadFilePathConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/fileManager/constant/BaseFileConstant$StaticPath.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/fileManager/constant/BaseFileConstant.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/fileManager/controller/UploadController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/model/BaseModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/model/SysConcernModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/model/SysFileModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/model/SysLoginLogModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/model/SysLoginModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/model/SysLoginRoleModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/model/SysMenuModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/model/SysOperationLogModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/model/SysPermissionModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/model/SysRoleModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/model/SysRolePermissionModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/model/SysSmsCodeModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/model/SysSmsLogModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/model/SysSmsModelModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/order/constant/BaseOrderConstant$DeliverOrderStatus.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/order/constant/BaseOrderConstant$OrderStatus.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/order/constant/BaseOrderConstant$PayOrderStatus.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/order/constant/BaseOrderConstant.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/poi/PoiExcelUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/poi/annotation/GsExcelProperty.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/rabbit/DirectRabbitConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/rabbit/FanoutRabbitConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/rabbit/TopicTabbitConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/BaseService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/SysFileService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/SysLoginLogService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/SysLoginRoleService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/SysLoginService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/SysMenuService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/SysOperationLogService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/SysPermissionService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/SysRolePermissionService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/SysRoleService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/SysSmsCodeService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/SysSmsLogService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/SysSmsModelService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/impl/BaseServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/impl/SysFileServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/impl/SysLoginLogServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/impl/SysLoginRoleServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/impl/SysLoginServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/impl/SysMenuServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/impl/SysOperationLogServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/impl/SysPermissionServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/impl/SysRolePermissionServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/impl/SysRoleServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/impl/SysSmsCodeServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/impl/SysSmsLogServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/service/impl/SysSmsModelServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/shrio/LoginType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/shrio/MyHashedCredentialsMatcher.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/shrio/MySessionManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/shrio/MyShiroRealm.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/shrio/MyUsernamePasswordToken.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/sms/SMSUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/sms/SmsConstant$MODEL_TYPE.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/sms/SmsConstant.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/ueditor/ActionEnter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/ueditor/ConfigManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/ueditor/Encoder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/ueditor/PathFormat.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/ueditor/controller/UeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/ueditor/define/ActionMap$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/ueditor/define/ActionMap.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/ueditor/define/AppInfo$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/ueditor/define/AppInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/ueditor/define/BaseState.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/ueditor/define/FileType$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/ueditor/define/FileType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/ueditor/define/MIMEType$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/ueditor/define/MIMEType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/ueditor/define/MultiState.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/ueditor/define/State.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/ueditor/hunter/FileManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/ueditor/hunter/ImageHunter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/ueditor/upload/Base64Uploader.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/ueditor/upload/BinaryUploader.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/ueditor/upload/StorageManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/ueditor/upload/Uploader.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/umeditor/comtroller/UmController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/umeditor/um/Uploader.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/util/ApkUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/util/BarcodeUtils$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/util/BarcodeUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/util/BaseUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/util/BeanRefUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/util/BufferedImageLuminanceSource.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/util/DateUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/util/HttpUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/util/PinYinHelper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/util/QRCodeUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/util/RequestUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/util/secretUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/webSocket/WebSocketConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/base/webSocket/WebSocketServer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/aboutUs/controller/AboutUsController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/aboutUs/controller/AccountController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/aboutUs/controller/AddressController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/aboutUs/dao/AboutUsDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/aboutUs/dao/AccountDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/aboutUs/dao/AddressDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/aboutUs/model/AboutUsModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/aboutUs/model/AccountModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/aboutUs/model/AddressModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/aboutUs/service/AboutUsService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/aboutUs/service/AccountService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/aboutUs/service/AddressService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/aboutUs/service/impl/AboutUsServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/aboutUs/service/impl/AccountServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/aboutUs/service/impl/AddressServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/apiController/ApiAboutController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/apiController/ApiBannerController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/apiController/ApiContentController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/apiController/ApiMenuController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/apiController/ApiNewsController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/apiMoudel/ApiAboutMoudel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/apiMoudel/ApiAddressMoudel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/apiMoudel/ApiBannerModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/apiMoudel/ApiContentCopyModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/apiMoudel/ApiContentModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/apiMoudel/ApiMenuModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/apiMoudel/ApiNewsMoudel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/appManager/controller/AppManagerController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/appManager/dao/AppManagerDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/appManager/model/AppManagerModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/appManager/service/AppManagerService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/appManager/service/impl/AppManagerServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/business/controller/OrderController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/business/controller/UserController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/business/dao/OrderDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/business/dao/UserDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/business/model/OrderModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/business/model/UserModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/business/service/OrderService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/business/service/UserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/business/service/impl/OrderServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/business/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/comBanner/controller/BannerController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/comBanner/dao/BannerDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/comBanner/model/BannerModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/comBanner/service/BannerService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/comBanner/service/impl/BannerServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/comContent/controller/ContentController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/comContent/dao/ContentDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/comContent/model/ContentModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/comContent/service/ContentService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/comContent/service/impl/ContentServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/comMenu/controller/MenuController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/comMenu/dao/MenuDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/comMenu/model/MenuCopy.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/comMenu/model/MenuModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/comMenu/service/MenuService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/comMenu/service/impl/MenuServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/constant/ConcernTypeEnum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/constant/DirEnum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/excelPort/ExcelModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/excelPort/ExcelModelCopy.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/newContent/controller/NewContentController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/newContent/dao/NewContentDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/newContent/model/NewContentModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/newContent/service/NewContentService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/newContent/service/impl/NewContentServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/thirdPart/controller/DefaultOOTController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/thirdPart/dao/OttServicesDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/thirdPart/model/OttServicesModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/thirdPart/service/OttServicesService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/thirdPart/service/impl/OttServicesServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/JwtAuthenticationFilter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/controller/ApiIntegralController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/controller/ApiUserNotificationController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/controller/ByIntegralController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/controller/DefaultIntegralController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/controller/DefaultIntegralRuleController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/controller/DefaultUserController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/controller/DefaultUserNotificationController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/dao/IntegralRuleDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/dao/UserIntegralDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/dao/UserMainDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/dao/UserNotificationDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/model/IntegralRuleModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/model/UserIntegralModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/model/UserMainModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/model/UserNotificationModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/service/IntegralRuleService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/service/UserIntegralService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/service/UserMainService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/service/UserNotificationService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/service/impl/IntegralRuleServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/service/impl/UserIntegralServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/service/impl/UserMainServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/service/impl/UserNotificationServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/utils/IntegralHelper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/user/utils/JwtUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/websocket/MyChannelHandlerPool.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/websocket/MyWebSocketHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/websocket/NettyServer$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/websocket/NettyServer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/websocket/WebSocketController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/weixin/controller/WeiXinH5Controller.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/weixin/controller/WeiXinPayController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/weixin/controller/WeiXinXCXController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/weixin/dao/Access_tokenDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/weixin/dao/WeixinParmsMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/weixin/model/Access_tokenEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/weixin/model/TemplateData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/weixin/model/UserEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/weixin/model/WeiXinEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/weixin/model/WxMssVo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/weixin/service/WeixinService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/weixin/service/impl/Access_tokenServiceImp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/weixin/service/impl/WeixinParmsService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/weixin/service/impl/WeixinServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/weixin/utils/OrderUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/weixin/utils/PayUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/weixin/utils/Sign.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/body/weixin/utils/WeiXinUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/config/CorsConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/config/MySwagger2Config.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/config/ShiroConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/config/WechatConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/test/JvmTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/test/ThreadTest$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/test/ThreadTest$Adder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/test/ThreadTest$Subtractor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/test/ThreadTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/test/newFixedThreadPoolDemo$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/lt/test/newFixedThreadPoolDemo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/config/application-dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/config/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/config/frame_template.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/config/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/config/mybatis/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/AboutUsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/AccountMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/AddressMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/BannerMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/ContentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/MenuMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/NewContentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/OrderMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/baseMapper/SysConcernMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/baseMapper/SysFileMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/baseMapper/SysLoginLogMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/baseMapper/SysLoginMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/baseMapper/SysLoginRoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/baseMapper/SysMenuMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/baseMapper/SysOperationLogMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/baseMapper/SysPermissionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/baseMapper/SysRoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/baseMapper/SysRolePermissionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/baseMapper/SysSmsCodeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/baseMapper/SysSmsLogMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/baseMapper/SysSmsModelMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/css/newindex.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/error/403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/error/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/error/500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/AboutUs/AboutUsAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/AboutUs/AboutUsEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/AboutUs/AboutUsList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/Account/AccountAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/Account/AccountEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/Account/AccountList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/Address/AddressAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/Address/AddressEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/Address/AddressList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/AppManager/AppManagerAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/AppManager/AppManagerEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/AppManager/AppManagerList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/Banner/BannerAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/Banner/BannerEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/Banner/BannerList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/Content/ContentAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/Content/ContentEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/Content/ContentList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/Menu/MenuList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/MenuTree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/NewContent/NewContentAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/NewContent/NewContentEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/NewContent/NewContentList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/Order/OrderAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/Order/OrderEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/Order/OrderList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/OttServices/OttServicesAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/OttServices/OttServicesEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/OttServices/OttServicesList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/OttServices/Type/Add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/OttServices/Type/Edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/OttServices/Type/List.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/OttServices/news/Add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/OttServices/news/Edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/OttServices/news/List.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SmsModel/SysSmsModelAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SmsModel/SysSmsModelEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SmsModel/SysSmsModelList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SmsModel/SysSmsModelSendTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SubmitMessage/SubmitMessageAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SubmitMessage/SubmitMessageEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SubmitMessage/SubmitMessageList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SubmitOption/SubmitOptionAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SubmitOption/SubmitOptionEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SubmitOption/SubmitOptionList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysConcern/SysConcernAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysConcern/SysConcernEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysConcern/SysConcernList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysFile/SysFileAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysFile/SysFileEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysFile/SysFileList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysLogin/SysLoginAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysLogin/SysLoginEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysLogin/SysLoginList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysLoginLog/SysLoginLogAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysLoginLog/SysLoginLogEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysLoginLog/SysLoginLogList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysOperationLog/SysOperationLogAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysOperationLog/SysOperationLogEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysOperationLog/SysOperationLogList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysPermission/SysPermissionAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysPermission/SysPermissionEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysPermission/SysPermissionList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysRole/SysRoleAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysRole/SysRoleEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysRole/SysRoleList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysSmsCode/SysSmsCodeAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysSmsCode/SysSmsCodeEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysSmsCode/SysSmsCodeList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysSmsLog/SysSmsLogAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysSmsLog/SysSmsLogEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysSmsLog/SysSmsLogList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/SysSmsLog/SysSmsLogShowData.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/User/UserAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/User/UserEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/User/UserList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/UserBrowse/UserBrowseAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/UserBrowse/UserBrowseEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/UserBrowse/UserBrowseList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/UserIntegral/INTEGRAL_RULE/Add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/UserIntegral/INTEGRAL_RULE/Edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/UserIntegral/INTEGRAL_RULE/List.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/UserIntegral/IntegralRule/IntegralRuleAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/UserIntegral/IntegralRule/IntegralRuleEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/UserIntegral/IntegralRule/IntegralRuleList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/UserIntegral/UserIntegralAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/UserIntegral/UserIntegralEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/UserIntegral/UserIntegralList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/UserMain/UserMainAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/UserMain/UserMainEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/UserMain/UserMainList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/UserNotification/UserNotificationAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/UserNotification/UserNotificationEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/UserNotification/UserNotificationList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/base_cropped.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/base_cropped2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/base_eleditor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/base_import_excel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/base_ue.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/base_um.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/base_upload.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/base_webUpload.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/base_webUpload2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/base_websocket.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/classCase/CaseAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/classCase/CaseEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/classCase/CaseList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/loginUpdatePassword.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/partyWork/PartWorkAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/partyWork/PartWorkEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/partyWork/PartWorkList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/product/ProductAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/product/ProductEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/product/ProductList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/html/welcome.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/images/backgrounds/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/images/backgrounds/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/images/backgrounds/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/images/picture.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/images/progress.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/admin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/base_gs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/initCss.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/initJs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/js/myService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/APlayer/APlayer.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/APlayer/APlayer.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/APlayer/font/aplayer-fontello.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/APlayer/font/aplayer-fontello.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/APlayer/font/aplayer-fontello.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/APlayer/font/aplayer-fontello.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/APlayer/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/DD_belatedPNG_0.0.8a-min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/Hui-iconfont/1.0.8/demo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/Hui-iconfont/1.0.8/iconfont.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/Hui-iconfont/1.0.8/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/Hui-iconfont/1.0.8/iconfont.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/Hui-iconfont/1.0.8/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/Hui-iconfont/1.0.8/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/Hui-iconfont/1.0.8/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/My97DatePicker/4.8/WdatePicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/My97DatePicker/4.8/calendar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/My97DatePicker/4.8/lang/en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/My97DatePicker/4.8/lang/zh-cn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/My97DatePicker/4.8/lang/zh-tw.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/My97DatePicker/4.8/skin/WdatePicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/My97DatePicker/4.8/skin/datePicker.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/My97DatePicker/4.8/skin/default/datepicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/My97DatePicker/4.8/skin/default/img.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/My97DatePicker/4.8/skin/twoer/datepicker-dev.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/My97DatePicker/4.8/skin/twoer/datepicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/My97DatePicker/4.8/skin/twoer/img.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/My97DatePicker/4.8/skin/twoer/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/My97DatePicker/4.8/skin/whyGreen/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/My97DatePicker/4.8/skin/whyGreen/datepicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/My97DatePicker/4.8/skin/whyGreen/img.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrap-3.3.7-dist/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrap-3.3.7-dist/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrap-3.3.7-dist/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrap-3.3.7-dist/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrap-3.3.7-dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrap-3.3.7-dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrap-3.3.7-dist/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrap-3.3.7-dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrap-3.3.7-dist/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrapselect/css/bootstrap-select.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrapselect/css/bootstrap-select.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrapselect/css/bootstrap-select.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrapselect/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrapselect/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrapselect/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrapselect/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrapselect/jquery插件库.url" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrapselect/js/bootstrap-select.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrapselect/js/bootstrap-select.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrapselect/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrapselect/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/bootstrapselect/www.jq22.com.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/cropper/cropper.common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/cropper/cropper.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/cropper/cropper.esm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/cropper/cropper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/cropper/cropper.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/cropper/cropper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/demo.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/diyUpload/diyUpload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/diyUpload/images/bgblack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/diyUpload/images/upload-bj.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/diyUpload/images/upload-icon1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/diyUpload/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/diyUpload/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/diyUpload/webuploader.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/eleditor/Eleditor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/eleditor/Eleditor.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/eleditor/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/eleditor/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/eleditor/layout/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/eleditor/upload.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/eleditor/webuploader.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/enlargement/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/enlargement/zoomify.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/enlargement/zoomify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/expressInstall.swf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/css/H-ui.admin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/css/H-ui.login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/images/acrossTab/acrossTab-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/images/admin-login-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/images/admin-loginform-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/images/cn.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/images/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/images/um.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/skin/blue/acrossTab-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/skin/blue/acrossTab.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/skin/blue/icon_arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/skin/blue/skin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/skin/default/acrossTab-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/skin/default/acrossTab.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/skin/default/icon_arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/skin/default/skin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/skin/green/acrossTab-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/skin/green/acrossTab.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/skin/green/icon_arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/skin/green/skin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/skin/orange/acrossTab-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/skin/orange/acrossTab.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/skin/orange/icon_arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/skin/orange/skin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/skin/red/acrossTab-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/skin/red/acrossTab.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/skin/red/icon_arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/skin/red/skin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/skin/yellow/acrossTab-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/skin/yellow/acrossTab.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/skin/yellow/icon_arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui.admin/skin/yellow/skin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/css/H-ui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/css/H-ui.ie.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/css/H-ui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/css/H-ui.reset.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/Hui-tags/empty.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/acrossTab/acrossTab-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/acrossTab/acrossTab-close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/acrossTab/acrossTab.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/dataTable/sort_asc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/dataTable/sort_both.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/dataTable/sort_desc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/dropDown/icon-jt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/201.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/202.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/203.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/204.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/205.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/206.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/207.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/208.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/209.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/210.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/10.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/100.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/101.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/102.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/103.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/104.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/105.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/106.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/11.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/12.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/13.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/14.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/15.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/16.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/18.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/19.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/20.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/21.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/22.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/23.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/24.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/25.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/26.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/27.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/28.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/29.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/3.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/30.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/31.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/32.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/33.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/34.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/35.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/36.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/37.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/38.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/39.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/4.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/40.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/41.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/42.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/43.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/44.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/45.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/46.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/47.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/48.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/49.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/5.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/50.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/51.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/52.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/53.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/54.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/55.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/56.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/57.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/58.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/59.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/6.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/60.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/61.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/62.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/63.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/64.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/65.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/66.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/67.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/68.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/69.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/7.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/70.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/71.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/72.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/73.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/74.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/75.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/76.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/77.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/78.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/79.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/8.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/80.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/81.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/82.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/83.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/84.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/85.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/86.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/87.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/88.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/89.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/9.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/90.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/91.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/92.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/93.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/94.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/95.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/96.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/97.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/98.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/face/QQ/99.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/iCheck/aero.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/iCheck/aero@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/iCheck/blue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/iCheck/blue@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/iCheck/green.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/iCheck/green@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/iCheck/grey.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/iCheck/grey@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/iCheck/minimal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/iCheck/minimal@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/iCheck/orange.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/iCheck/orange@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/iCheck/pink.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/iCheck/pink@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/iCheck/purple.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/iCheck/purple@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/iCheck/red.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/iCheck/red@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/iCheck/yellow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/iCheck/yellow@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/iconpic-arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/jselect/iconpic-arrow-down2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/loading/loading-b.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/loading/loading-s.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/rollpic/unslider-arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/star/iconpic-star-S-default.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/star/iconpic-star-S.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/steps/step_arrow-active.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/steps/step_arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/steps/step_bg-active.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/steps/step_bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/ucnter/avatar-default-S.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/ucnter/avatar-default.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/ucnter/avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/ucnter/noavatar_small.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/validform/iconpic-error.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/validform/iconpic-right.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/validform/iconpic-warning.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/verticalTab/tabNav-active.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/verticalTab/tabNav-hover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/verticalTab/tabNav.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/verticalTab/tabNav_right-active.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/verticalTab/tabNav_right-hover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/verticalTab/tabNav_right.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/images/verticalTab/tab_bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/js/H-ui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/h-ui/js/H-ui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/html5shiv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/jquery-ui/1.9.1/jquery-ui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/jquery-ui/3.4.1/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/jquery.SuperSlide/2.1.3/jquery.SuperSlide.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/jquery.contextmenu/jquery.contextmenu.r2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/jquery.validation/1.14.0/additional-methods.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/jquery.validation/1.14.0/jquery.validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/jquery.validation/1.14.0/messages_zh.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/jquery.validation/1.14.0/validate-methods.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/jquery/1.9.1/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/jquery/1.9.1/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/jquery/3.4.1/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/jselect-1.0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layer/3.1.1/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layer/3.1.1/mobile/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layer/3.1.1/mobile/need/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layer/3.1.1/skin/default/icon-ext.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layer/3.1.1/skin/default/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layer/3.1.1/skin/default/loading-0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layer/3.1.1/skin/default/loading-1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layer/3.1.1/skin/default/loading-2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layer/3.1.1/skin/icon-ext.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layer/3.1.1/skin/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layer/3.1.1/skin/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layer/3.1.1/skin/loading-0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layer/3.1.1/skin/loading-1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layer/3.1.1/skin/loading-2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/laypage/2.4.5/laypage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/laypage/2.4.5/skin/laypage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/mui/3.0.0/js/mui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/nprogress/0.2.0/nprogress.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/nprogress/0.2.0/nprogress.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/nprogress/0.2.0/nprogress.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/nprogress/0.2.0/nprogress.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/pagination/common/common.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/pagination/common/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/pagination/common/reset.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/pagination/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/pagination/jquery.pagination.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/pagination/jquery插件库.url" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/pagination/pagination.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/respond.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/squid.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/supersized/supersized.3.2.7.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/swfobject.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/anchor/anchor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/attachment.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/attachment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/attachment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/fileTypeImages/icon_chm.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/fileTypeImages/icon_default.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/fileTypeImages/icon_doc.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/fileTypeImages/icon_exe.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/fileTypeImages/icon_jpg.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/fileTypeImages/icon_mp3.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/fileTypeImages/icon_mv.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/fileTypeImages/icon_pdf.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/fileTypeImages/icon_ppt.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/fileTypeImages/icon_psd.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/fileTypeImages/icon_rar.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/fileTypeImages/icon_txt.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/fileTypeImages/icon_xls.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/images/alignicon.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/images/alignicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/images/bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/images/file-icons.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/images/file-icons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/images/icons.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/images/icons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/images/image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/images/progress.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/images/success.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/attachment/images/success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/background/background.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/background/background.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/background/background.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/background/images/bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/background/images/success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/charts/chart.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/charts/charts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/charts/charts.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/charts/charts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/charts/images/charts0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/charts/images/charts1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/charts/images/charts2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/charts/images/charts3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/charts/images/charts4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/charts/images/charts5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/emotion/emotion.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/emotion/emotion.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/emotion/emotion.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/emotion/images/0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/emotion/images/bface.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/emotion/images/cface.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/emotion/images/fface.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/emotion/images/jxface2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/emotion/images/neweditor-tab-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/emotion/images/tface.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/emotion/images/wface.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/emotion/images/yface.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/gmap/gmap.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/help/help.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/help/help.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/help/help.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/image/image.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/image/image.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/image/image.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/image/images/alignicon.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/image/images/bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/image/images/icons.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/image/images/icons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/image/images/image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/image/images/progress.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/image/images/success.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/image/images/success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/insertframe/insertframe.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/internal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/link/link.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/map/map.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/map/show.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/music/music.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/music/music.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/music/music.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/preview/preview.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/scrawl/images/addimg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/scrawl/images/brush.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/scrawl/images/delimg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/scrawl/images/delimgH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/scrawl/images/empty.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/scrawl/images/emptyH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/scrawl/images/eraser.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/scrawl/images/redo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/scrawl/images/redoH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/scrawl/images/scale.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/scrawl/images/scaleH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/scrawl/images/size.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/scrawl/images/undo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/scrawl/images/undoH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/scrawl/scrawl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/scrawl/scrawl.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/scrawl/scrawl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/searchreplace/searchreplace.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/searchreplace/searchreplace.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/snapscreen/snapscreen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/spechars/spechars.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/spechars/spechars.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/table/dragicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/table/edittable.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/table/edittable.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/table/edittable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/table/edittd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/table/edittip.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/template/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/template/images/bg.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/template/images/pre0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/template/images/pre1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/template/images/pre2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/template/images/pre3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/template/images/pre4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/template/template.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/template/template.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/template/template.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/video/images/bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/video/images/center_focus.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/video/images/file-icons.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/video/images/file-icons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/video/images/icons.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/video/images/icons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/video/images/image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/video/images/left_focus.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/video/images/none_focus.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/video/images/progress.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/video/images/right_focus.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/video/images/success.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/video/images/success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/video/video.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/video/video.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/video/video.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/webapp/webapp.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/wordimage/fClipboard_ueditor.swf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/wordimage/imageUploader.swf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/wordimage/tangram.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/wordimage/wordimage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/wordimage/wordimage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/xiumi/316e42.xiumi_logo_40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/xiumi/internal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/xiumi/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/xiumi/xiumi-ue-dialog-v5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/xiumi/xiumi-ue-dialog-v5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/xiumi/xiumi-ue-v5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/dialogs/xiumi/zh-cn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/jsp/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/jsp/controller.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/lang/en/en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/lang/en/images/addimage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/lang/en/images/alldeletebtnhoverskin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/lang/en/images/alldeletebtnupskin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/lang/en/images/background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/lang/en/images/button.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/lang/en/images/copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/lang/en/images/deletedisable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/lang/en/images/deleteenable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/lang/en/images/listbackground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/lang/en/images/localimage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/lang/en/images/music.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/lang/en/images/rotateleftdisable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/lang/en/images/rotateleftenable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/lang/en/images/rotaterightdisable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/lang/en/images/rotaterightenable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/lang/en/images/upload.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/lang/zh-cn/images/copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/lang/zh-cn/images/localimage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/lang/zh-cn/images/music.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/lang/zh-cn/images/upload.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/lang/zh-cn/zh-cn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/css/ueditor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/css/ueditor.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/dialogbase.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/anchor.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/arrow_down.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/arrow_up.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/button-bg.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/cancelbutton.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/charts.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/cursor_h.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/cursor_h.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/cursor_v.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/cursor_v.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/dialog-title-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/filescan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/highlighted.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/icons-all.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/icons.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/icons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/loaderror.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/lock.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/neweditor-tab-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/pagebreak.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/scale.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/sortable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/spacer.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/sparator_v.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/table-cell-align.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/tangram-colorpicker.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/toolbar_bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/unhighlighted.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/upload.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/videologo.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/word.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/default/images/wordpaste.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/themes/iframe.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/SyntaxHighlighter/shCore.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/codemirror/codemirror.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/codemirror/codemirror.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/adapters/mootools-adapter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/adapters/mootools-adapter.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/adapters/prototype-adapter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/adapters/prototype-adapter.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/adapters/standalone-framework.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/adapters/standalone-framework.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/highcharts-more.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/highcharts-more.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/highcharts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/highcharts.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/modules/annotations.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/modules/annotations.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/modules/canvas-tools.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/modules/canvas-tools.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/modules/data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/modules/data.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/modules/drilldown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/modules/drilldown.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/modules/exporting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/modules/exporting.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/modules/funnel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/modules/funnel.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/modules/heatmap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/modules/heatmap.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/modules/map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/modules/map.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/modules/no-data-to-display.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/modules/no-data-to-display.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/themes/dark-blue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/themes/dark-green.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/themes/gray.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/themes/grid.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/highcharts/themes/skies.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/jquery-1.10.2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/jquery-1.10.2.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/jquery-1.10.2.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/snapscreen/UEditorSnapscreen.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/video-js/font/vjs.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/video-js/font/vjs.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/video-js/font/vjs.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/video-js/font/vjs.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/video-js/video-js.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/video-js/video-js.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/video-js/video-js.swf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/video-js/video.dev.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/video-js/video.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/webuploader/Uploader.swf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/webuploader/webuploader.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/webuploader/webuploader.custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/webuploader/webuploader.custom.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/webuploader/webuploader.flashonly.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/webuploader/webuploader.flashonly.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/webuploader/webuploader.html5only.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/webuploader/webuploader.html5only.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/webuploader/webuploader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/webuploader/webuploader.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/webuploader/webuploader.withoutimage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/webuploader/webuploader.withoutimage.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/xss.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/zeroclipboard/ZeroClipboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/zeroclipboard/ZeroClipboard.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/third-party/zeroclipboard/ZeroClipboard.swf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/ueditor.all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/ueditor.all.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/ueditor.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/ueditor/ueditor.parse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/emotion/emotion.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/emotion/emotion.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/emotion/images/0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/emotion/images/bface.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/emotion/images/cface.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/emotion/images/fface.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/emotion/images/jxface2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/emotion/images/neweditor-tab-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/emotion/images/tface.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/emotion/images/wface.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/emotion/images/yface.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/formula/formula.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/formula/formula.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/formula/formula.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/formula/images/formula.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/image/image.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/image/image.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/image/images/close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/image/images/upload1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/image/images/upload2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/link/link.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/map/map.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/map/map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/video/images/center_focus.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/video/images/left_focus.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/video/images/none_focus.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/video/images/right_focus.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/video/video.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/video/video.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/xiumi/internal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/xiumi/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/xiumi/xiumi-ue-dialog-v5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/xiumi/xiumi-ue-dialog-v5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/dialogs/xiumi/xiumi-ue-v5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/lang/en/en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/lang/en/images/addimage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/lang/en/images/alldeletebtnhoverskin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/lang/en/images/alldeletebtnupskin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/lang/en/images/background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/lang/en/images/button.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/lang/en/images/copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/lang/en/images/deletedisable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/lang/en/images/deleteenable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/lang/en/images/imglabel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/lang/en/images/listbackground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/lang/en/images/localimage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/lang/en/images/music.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/lang/en/images/rotateleftdisable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/lang/en/images/rotateleftenable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/lang/en/images/rotaterightdisable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/lang/en/images/rotaterightenable.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/lang/en/images/upload.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/lang/zh-cn/images/copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/lang/zh-cn/images/imglabel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/lang/zh-cn/images/localimage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/lang/zh-cn/images/music.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/lang/zh-cn/images/upload.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/lang/zh-cn/zh-cn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/themes/default/css/umeditor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/themes/default/css/umeditor.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/themes/default/images/caret.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/themes/default/images/close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/themes/default/images/icons.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/themes/default/images/icons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/themes/default/images/ok.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/themes/default/images/pop-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/themes/default/images/spacer.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/themes/default/images/videologo.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/mathquill/font/Symbola.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/mathquill/font/Symbola.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/mathquill/font/Symbola.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/mathquill/font/Symbola.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/mathquill/font/Symbola.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/mathquill/font/stixgeneral-bundle/STIXFontLicense2010.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/mathquill/font/stixgeneral-bundle/stixgeneral-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/mathquill/font/stixgeneral-bundle/stixgeneral-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/mathquill/font/stixgeneral-bundle/stixgeneral-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/mathquill/font/stixgeneral-bundle/stixgeneral-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/mathquill/font/stixgeneral-bundle/stixgeneralbol-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/mathquill/font/stixgeneral-bundle/stixgeneralbol-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/mathquill/font/stixgeneral-bundle/stixgeneralbol-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/mathquill/font/stixgeneral-bundle/stixgeneralbol-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/mathquill/font/stixgeneral-bundle/stixgeneralbolita-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/mathquill/font/stixgeneral-bundle/stixgeneralbolita-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/mathquill/font/stixgeneral-bundle/stixgeneralbolita-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/mathquill/font/stixgeneral-bundle/stixgeneralbolita-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/mathquill/font/stixgeneral-bundle/stixgeneralitalic-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/mathquill/font/stixgeneral-bundle/stixgeneralitalic-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/mathquill/font/stixgeneral-bundle/stixgeneralitalic-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/mathquill/font/stixgeneral-bundle/stixgeneralitalic-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/mathquill/mathquill.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/mathquill/mathquill.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/third-party/mathquill/mathquill.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/umeditor.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/umeditor/1.2.3/umeditor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/verSelector/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/verSelector/asset/js/area.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/verSelector/asset/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/verSelector/asset/js/select.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/verSelector/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/verSelector/jquery插件库.url" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/verSelector/verSelector/need/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/verSelector/verSelector/need/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/verSelector/verSelector/need/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/verSelector/verSelector/need/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/verSelector/verSelector/need/iconfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/verSelector/verSelector/need/select.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/verSelector/verSelector/need/vericon.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/verSelector/verSelector/verSelect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/verSelector/www.jq22.com.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/video/css/video-js.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/video/css/video-js.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/video/js/video-js.swf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/video/js/video.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/video/js/videojs-flash.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/webuploader/my0.1.5/Uploader.swf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/webuploader/my0.1.5/webuploader.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/webuploader/my0.1.5/webuploader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/webuploader/my0.1.5/webuploader.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/css/awesomeStyle/awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/css/awesomeStyle/awesome.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/css/awesomeStyle/fa.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/css/awesomeStyle/img/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/css/demo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/css/metroStyle/img/line_conn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/css/metroStyle/img/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/css/metroStyle/img/metro.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/css/metroStyle/img/metro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/css/metroStyle/metroStyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/css/zTreeStyle/img/diy/1_close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/css/zTreeStyle/img/diy/1_open.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/css/zTreeStyle/img/diy/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/css/zTreeStyle/img/diy/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/css/zTreeStyle/img/diy/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/css/zTreeStyle/img/diy/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/css/zTreeStyle/img/diy/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/css/zTreeStyle/img/diy/7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/css/zTreeStyle/img/diy/8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/css/zTreeStyle/img/diy/9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/css/zTreeStyle/img/line_conn.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/css/zTreeStyle/img/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/css/zTreeStyle/img/zTreeStandard.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/css/zTreeStyle/img/zTreeStandard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/css/zTreeStyle/zTreeStyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/js/jquery-1.4.4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/js/jquery.ztree.all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/js/jquery.ztree.all.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/js/jquery.ztree.core.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/js/jquery.ztree.core.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/js/jquery.ztree.excheck.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/js/jquery.ztree.excheck.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/js/jquery.ztree.exedit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/js/jquery.ztree.exedit.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/js/jquery.ztree.exhide.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/zTree/v3/js/jquery.ztree.exhide.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ueConfig.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../Program Files/apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="D:\Program Files\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1hr4TTmBgwpHBGd3M87SuzmeTrE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../g_qualityAnswer" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.43563217" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RunManager" selected="Application.JvmTest">
+    <configuration name="JvmTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.gyb.test.JvmTest" />
+      <module name="template" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gyb.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringbootBaseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="template" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gyb.SpringbootBaseApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.JvmTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="002eb7ac-4cf2-484f-90c5-9f7f3a8e1d0e" name="Default Changelist" comment="" />
+      <created>1600755884872</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600755884872</updated>
+      <workItem from="1600755885950" duration="1044000" />
+      <workItem from="1600758052204" duration="5844000" />
+      <workItem from="1600768235812" duration="9803000" />
+      <workItem from="1600917044530" duration="410000" />
+    </task>
+    <task id="LOCAL-00001" summary="修改ａｒｔｉｆｙＩｄ">
+      <created>1600917218320</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600917218320</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="修改ａｒｔｉｆｙＩｄ" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改ａｒｔｉｆｙＩｄ" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600755988900">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600755988900" />
+    <state x="765" y="225" key="#com.intellij.ide.util.MemberChooser" timestamp="1600854123422">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="225" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1600854123422" />
+    <state x="437" y="86" key="CommitChangelistDialog2" timestamp="1600917206989">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="437" y="86" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1600917206989" />
+    <state width="438" height="466" key="DebuggerActiveHint" timestamp="1600768572540">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="438" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1600768572540" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1600917080812">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1600917080812" />
+    <state width="1877" height="381" key="GridCell.Tab.0.bottom" timestamp="1600917029980">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="381" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600917029980" />
+    <state width="1877" height="381" key="GridCell.Tab.0.center" timestamp="1600917029980">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="381" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600917029980" />
+    <state width="1877" height="381" key="GridCell.Tab.0.left" timestamp="1600917029980">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="381" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600917029980" />
+    <state width="1877" height="381" key="GridCell.Tab.0.right" timestamp="1600917029980">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="381" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600917029980" />
+    <state width="1877" height="230" key="GridCell.Tab.1.bottom" timestamp="1600917029977">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="230" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600917029977" />
+    <state width="1877" height="230" key="GridCell.Tab.1.center" timestamp="1600917029977">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="230" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600917029977" />
+    <state width="1877" height="230" key="GridCell.Tab.1.left" timestamp="1600917029977">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="230" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600917029977" />
+    <state width="1877" height="230" key="GridCell.Tab.1.right" timestamp="1600917029977">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="230" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600917029977" />
+    <state width="1877" height="230" key="GridCell.Tab.2.bottom" timestamp="1600917029978">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="230" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600917029978" />
+    <state width="1877" height="230" key="GridCell.Tab.2.center" timestamp="1600917029977">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="230" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600917029977" />
+    <state width="1877" height="230" key="GridCell.Tab.2.left" timestamp="1600917029977">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="230" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600917029977" />
+    <state width="1877" height="230" key="GridCell.Tab.2.right" timestamp="1600917029978">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="230" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600917029978" />
+    <state x="490" y="174" key="Maven.ArtifactSearchDialog" timestamp="1600756869156">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="490" y="174" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600756869156" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1600917090620">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1600917090620" />
+    <state x="498" y="255" width="923" height="642" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1600820763245">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="498" y="255" width="923" height="642" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1600820763245" />
+    <state x="661" y="118" width="598" height="804" key="find.popup" timestamp="1600768612451">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="661" y="118" width="598" height="804" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600768612451" />
+    <state x="130" y="225" width="1403" height="678" key="search.everywhere.popup" timestamp="1600820783311">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="130" y="225" width="1403" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600820783311" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/gyb/test/JvmTest.java</url>
+          <line>14</line>
+          <properties class="com.gyb.test.JvmTest" method="main">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

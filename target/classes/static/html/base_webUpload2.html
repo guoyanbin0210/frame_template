@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <script type="text/javascript" src="/js/initCss.js"></script>
+    <script type="text/javascript" src="/js/initJs.js"></script>
+    <link rel="stylesheet" type="text/css" href="/lib/webuploader/my0.1.5/webuploader.css"/>
+    <script type="text/javascript" src="/lib/webuploader/my0.1.5/webuploader.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="/lib/cropper/cropper.min.css"/>
+    <script type="text/javascript" src="/lib/cropper/cropper.min.js"></script>
+
+
+</head>
+<body>
+<article class="page-container">
+    <form action="" method="post" class="form form-horizontal" id="requestForm">
+
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2" for="news_icon"><span class="c-red">*</span>分享图标：</label>
+            <div class="row cl div-file">
+                <div class="formControls col-xs-8 col-sm-9">
+                    <img style="width:120px; height:120px ;display: none" id="show_news_icon" class="thumbnail l mr-10">
+                    <span id="news_icon_list" class="uploader-list"></span>
+                    <span id="news_icon_filePicker" class="mr-5">选择图片</span>
+                    <input type="text" class="input-text" id="news_icon"
+                           name="news_icon" readonly required placeholder="120*120"
+                           style=" width:40%">
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+</article>
+
+
+<script type="text/javascript">
+
+
+    // 图片上传
+    jQuery(function () {
+        let $list = $('#news_icon_list'),
+            // 优化retina, 在retina下这个值是2
+            ratio = window.devicePixelRatio || 1,
+            // 缩略图大小
+            thumbnailWidth = 100 * ratio,
+            thumbnailHeight = 100 * ratio,
+            // Web Uploader实例
+            uploader;
+        // 初始化Web Uploader
+        uploader = WebUploader.create({
+            auto: false,// 自动上传。
+            swf: '/static/lib/my0.1.5/Uploader.swf',// swf文件路径
+            server: '/fileManager/upload',// 文件接收服务端。
+            // 选择文件的按钮。可选。
+            // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+            pick: {id: '#news_icon_filePicker', multiple: false},
+            //只能选择一个文件上传
+            multiple: false,
+            // 只允许选择文件，可选。
+            accept: {
+                title: 'Images',
+                extensions: 'gif,jpg,jpeg,bmp,png,mp4',
+                // mimeTypes: 'image/*,video/*'
+                mimeTypes: 'image/*'
+            }
+        });
+        // 当有文件添加进来的时候
+        uploader.on('fileQueued', function (file) {
+            let $li =
+                    $('<div id="' + file.id + '" class="file-item thumbnail"><img alt="" src=""><div class="info">' + file.name + '</div></div>'),
+                $img = $li.find('img');
+            $list.html($li);//todo 单张 如果需要多张 这里换成 append
+            // 创建缩略图
+            uploader.makeThumb(file, function (error, src) {
+                if (error) {
+                    $img.replaceWith('<span>不能预览</span>');
+                    return;
+                }
+
+
+                $img.attr('src', src);
+            }, thumbnailWidth, thumbnailHeight);
+        });
+
+
+
+
+        // 文件上传过程中创建进度条实时显示。
+        uploader.on('uploadProgress', function (file, percentage) {
+            let $li = $('#' + file.id),
+                $percent = $li.find('.progress span');
+            // 避免重复创建
+            if (!$percent.length) {
+                $percent = $('<p class="progress"><span></span></p>')
+                    .appendTo($li)
+                    .find('span');
+            }
+            $percent.css('width', percentage * 100 + '%');
+        });
+
+        // 文件上传成功，给item添加成功class, 用样式标记上传成功。
+        uploader.on('uploadSuccess', function (file, responseMENU) {
+            $("#news_icon").val(responseMENU.urlPath);
+            // $("#bd_image").val(responseMENU.id);
+            $('#' + file.id).addClass('upload-state-done');
+        });
+
+        // 文件上传失败，现实上传出错。
+        uploader.on('uploadError', function (file) {
+            let $li = $('#' + file.id),
+                $error = $li.find('error');
+            // 避免重复创建
+            if (!$error.length) {
+                $error = $('<div class="error"></div>').appendTo($li);
+            }
+            $error.text('上传失败');
+        });
+
+        // 完成上传完了，成功或者失败，先删除进度条。
+        uploader.on('uploadComplete', function (file) {
+            $('#' + file.id).find('.progress').remove();
+        });
+    });
+
+
+</script>
+
+</body>
+</html>

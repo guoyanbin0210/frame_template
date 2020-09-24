@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lt.base.dao.SysSmsCodeDao">
+    <resultMap id="baseModel" type="com.lt.base.model.SysSmsCodeModel">
+        <id column="id" property="id"/>
+        <id column="create_by" property="create_by"/>
+        <id column="create_time" property="create_time"/>
+        <id column="modify_by" property="modify_by"/>
+        <id column="modify_time" property="modify_time"/>
+        <id column="base_status" property="base_status"/>
+        <id column="base_available" property="base_available"/>
+        <id column="base_sort" property="base_sort"/>
+        <id column="ssc_phone" property="ssc_phone"/>
+        <id column="ssl_code" property="ssl_code"/>
+        <id column="ssl_out_time" property="ssl_out_time"/>
+    </resultMap>
+    <sql id="select_all">id, create_by, create_time, modify_by, modify_time, base_status, base_available, base_sort, ssc_phone, ssl_code, ssl_out_time</sql>
+    <sql id="Base_Column_List">
+        <if test="id!=null">id,</if>
+        <if test="create_by!=null">create_by,</if>
+        <if test="create_time!=null">create_time,</if>
+        <if test="modify_by!=null">modify_by,</if>
+        <if test="modify_time!=null">modify_time,</if>
+        <if test="base_status!=null">base_status,</if>
+        <if test="base_available!=null">base_available,</if>
+        <if test="base_sort!=null">base_sort,</if>
+        <if test="ssc_phone!=null">ssc_phone,</if>
+        <if test="ssl_code!=null">ssl_code,</if>
+        <if test="ssl_out_time!=null">ssl_out_time,</if>
+    </sql>
+    <sql id="Base_property_List">
+        <if test="id!=null">#{id},</if>
+        <if test="create_by!=null">#{create_by},</if>
+        <if test="create_time!=null">#{create_time},</if>
+        <if test="modify_by!=null">#{modify_by},</if>
+        <if test="modify_time!=null">#{modify_time},</if>
+        <if test="base_status!=null">#{base_status},</if>
+        <if test="base_available!=null">#{base_available},</if>
+        <if test="base_sort!=null">#{base_sort},</if>
+        <if test="ssc_phone!=null">#{ssc_phone},</if>
+        <if test="ssl_code!=null">#{ssl_code},</if>
+        <if test="ssl_out_time!=null">#{ssl_out_time},</if>
+    </sql>
+    <sql id="Base_update_List">
+        <if test="id!=null">id=#{id},</if>
+        <if test="create_by!=null">create_by=#{create_by},</if>
+        <if test="create_time!=null">create_time=#{create_time},</if>
+        <if test="modify_by!=null">modify_by=#{modify_by},</if>
+        <if test="modify_time!=null">modify_time=#{modify_time},</if>
+        <if test="base_status!=null">base_status=#{base_status},</if>
+        <if test="base_available!=null">base_available=#{base_available},</if>
+        <if test="base_sort!=null">base_sort=#{base_sort},</if>
+        <if test="ssc_phone!=null">ssc_phone=#{ssc_phone},</if>
+        <if test="ssl_code!=null">ssl_code=#{ssl_code},</if>
+        <if test="ssl_out_time!=null">ssl_out_time=#{ssl_out_time},</if>
+    </sql>
+    <sql id="Base_select_List">
+        <if test="id!=null">AND id=#{id}</if>
+        <if test="create_by!=null">AND create_by=#{create_by}</if>
+        <if test="create_time!=null">AND create_time=#{create_time}</if>
+        <if test="modify_by!=null">AND modify_by=#{modify_by}</if>
+        <if test="modify_time!=null">AND modify_time=#{modify_time}</if>
+        <if test="base_status!=null">AND base_status=#{base_status}</if>
+        <if test="base_available!=null">AND base_available=#{base_available}</if>
+        <if test="base_sort!=null">AND base_sort=#{base_sort}</if>
+        <if test="ssc_phone!=null">AND ssc_phone=#{ssc_phone}</if>
+        <if test="ssl_code!=null">AND ssl_code=#{ssl_code}</if>
+        <if test="ssl_out_time!=null">AND ssl_out_time=#{ssl_out_time}</if>
+    </sql>
+    <sql id="Base_select_like_List">
+        <trim suffixOverrides=",">IFNULL
+            (ssc_phone, '')
+            , IFNULL(ssl_code, ''), IFNULL(ssl_out_time, ''),
+        </trim>
+    </sql>
+    <insert id="insert">INSERT INTO tb_sys_sms_code (
+        <trim suffixOverrides=",">
+            <include refid="Base_Column_List"/>
+        </trim>
+        ) VALUES (
+        <trim suffixOverrides=",">
+            <include refid="Base_property_List"/>
+        </trim>
+        )
+    </insert>
+    <delete id="delete">DELETE
+                        FROM tb_sys_sms_code
+                        WHERE id = #{id}</delete>
+    <update id="update">UPDATE tb_sys_sms_code SET
+        <trim suffixOverrides=",">
+            <include refid="Base_update_List"/>
+        </trim>
+        WHERE id = #{id}
+    </update>
+    <select id="selectById" resultMap="baseModel" useCache="true">SELECT
+        <include refid="select_all"/>
+        FROM tb_sys_sms_code WHERE id =#{id}
+    </select>
+    <select id="selectListByModel" resultMap="baseModel" useCache="true">SELECT
+        <include refid="select_all"/>
+        FROM tb_sys_sms_code
+        <where>
+            <include refid="Base_select_List"/>
+        </where>
+        ORDER BY create_time DESC
+    </select>
+    <select id="selectAll" resultMap="baseModel" useCache="true">SELECT
+        <include refid="select_all"/>
+        FROM tb_sys_sms_code ORDER BY create_time DESC
+    </select>
+    <select id="selectListByKeyWord" resultMap="baseModel" useCache="true">SELECT
+        <include refid="select_all"/>
+        FROM tb_sys_sms_code
+        <where>CONCAT(<include refid="Base_select_like_List"/>) LIKE concat(concat('%',#{keyWord}),'%')
+        </where>
+        ORDER BY create_time DESC
+    </select>
+    <select id="selectOneByPhoneAndCode" resultMap="baseModel">
+        SELECT
+        <include refid="select_all"/>
+        FROM tb_sys_sms_code
+        WHERE
+        ssc_phone=#{ssc_phone}
+        AND ssl_code=#{ssl_code}
+        AND ssl_out_time > DATE_SUB( NOW( ), INTERVAL 5 MINUTE )
+        LIMIT 1
+    </select>
+</mapper>
