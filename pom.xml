@@ -30,7 +30,7 @@
         <jodd-http.version>5.0.12</jodd-http.version>
        <!-- <poi.version>4.0.1</poi.version>-->
 
-        <org.apache.ant.version>1.10.6</org.apache.ant.version>
+        <org.apache.ant.version>1.10.9</org.apache.ant.version>
         <druid-spring-boot-starter.version>1.1.18</druid-spring-boot-starter.version>
         <mybatis-spring-boot-starter.version>2.1.0</mybatis-spring-boot-starter.version>
         <pagehelper-spring-boot-starter.version>1.2.12</pagehelper-spring-boot-starter.version>
