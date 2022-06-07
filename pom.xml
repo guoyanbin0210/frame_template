@@ -27,7 +27,7 @@
         <apk-parser.version>2.6.6</apk-parser.version>
         <java-jwt.version>3.8.0</java-jwt.version>
 
-        <jodd-http.version>5.0.12</jodd-http.version>
+        <jodd-http.version>6.2.1</jodd-http.version>
        <!-- <poi.version>4.0.1</poi.version>-->
 
         <org.apache.ant.version>1.10.6</org.apache.ant.version>
